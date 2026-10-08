@@ -1,0 +1,4 @@
+interface:
+  display_name: "EPK Social Metadata"
+  short_description: "Use EPK Social Metadata and contribute tested improvements"
+  default_prompt: "Use $epk-social-metadata to inspect the available features and complete my task."

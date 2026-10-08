@@ -1,0 +1,16 @@
+name: Reusable improvement
+description: Explain a task that existing capabilities cannot complete.
+body:
+  - type: markdown
+    attributes:
+      value: "Review the tool inventory at https://kieransimkin.co.uk/danceflow/ and the relevant upstream docs first."
+  - type: textarea
+    id: gap
+    attributes:
+      label: Task, existing capabilities checked and remaining gap
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Small example and proposed validation

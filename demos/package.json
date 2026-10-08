@@ -1,0 +1,22 @@
+{
+  "name": "danceflow-demos",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Runnable DanceFlow demonstrations. https://kieransimkin.co.uk/danceflow/",
+  "homepage": "https://kieransimkin.co.uk/danceflow/",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite --host 127.0.0.1 --port 8897"
+  },
+  "dependencies": {
+    "@kieransimkin/dance-rudiments": "0.2.3",
+    "@kieransimkin/dancemoves": "3.1.15",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "react-timeline-sequence": "0.2.1"
+  },
+  "devDependencies": {
+    "vite": "7.3.7"
+  }
+}

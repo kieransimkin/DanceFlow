@@ -1,0 +1,159 @@
+name: Validate and release DanceFlow
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.10", "3.13"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -e ".[dev]"
+      - run: python -m pytest -q
+      - run: python scripts/validate_toolkit.py
+
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: demos/package-lock.json
+      - run: python -m pip install -e . numpy soundfile fastapi
+      - run: python -m pip install --no-deps danceflow-stemlab==1.3.3
+      - run: npm ci --prefix demos
+      - run: python scripts/prepare_arcadians.py
+      - run: npm run build --prefix demos
+      - uses: actions/upload-artifact@v7
+        with:
+          name: arcadians-playground
+          path: docs/playground/
+
+  build:
+    needs: [test, demo]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - run: python -m pip install -e ".[dev]"
+      - run: python scripts/validate_toolkit.py
+      - name: Check immutable tag identity
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          python - <<'PY'
+          import os, tomllib
+          version = tomllib.load(open('pyproject.toml', 'rb'))['project']['version']
+          assert os.environ['GITHUB_REF_NAME'] == 'v' + version
+          PY
+      - run: python -m build
+      - run: python -m twine check --strict dist/*
+      - uses: actions/download-artifact@v8
+        with:
+          name: arcadians-playground
+          path: docs/playground
+      - run: python scripts/package_toolkit.py
+      - uses: actions/upload-artifact@v7
+        with:
+          name: release-packages
+          path: dist/*
+
+  github-release:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v8
+        with:
+          name: release-packages
+          path: dist
+      - run: cd dist && sha256sum -c SHA256SUMS.txt
+      - name: Publish immutable GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            echo 'Refusing to overwrite an existing release'; exit 1
+          fi
+          printf 'Portable skills for ten DanceFlow components, Claude/Codex marketplace catalogs and a local KeywordMoves/PixelCue MCP bridge.\n\nWebsite: https://kieransimkin.co.uk/danceflow/\n\nSource: %s\nValidated: real stdio protocol and synthetic local HTTP contracts on Windows/Linux, Python 3.10 and 3.13; skill/marketplace identity; strict package metadata. PixelCue GPU inference and physical-device motion are not established by these checks.\n' "$GITHUB_SHA" > release-notes.md
+          gh release create "$GITHUB_REF_NAME" dist/* --title "DanceFlow $GITHUB_REF_NAME" --notes-file release-notes.md --verify-tag
+          mkdir readback
+          gh release download "$GITHUB_REF_NAME" --dir readback
+          cd readback && sha256sum -c SHA256SUMS.txt
+
+  pypi:
+    needs: github-release
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: release-packages
+          path: verified
+      - run: cd verified && sha256sum -c SHA256SUMS.txt
+      - run: mkdir dist && cp verified/*.whl verified/*.tar.gz dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
+
+  mcp-registry:
+    needs: pypi
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Publish checksum-verified MCP metadata after PyPI
+        env:
+          MCP_PUBLISHER_VERSION: v1.8.1
+          MCP_PUBLISHER_SHA256: a06c9096dcb9727c13555b6be26c7effa707b01f06a4c561ba7a3635443cf2cc
+        run: python scripts/publish_mcp_registry.py --metadata mcp-registry/server.json --tag "$GITHUB_REF_NAME"
+
+  pages:
+    needs: github-release
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: arcadians-playground
+          path: site/playground
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v5

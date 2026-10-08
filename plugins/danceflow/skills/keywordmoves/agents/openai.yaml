@@ -1,0 +1,4 @@
+interface:
+  display_name: "KeywordMoves"
+  short_description: "Use KeywordMoves and contribute tested improvements"
+  default_prompt: "Use $keywordmoves to inspect the available features and complete my task."

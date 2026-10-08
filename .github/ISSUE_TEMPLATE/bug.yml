@@ -1,0 +1,19 @@
+name: Reproducible problem
+description: Report a concrete failure with a small shareable example.
+body:
+  - type: markdown
+    attributes:
+      value: "Website: https://kieransimkin.co.uk/danceflow/ — keep secrets and private assets out of reports."
+  - type: input
+    id: component
+    attributes:
+      label: Component and version
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction, expected result and actual result
+      description: Include OS, command, small synthetic input and relevant output.
+    validations:
+      required: true

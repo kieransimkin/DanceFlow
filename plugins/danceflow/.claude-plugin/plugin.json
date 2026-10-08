@@ -1,0 +1,19 @@
+{
+  "name": "danceflow",
+  "version": "0.1.0",
+  "description": "Music, motion and media tools for agents. https://kieransimkin.co.uk/danceflow/",
+  "author": {
+    "name": "Kieran Simkin",
+    "url": "https://kieransimkin.co.uk/"
+  },
+  "homepage": "https://kieransimkin.co.uk/danceflow/",
+  "repository": "https://github.com/kieransimkin/DanceFlow",
+  "license": "MIT",
+  "keywords": [
+    "DanceFlow",
+    "music",
+    "motion",
+    "MCP",
+    "agent-skills"
+  ]
+}

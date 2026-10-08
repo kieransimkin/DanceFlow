@@ -1,0 +1,4 @@
+interface:
+  display_name: "StemLab"
+  short_description: "Use StemLab and contribute tested improvements"
+  default_prompt: "Use $stemlab to inspect the available features and complete my task."

@@ -1,0 +1,82 @@
+[
+  {
+    "name": "stemlab",
+    "title": "StemLab",
+    "repository": "https://github.com/kieransimkin/stemlab",
+    "website": "https://kieransimkin.co.uk/danceflow/",
+    "capabilities": "music, stem, rhythm, structure, harmony, lyrics, sonic features and loop evidence",
+    "experimental": false
+  },
+  {
+    "name": "dancerudiments",
+    "title": "DanceRudiments",
+    "repository": "https://github.com/kieransimkin/DanceRudiments",
+    "website": "https://kieransimkin.co.uk/danceflow/",
+    "capabilities": "deterministic rhythmic position functions, authored pattern collections and a visualizer",
+    "experimental": false
+  },
+  {
+    "name": "dancemoves",
+    "title": "DanceMoves",
+    "repository": "https://github.com/kieransimkin/DanceMoves",
+    "website": "https://kieransimkin.co.uk/danceflow/",
+    "capabilities": "BPM-synchronised web motion, shared clocks, effects, input, lifecycle and adaptive quality",
+    "experimental": false
+  },
+  {
+    "name": "keywordmoves",
+    "title": "KeywordMoves",
+    "repository": "https://github.com/kieransimkin/keywordmoves",
+    "website": "https://kieransimkin.co.uk/danceflow/",
+    "capabilities": "source-specific keyword research, local phrase extraction and reviewed evidence imports",
+    "experimental": false
+  },
+  {
+    "name": "rastermoves",
+    "title": "RasterMoves",
+    "repository": "https://github.com/kieransimkin/RasterMoves",
+    "website": "https://kieransimkin.co.uk/danceflow/",
+    "capabilities": "local image upscaling with catalogue plugins, PyTorch/ONNX backends and optional refinement",
+    "experimental": false
+  },
+  {
+    "name": "pixelcue",
+    "title": "PixelCue",
+    "repository": "https://github.com/kieransimkin/PixelCue",
+    "website": "https://kieransimkin.co.uk/danceflow/",
+    "capabilities": "local visual-media tagging with selectable VLMs, a desktop scanner and REST/Socket.IO service",
+    "experimental": false
+  },
+  {
+    "name": "thumbmoves",
+    "title": "ThumbMoves",
+    "repository": "https://github.com/kieransimkin/PixelCue",
+    "website": "https://kieransimkin.co.uk/danceflow/",
+    "capabilities": "cache-only thumbnail access with explicit cache misses",
+    "experimental": false
+  },
+  {
+    "name": "react-timeline-sequence",
+    "title": "React Timeline Sequence",
+    "repository": "https://github.com/kieransimkin/react-timeline-sequence",
+    "website": "https://kieransimkin.co.uk/danceflow/",
+    "capabilities": "React audio transport, sequence lanes, seeking, zoom and sample-frame loop regions",
+    "experimental": false
+  },
+  {
+    "name": "epk-social-metadata",
+    "title": "EPK Social Metadata",
+    "repository": "https://github.com/kieransimkin/kieran-epk-social-metadata",
+    "website": "https://kieransimkin.co.uk/danceflow/",
+    "capabilities": "WordPress Open Graph, X card and Schema.org music/webpage metadata from canonical page facts",
+    "experimental": false
+  },
+  {
+    "name": "dancevault",
+    "title": "DanceVault",
+    "repository": "https://github.com/kieransimkin/DanceVault",
+    "website": "https://kieransimkin.co.uk/danceflow/",
+    "capabilities": "experimental encrypted, password-controlled WordPress file delivery",
+    "experimental": true
+  }
+]

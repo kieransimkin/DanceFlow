@@ -1,0 +1,4 @@
+interface:
+  display_name: "DanceRudiments"
+  short_description: "Use DanceRudiments and contribute tested improvements"
+  default_prompt: "Use $dancerudiments to inspect the available features and complete my task."

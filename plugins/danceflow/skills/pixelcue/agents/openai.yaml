@@ -1,0 +1,4 @@
+interface:
+  display_name: "PixelCue"
+  short_description: "Use PixelCue and contribute tested improvements"
+  default_prompt: "Use $pixelcue to inspect the available features and complete my task."

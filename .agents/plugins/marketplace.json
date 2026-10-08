@@ -1,0 +1,20 @@
+{
+  "name": "danceflow",
+  "interface": {
+    "displayName": "DanceFlow \u00b7 kieransimkin.co.uk"
+  },
+  "plugins": [
+    {
+      "name": "danceflow",
+      "source": {
+        "source": "local",
+        "path": "./plugins/danceflow"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

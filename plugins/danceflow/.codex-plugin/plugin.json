@@ -1,0 +1,29 @@
+{
+  "name": "danceflow",
+  "version": "0.1.0",
+  "description": "Music, motion and media tools for agents. https://kieransimkin.co.uk/danceflow/",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "DanceFlow",
+    "shortDescription": "Music, motion and media tools for agents",
+    "longDescription": "Ten independently useful tools with portable skills, tested local KeywordMoves/PixelCue MCP adapters and contribution guidance. Website: https://kieransimkin.co.uk/danceflow/",
+    "developerName": "Kieran Simkin",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://kieransimkin.co.uk/danceflow/",
+    "defaultPrompt": [
+      "Choose the right DanceFlow tool for my task and inspect its available features.",
+      "Use KeywordMoves to extract literal phrases from my local reference text.",
+      "Find a small reproducible improvement and prepare a tested contribution."
+    ]
+  },
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/setup/SKILL.md"
+    }
+  }
+}

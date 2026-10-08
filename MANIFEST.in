@@ -1,0 +1,6 @@
+recursive-include plugins *
+recursive-include docs *.md
+recursive-include mcp-registry *.json
+recursive-include recipes *
+include catalogue.json CONTRIBUTING.md AGENTS.md
+exclude **/__pycache__/*

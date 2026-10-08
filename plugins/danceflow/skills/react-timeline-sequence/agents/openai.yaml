@@ -1,0 +1,4 @@
+interface:
+  display_name: "React Timeline Sequence"
+  short_description: "Use React Timeline Sequence and contribute tested improvements"
+  default_prompt: "Use $react-timeline-sequence to inspect the available features and complete my task."

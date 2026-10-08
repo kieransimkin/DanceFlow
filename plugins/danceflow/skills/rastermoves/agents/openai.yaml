@@ -1,0 +1,4 @@
+interface:
+  display_name: "RasterMoves"
+  short_description: "Use RasterMoves and contribute tested improvements"
+  default_prompt: "Use $rastermoves to inspect the available features and complete my task."

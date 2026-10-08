@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "danceflow-agent-tools"
+version = "0.1.0"
+description = "Portable DanceFlow skills and local KeywordMoves/PixelCue MCP tools. https://kieransimkin.co.uk/danceflow/"
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Kieran Simkin" }]
+keywords = ["DanceFlow", "MCP", "agent-skills", "keywords", "visual-media"]
+dependencies = ["mcp>=2.2,<3", "keywordmoves>=0.4.2,<0.5"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "build>=1.2", "twine>=6", "PyYAML>=6", "jsonschema>=4", "tomli>=2; python_version < '3.11'"]
+
+[project.urls]
+Homepage = "https://kieransimkin.co.uk/danceflow/"
+"Kieran Simkin" = "https://kieransimkin.co.uk/"
+Repository = "https://github.com/kieransimkin/DanceFlow"
+Issues = "https://github.com/kieransimkin/DanceFlow/issues"
+Documentation = "https://github.com/kieransimkin/DanceFlow/tree/main/docs"
+
+[project.scripts]
+danceflow-mcp = "danceflow_agents.server:main"
+danceflow-agent-tools = "danceflow_agents.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.setuptools.data-files]
+"share/danceflow-agent-tools/plugins/danceflow" = ["plugins/danceflow/.mcp.json", "plugins/danceflow/mcp.json", "plugins/danceflow/plugin.json"]
+"share/danceflow-agent-tools/plugins/danceflow/.claude-plugin" = ["plugins/danceflow/.claude-plugin/plugin.json"]
+"share/danceflow-agent-tools/plugins/danceflow/.codex-plugin" = ["plugins/danceflow/.codex-plugin/plugin.json"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/dancemoves" = ["plugins/danceflow/skills/dancemoves/SKILL.md"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/dancemoves/agents" = ["plugins/danceflow/skills/dancemoves/agents/openai.yaml"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/dancerudiments" = ["plugins/danceflow/skills/dancerudiments/SKILL.md"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/dancerudiments/agents" = ["plugins/danceflow/skills/dancerudiments/agents/openai.yaml"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/dancevault" = ["plugins/danceflow/skills/dancevault/SKILL.md"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/dancevault/agents" = ["plugins/danceflow/skills/dancevault/agents/openai.yaml"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/epk-social-metadata" = ["plugins/danceflow/skills/epk-social-metadata/SKILL.md"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/epk-social-metadata/agents" = ["plugins/danceflow/skills/epk-social-metadata/agents/openai.yaml"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/keywordmoves" = ["plugins/danceflow/skills/keywordmoves/SKILL.md"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/keywordmoves/agents" = ["plugins/danceflow/skills/keywordmoves/agents/openai.yaml"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/pixelcue" = ["plugins/danceflow/skills/pixelcue/SKILL.md"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/pixelcue/agents" = ["plugins/danceflow/skills/pixelcue/agents/openai.yaml"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/rastermoves" = ["plugins/danceflow/skills/rastermoves/SKILL.md"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/rastermoves/agents" = ["plugins/danceflow/skills/rastermoves/agents/openai.yaml"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/react-timeline-sequence" = ["plugins/danceflow/skills/react-timeline-sequence/SKILL.md"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/react-timeline-sequence/agents" = ["plugins/danceflow/skills/react-timeline-sequence/agents/openai.yaml"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/setup" = ["plugins/danceflow/skills/setup/SKILL.md"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/stemlab" = ["plugins/danceflow/skills/stemlab/SKILL.md"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/stemlab/agents" = ["plugins/danceflow/skills/stemlab/agents/openai.yaml"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/thumbmoves" = ["plugins/danceflow/skills/thumbmoves/SKILL.md"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/thumbmoves/agents" = ["plugins/danceflow/skills/thumbmoves/agents/openai.yaml"]

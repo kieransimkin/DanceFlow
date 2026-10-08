@@ -1,0 +1,16 @@
+{
+  "name": "danceflow",
+  "description": "DanceFlow tools and contribution skills. https://kieransimkin.co.uk/danceflow/",
+  "owner": {
+    "name": "Kieran Simkin"
+  },
+  "plugins": [
+    {
+      "name": "danceflow",
+      "source": "./plugins/danceflow",
+      "description": "Music, motion and media tools for agents. https://kieransimkin.co.uk/danceflow/",
+      "homepage": "https://kieransimkin.co.uk/danceflow/",
+      "version": "0.1.0"
+    }
+  ]
+}

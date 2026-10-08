@@ -1,0 +1,4 @@
+interface:
+  display_name: "DanceMoves"
+  short_description: "Use DanceMoves and contribute tested improvements"
+  default_prompt: "Use $dancemoves to inspect the available features and complete my task."

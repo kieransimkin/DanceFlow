@@ -1,0 +1,4 @@
+interface:
+  display_name: "DanceVault"
+  short_description: "Use DanceVault and contribute tested improvements"
+  default_prompt: "Use $dancevault to inspect the available features and complete my task."

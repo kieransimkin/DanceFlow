@@ -1,0 +1,4 @@
+interface:
+  display_name: "ThumbMoves"
+  short_description: "Use ThumbMoves and contribute tested improvements"
+  default_prompt: "Use $thumbmoves to inspect the available features and complete my task."

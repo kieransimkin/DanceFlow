@@ -1,0 +1,38 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.kieransimkin/danceflow",
+  "title": "DanceFlow",
+  "description": "Local KeywordMoves and PixelCue tools for agents. https://kieransimkin.co.uk/danceflow/",
+  "websiteUrl": "https://kieransimkin.co.uk/danceflow/",
+  "repository": {
+    "url": "https://github.com/kieransimkin/DanceFlow",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "danceflow-agent-tools",
+      "version": "0.1.0",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "DANCEFLOW_WORKSPACE",
+          "description": "Explicitly selected local workspace; file operations reject when omitted.",
+          "isRequired": false,
+          "isSecret": false
+        }
+      ],
+      "runtimeArguments": [
+        {
+          "type": "named",
+          "name": "--python",
+          "value": "3.13"
+        }
+      ]
+    }
+  ]
+}
