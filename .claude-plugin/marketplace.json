@@ -10,7 +10,7 @@
       "source": "./plugins/danceflow",
       "description": "Music, motion and media tools for agents. https://kieransimkin.co.uk/danceflow/",
       "homepage": "https://kieransimkin.co.uk/danceflow/",
-      "version": "0.1.0"
+      "version": "0.1.1"
     }
   ]
 }

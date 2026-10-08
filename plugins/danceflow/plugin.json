@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "danceflow",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Music, motion and media tools for agents. https://kieransimkin.co.uk/danceflow/",
   "author": {
     "name": "Kieran Simkin",

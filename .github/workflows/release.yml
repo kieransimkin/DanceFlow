@@ -137,25 +137,3 @@ jobs:
           MCP_PUBLISHER_SHA256: a06c9096dcb9727c13555b6be26c7effa707b01f06a4c561ba7a3635443cf2cc
         run: python scripts/publish_mcp_registry.py --metadata mcp-registry/server.json --tag "$GITHUB_REF_NAME"
 
-  pages:
-    needs: github-release
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/download-artifact@v8
-        with:
-          name: arcadians-playground
-          path: site/playground
-      - run: cp hosting/github-pages/index.html site/index.html
-      - uses: actions/upload-pages-artifact@v5
-        with:
-          path: site
-      - id: deployment
-        uses: actions/deploy-pages@v5
