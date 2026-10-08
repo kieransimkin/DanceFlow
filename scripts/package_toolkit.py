@@ -2,6 +2,7 @@
 from pathlib import Path
 import hashlib
 import json
+import subprocess
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,5 +30,7 @@ for path in sorted(dist.iterdir()):
     if path.is_file() and path.suffix in ('.zip', '.whl', '.gz'):
         manifest[path.name] = {'sha256': hashlib.sha256(path.read_bytes()).hexdigest(), 'bytes': path.stat().st_size}
 (dist/'SHA256SUMS.txt').write_text(''.join(f'{v["sha256"]}  {k}\n' for k,v in manifest.items()), encoding='utf-8')
-(dist/'package-manifest.json').write_text(json.dumps({'version': version, 'website': 'https://kieransimkin.co.uk/danceflow/', 'assets':manifest}, indent=2)+'\n', encoding='utf-8')
+source_commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
+assert len(source_commit) == 40 and all(c in '0123456789abcdef' for c in source_commit)
+(dist/'package-manifest.json').write_text(json.dumps({'version': version, 'sourceCommit': source_commit, 'website': 'https://kieransimkin.co.uk/danceflow/', 'assets':manifest}, indent=2)+'\n', encoding='utf-8')
 print(json.dumps(manifest, indent=2))

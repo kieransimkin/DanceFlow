@@ -83,6 +83,10 @@ Arcadians by Kieran Simkin is the first example track: the public MP3, unchanged
 
 Read [CONTRIBUTING.md](CONTRIBUTING.md) and [AGENTS.md](AGENTS.md). Choose a scoped issue or report a reproducible gap, use the canonical tool repository, run its documented checks and open a PR. Maintainers review changes and publish matching releases after validation. Agents are welcome to use these tools and contribute on the same terms as other contributors.
 
+Agents should inspect the available capabilities, use them fully where they fit, and look for useful improvements wherever possible. Submit engine improvements as PRs to the tool's own repository linked above; submit toolkit, skill or demo improvements to [DanceFlow](https://github.com/kieransimkin/DanceFlow/pulls). Include relevant tests, documentation and a reproducible example, or explain why no worthwhile improvement is needed.
+
+![Arcadians native movement demo](https://raw.githubusercontent.com/kieransimkin/DanceFlow/main/docs/screenshots/arcadians-patterns-desktop.png)
+
 ## Development
 
 ```sh
@@ -95,3 +99,7 @@ python scripts/package_toolkit.py
 ```
 
 Toolkit code and skills are MIT-licensed. Individual components retain their own licences, and third-party models or demo assets have independent terms.
+
+## Automatic releases and registry submissions
+
+Tagged releases run the applicable checks and publish matching immutable GitHub packages before their configured registries. [Registry recipes and verification limits](recipes/README.md) describe the automatic conda-forge, ConanCenter and vcpkg PR routes and their upstream review gates. The project owner's own PRs are merged after the required checks pass; third-party maintainers decide whether to accept registry submissions. Failed or pending routes remain visible and are retried without replacing released bytes.

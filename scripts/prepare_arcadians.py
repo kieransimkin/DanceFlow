@@ -59,12 +59,27 @@ def prepare(stemlab_root: Path | None = None):
     report = PluginRegistry().get('text-library').run(
         PluginRequest(operation='extract-literal', inputs=(relative,), options={'limit': 80}),
         ExecutionContext(llms=LLMRegistry())).to_dict()
+    # KeywordMoves records absolute sources. Rebase only that metadata for the
+    # public fixture; keep the original result outside the distribution tree.
+    (ROOT.parent / 'keywordmoves-original-result.json').write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+    report['metadata']['sources'] = ['media/lyrics.txt']
+    report['metadata']['source_path_rebase'] = 'Source path made relative for publication; keyword and evidence rows unchanged.'
     (public / 'keywordmoves-example.json').write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
     # Vite emits the package's pinned WASM through its asset URL; do not duplicate it.
     licences = public / 'licences'
     licences.mkdir(exist_ok=True)
     for package, filename in [('@kieransimkin/dancemoves', 'DanceMoves.txt'), ('@kieransimkin/dance-rudiments', 'DanceRudiments.txt'), ('react-timeline-sequence', 'ReactTimelineSequence.txt')]:
         shutil.copyfile(ROOT / 'demos/node_modules' / package / 'LICENSE', licences / filename)
+    rudiments = ROOT / 'demos/node_modules/@kieransimkin/dance-rudiments'
+    shutil.copyfile(rudiments / 'collections/initial/THIRD_PARTY_NOTICES.md', licences / 'DanceRudiments-third-party-notices.md')
+    shutil.copyfile(rudiments / 'python/dancerudiments_authoring/packs/THIRD_PARTY_NOTICES.md', licences / 'DanceRudiments-authoring-notices.md')
+    # The npm notice references a full BSD notice embedded in generated patterns.
+    # Serve the separate source notice too, pinned to the same released version.
+    bsd_url = 'https://raw.githubusercontent.com/kieransimkin/DanceRudiments/v0.2.3/collections/initial/sources/d3-ease/LICENSE'
+    with urlopen(Request(bsd_url, headers={'User-Agent': 'DanceFlow-example/0.1.0'}), timeout=30) as response:
+        bsd_notice = response.read(16384)
+    assert b'Copyright' in bsd_notice and b'REDISTRIBUTION' in bsd_notice.upper()
+    (licences / 'DanceRudiments-d3-ease-BSD.txt').write_bytes(bsd_notice)
     (public / 'provenance.json').write_text(json.dumps({'website': 'https://kieransimkin.co.uk/danceflow/',
         'source_commit': COMMIT, 'assets': records,
         'music_and_artwork': 'Arcadians by Kieran Simkin, supplied for this demonstration. Music and artwork rights are separate from software licences.',

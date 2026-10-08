@@ -9,3 +9,4 @@ demos/public/
 docs/playground/
 test-results/
 pytest-cache-files-*/
+CMakeUserPresets.json

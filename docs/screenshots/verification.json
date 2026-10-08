@@ -1,0 +1,45 @@
+{
+  "source": "Actual local Vite build, http://127.0.0.1:8897/",
+  "date": "2026-10-08",
+  "track": "Arcadians by Kieran Simkin",
+  "screenshots": [
+    {
+      "file": "arcadians-keywords-desktop.png",
+      "sha256": "16e47e56841634f86633112281ea89255a1f6588f58aecc1675adffe8cc93607",
+      "bytes": 134065
+    },
+    {
+      "file": "arcadians-patterns-desktop.png",
+      "sha256": "0d33bbc4791659b73a54bd879fe956267c91f7cd4d5daa1f7516bf1e5e493ee7",
+      "bytes": 189375
+    },
+    {
+      "file": "arcadians-patterns-mobile.png",
+      "sha256": "2de1a87131af66119f8e36ef19d39d24429d2944068e64a22a9fa550be3b2f37",
+      "bytes": 145451
+    },
+    {
+      "file": "arcadians-timeline-desktop.png",
+      "sha256": "846433bed036262a3ff3b5cee16fa56cfb699a41a3fa516cbaf018148ecbbbd0",
+      "bytes": 197858
+    },
+    {
+      "file": "arcadians-timeline-mobile.png",
+      "sha256": "aae39eaabb9b34f54f89ab16a7bce39a9f44a8e8b7c7c6638e96f4a9da069478",
+      "bytes": 124147
+    }
+  ],
+  "checked": [
+    "Real media playback and sample-frame audition range",
+    "Native DanceRudiments WASM catalogue selection and media-clock position",
+    "Reduced-motion override and recovery",
+    "Forced-colours emulation: preference active, static token and cleared recovery",
+    "Saved KeywordMoves phrase filtering",
+    "Desktop and narrow layout; no horizontal overflow"
+  ],
+  "limits": [
+    "Audition ranges are not accepted seamless loops",
+    "No PixelCue neural inference or RasterMoves model benchmark",
+    "Manual quality selection is an API request; healthy-window recovery may upgrade it"
+  ]
+}

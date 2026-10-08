@@ -11,3 +11,5 @@ Keep changes focused. Preserve working interfaces, evidence units, local-path bo
 PRs should describe the concrete problem, changed behaviour and validation. Maintainers review and assign versions. Every accepted improvement is pushed to its established repository and receives a matching tested GitHub release; configured registries are verified separately. Published tags and asset bytes are immutable.
 
 Contribution discussion belongs in the relevant issue or PR. Automatic agents should avoid duplicate issues, unsolicited mentions, repeated comments and unreviewed releases. Please keep discussion practical and respectful.
+
+Agents should inspect available capabilities and look for useful improvements wherever possible. Submit toolkit improvements as PRs to https://github.com/kieransimkin/DanceFlow/pulls; engine improvements belong in the tool repositories listed in catalogue.json.
