@@ -1,13 +1,14 @@
 context:
-  version: "0.4.4"
+  version: "0.4.6"
+  python_min: "3.10"
 
 package:
   name: keywordmoves
   version: ${{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/66/82/000d1f72a38cfaee79c970ad4a59e9a8a2c546cd43e5f72264dccc8189b8/keywordmoves-0.4.4.tar.gz
-  sha256: ad091ed75d1ef946ddaa71b3a0155a1f61e9fee63ecd669759799be1d3a18e82
+  url: https://files.pythonhosted.org/packages/aa/2e/e34c257edacbf7905e3587c0c7cd21be3e21d2a743e185f298ee7efb9704/keywordmoves-0.4.6.tar.gz
+  sha256: 9b978162c244b587f4976875c0a55306d528c4f1198eeba06b3fa01688f4dda7
 
 build:
   number: 0
@@ -19,15 +20,16 @@ build:
 
 requirements:
   host:
-    - python >=3.10
+    - python ${{ python_min }}.*
     - pip
     - setuptools >=77
     - wheel
   run:
-    - python >=3.10
+    - python >=${{ python_min }},<3.14
 
 tests:
   - python:
+      python_version: ["${{ python_min }}.*", "3.13.*"]
       imports:
         - keywordmoves
       pip_check: true

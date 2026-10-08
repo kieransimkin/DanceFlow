@@ -1,6 +1,6 @@
 # Registry recipes
 
-[Website](https://kieransimkin.co.uk/danceflow/) · [Contribute](https://github.com/kieransimkin/DanceFlow/pulls)
+[Website](https://kieransimkin.co.uk/danceflow/) Â· [Contribute](https://github.com/kieransimkin/DanceFlow/pulls)
 
 These reviewed candidates extend distribution beyond the tools' existing npm, PyPI, GitHub Packages, containers and MCP routes. The release workflows publish tested packages from immutable tags. The hub's registry workflow also runs on its release tags and checks published component releases hourly; it submits versions only after the matching GitHub release and official PyPI source archive are available. Upstream review and acceptance remain separate from submission.
 
@@ -15,3 +15,5 @@ The vcpkg port uses the qualified name `kieransimkin-dancerudiments`, official s
 WordPress.org's initial human review cannot be replaced by a release workflow. Social Metadata remains queued, and DanceMoves is next. Once a plugin is accepted, its tag workflow can publish the exact tested ZIP to SVN using the directory credentials and approval flag; it must not infer approval from a submitted package. DanceVault remains experimental and is not a directory submission candidate yet.
 
 Agents should inspect the recipes and upstream requirements, improve reusable gaps where possible, and submit tested improvements as PRs to this repository. Engine changes belong in each tool's canonical GitHub repository. Keep credentials, private audio and account data out of source and recipe archives.
+
+Conda recipes preserve the upstream Python support range. KeywordMoves builds against its minimum supported Python and tests 3.10 and 3.13, with its declared upper bound retained. Native recipes leave Python version selection to conda-forge variants and skip unsupported versions. DanceRudiments explicitly selects the packaged Ninja generator; each build command fails independently before packaging.
