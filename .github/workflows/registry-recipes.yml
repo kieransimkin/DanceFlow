@@ -1,0 +1,41 @@
+name: Submit registry recipes after tagged releases
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+  schedule:
+    - cron: '23 * * * *'
+permissions:
+  contents: read
+concurrency:
+  group: danceflow-registry-recipes
+  cancel-in-progress: false
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ secrets.REGISTRY_SUBMISSION_TOKEN }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - run: python -m pip install PyYAML
+      - name: Check reviewed recipe identities
+        run: python scripts/submit_registry_recipes.py --check
+      - name: Require the scoped public repository credential
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo 'REGISTRY_SUBMISSION_TOKEN is required for cross-repository PRs. Do not substitute the private-repository account token.' >&2
+            exit 1
+          fi
+      - name: Submit versions with verified GitHub releases and PyPI source archives
+        run: python scripts/submit_registry_recipes.py --refresh --apply
+      - name: Retain exact submitted recipe candidates
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: registry-recipe-candidates
+          path: recipes/
+          if-no-files-found: error

@@ -2,5 +2,10 @@ recursive-include plugins *
 recursive-include docs *.md
 recursive-include mcp-registry *.json
 recursive-include recipes *
+recursive-include scripts *.py
+recursive-include tests *.py
+recursive-include hosting *.html *.md
+prune recipes/conan/dancerudiments/all/test_package/build
+global-exclude CMakeUserPresets.json *.pyc
 include catalogue.json CONTRIBUTING.md AGENTS.md
 exclude **/__pycache__/*

@@ -148,10 +148,12 @@ jobs:
       pages: write
       id-token: write
     steps:
+      - uses: actions/checkout@v7
       - uses: actions/download-artifact@v8
         with:
           name: arcadians-playground
           path: site/playground
+      - run: cp hosting/github-pages/index.html site/index.html
       - uses: actions/upload-pages-artifact@v5
         with:
           path: site
