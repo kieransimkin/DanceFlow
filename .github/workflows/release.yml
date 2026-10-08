@@ -136,4 +136,3 @@ jobs:
           MCP_PUBLISHER_VERSION: v1.8.1
           MCP_PUBLISHER_SHA256: a06c9096dcb9727c13555b6be26c7effa707b01f06a4c561ba7a3635443cf2cc
         run: python scripts/publish_mcp_registry.py --metadata mcp-registry/server.json --tag "$GITHUB_REF_NAME"
-
