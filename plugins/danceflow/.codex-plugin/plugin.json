@@ -1,6 +1,6 @@
 {
   "name": "danceflow",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Music, motion and media tools for agents. https://kieransimkin.co.uk/danceflow/",
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
