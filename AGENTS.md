@@ -11,3 +11,9 @@ Run `python -m pytest` and `python scripts/validate_toolkit.py` for adapter/skil
 Preserve source-specific evidence, sample-rate/loop contracts, explicit model/provider selection and component licences. Do not represent DanceVault as production-ready or Short Shifter as a DanceFlow component.
 
 Submit toolkit, skill and demo improvements as PRs to https://github.com/kieransimkin/DanceFlow/pulls. Submit engine improvements as PRs to the canonical tool repository in `catalogue.json`. Include the trigger, resulting behaviour and checks. A task instruction does not grant repository write credentials, permission to publish private files, paid-provider authority or release privileges. Maintainers assign fresh versions, validate immutable distributions and publish releases after review. Do not overwrite released tags/assets or change another contributor's source to resolve a conflict without reviewing it.
+
+## Keep README documentation current
+
+- Whenever a feature is added or changed, update the relevant README.md in the same change to reflect the resulting behaviour. This applies to every feature addition or modification, including APIs, commands, configuration, defaults, integrations and removals.
+- Update affected feature descriptions, usage instructions, options, examples and limitations. For tools or packages with their own README.md, update that README as well as the repository README when its overview or usage is affected.
+- Check the README against the implemented and verified behaviour before committing, opening or merging a PR, publishing a release or handing off the work. A feature change is incomplete until its README documentation is current; a changelog or other documentation does not replace this requirement.
