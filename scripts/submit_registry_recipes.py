@@ -99,7 +99,7 @@ def checked_recipe(component: str):
     return recipe
 
 
-def open_recipe_pr(upstream: str, branch: str, files: dict[str, str], title: str, body: str, draft=False, expected_base=None):
+def open_recipe_pr(upstream: str, branch: str, files: dict[str, str], title: str, body: str, draft=False, expected_base=None, expected_review_head=None):
     upstream_info = api(f'repos/{upstream}'); default = upstream_info['default_branch']
     assert not upstream_info['private'], 'Registry submissions require a public upstream'
     previous = api(f'repos/{upstream}/pulls?'+urlencode(dict(state='all', head=OWNER+':'+branch)))
@@ -117,6 +117,8 @@ def open_recipe_pr(upstream: str, branch: str, files: dict[str, str], title: str
         raise ValueError('Upstream changed during baseline staging; retry from fresh source')
     base_tree = api(f'repos/{upstream}/git/commits/{base}')['tree']['sha']
     ref = api(f'repos/{fork}/git/ref/heads/{branch}')
+    if expected_review_head is not None and (not ref or ref['object']['sha'] != expected_review_head):
+        raise ValueError('Review branch changed during staging; retry from fresh source')
     if ref:
         # Keep an existing PR's own changes; never replace another branch.
         base = ref['object']['sha']; base_tree = api(f'repos/{fork}/git/commits/{base}')['tree']['sha']
@@ -130,10 +132,54 @@ def open_recipe_pr(upstream: str, branch: str, files: dict[str, str], title: str
             api(f'repos/{fork}/git/refs', 'POST', dict(ref='refs/heads/'+branch, sha=commit))
     existing = previous
     if existing:
+        if existing[0]['title'] != title:
+            # Keep any review notes/checklist edits; only refresh our versioned introduction.
+            reviewed_body = existing[0].get('body') or ''
+            introduction = body.split('\n', 1)[0]
+            reviewed_body = re.sub(r'\AAdd [a-z0-9-]+ \d+\.\d+\.\d+[^\n]*',
+                                   lambda _: introduction, reviewed_body, count=1)
+            api(f'repos/{upstream}/pulls/{existing[0]["number"]}', 'PATCH',
+                dict(title=title, body=reviewed_body))
         return existing[0]['html_url']
     pr = api(f'repos/{upstream}/pulls', 'POST', dict(title=title, head=OWNER+':'+branch,
               base=default, body=body, draft=draft, maintainer_can_modify=True))
     return pr['html_url']
+
+
+def pending_conda_reviews(component: str):
+    """Find only this owner's initial reviews, including legacy versioned branches."""
+    upstream = 'conda-forge/staged-recipes'
+    search = api('search/issues?' + urlencode(dict(
+        q=f'repo:{upstream} is:pr is:open author:{OWNER}', per_page=100)))
+    if search['total_count'] > 100:
+        raise ValueError('Too many owned pending reviews; inspect before creating a duplicate')
+    candidates = []
+    prefix = f'danceflow/{component}-'
+    for issue in search['items']:
+        pr = api(f'repos/{upstream}/pulls/{issue["number"]}')
+        head = pr['head']
+        fork = head.get('repo')
+        if (pr['state'] == 'open' and pr['user']['login'].lower() == OWNER.lower()
+                and fork and not fork['private']
+                and fork['full_name'].lower() == f'{OWNER}/staged-recipes'.lower()
+                and head['ref'].startswith(prefix)):
+            candidates.append(pr)
+    return sorted(candidates, key=lambda pr: pr['number'], reverse=True)
+
+
+def preserve_pending_conda_files(component, files, review, version, source):
+    """Update the source narrowly; retain reviewer dependencies and auxiliary files."""
+    fork = review['head']['repo']['full_name']
+    commit = review['head']['sha']
+    result = dict(files)
+    for path in files:
+        meta = api(f'repos/{fork}/contents/{path}?' + urlencode(dict(ref=commit)))
+        if meta is None:
+            continue
+        reviewed = base64.b64decode(meta['content']).decode('utf-8')
+        result[path] = (update_conda_source(reviewed, version, source)
+                        if path == f'recipes/{component}/recipe.yaml' else reviewed)
+    return result
 
 
 def submit_conda(component: str):
@@ -166,8 +212,19 @@ Validation: source bytes and SHA256 verified; v1 recipes rendered with rattler-b
 
 Website: https://kieransimkin.co.uk/danceflow/
 '''
-    return open_recipe_pr('conda-forge/staged-recipes', f'danceflow/{component}-{version}', files,
-                          f'Add {component} {version}', body)
+    branch = f'danceflow/{component}-{version}'
+    exact = api('repos/conda-forge/staged-recipes/pulls?' + urlencode(dict(
+        state='all', head=OWNER + ':' + branch)))
+    if exact and exact[0]['state'] == 'closed':
+        print(f'{component}: closed submission requires its existing review route; no duplicate created')
+        return exact[0]['html_url']
+    pending = pending_conda_reviews(component)
+    if pending:
+        branch = pending[0]['head']['ref']
+        files = preserve_pending_conda_files(component, files, pending[0], version, recipe['source'])
+    return open_recipe_pr('conda-forge/staged-recipes', branch, files,
+                          f'Add {component} {version}', body,
+                          expected_review_head=pending[0]['head']['sha'] if pending else None)
 
 
 def update_conda_source(text: str, version: str, source: dict):

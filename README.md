@@ -28,7 +28,7 @@ Select DanceFlow in the plugin directory and install it. Repository marketplace 
 Requires uv and Python 3.10â€“3.13. Choose one workspace containing authorised input files:
 
 ```sh
-uvx --python 3.13 --from danceflow-agent-tools==0.1.2 danceflow-mcp --workspace ./my-workspace
+uvx --python 3.13 --from danceflow-agent-tools==0.1.3 danceflow-mcp --workspace ./my-workspace
 ```
 
 For a client-managed server, add this configuration and replace the workspace with your selected local directory:
@@ -38,7 +38,7 @@ For a client-managed server, add this configuration and replace the workspace wi
   "mcpServers": {
     "danceflow": {
       "command": "uvx",
-      "args": ["--python", "3.13", "--from", "danceflow-agent-tools==0.1.2", "danceflow-mcp"],
+      "args": ["--python", "3.13", "--from", "danceflow-agent-tools==0.1.3", "danceflow-mcp"],
       "env": {"DANCEFLOW_WORKSPACE": "/absolute/path/to/my-workspace"}
     }
   }
@@ -105,3 +105,17 @@ Toolkit code and skills are MIT-licensed. Individual components retain their own
 Tagged releases run the applicable checks and publish matching immutable GitHub packages before their configured registries. [Registry recipes and verification limits](recipes/README.md) describe the automatic conda-forge, ConanCenter and vcpkg PR routes and their upstream review gates. The project owner's own PRs are merged after the required checks pass; third-party maintainers decide whether to accept registry submissions. Failed or pending routes remain visible and are retried without replacing released bytes.
 
 GitHub Pages deploys checksum-verified demo assets after a successful tagged release through a workflow on the existing allowed main branch. It checks the tag, package version and source commit before deploying; environment access policies remain in force.
+
+### Preserve initial registry reviews
+
+The registry workflow reuses the newest open initial conda-forge review for each
+tool when a newer verified GitHub/PyPI version appears. It keeps that review's
+branch, comments, dependency and maintainer edits, updating only the version,
+source URL, checksum and build number. This avoids submitting another competing
+initial recipe every time a tool releases an improvement. Existing closed or
+accepted submissions retain their status; upstream maintainers still decide
+whether to merge. Accepted feedstocks use their own update route.
+
+Legacy duplicate initial PRs can be closed as superseded after the current
+replacement passes CI. Their review history remains available on GitHub.
+Website: https://kieransimkin.co.uk/danceflow/.
