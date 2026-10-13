@@ -1,4 +1,5 @@
 import importlib.util
+import base64
 import json
 from pathlib import Path
 
@@ -47,3 +48,67 @@ def test_conan_refresh_retains_accepted_versions_patches_and_config():
     assert yaml.safe_load(updated)['sources']['0.2.3'] == {'url':'old', 'sha256':'aaa'}
     with pytest.raises(AssertionError, match='source differs'):
         recipes.add_conan_version(config, updated, '0.2.4', {'url':'changed', 'sha256':'bbb'})
+
+
+def test_pending_review_lookup_excludes_foreign_forks_and_other_components(monkeypatch):
+    def review(number, ref, owner='kieransimkin', fork='kieransimkin/staged-recipes'):
+        return {'number':number, 'state':'open', 'user':{'login':owner},
+                'head':{'ref':ref, 'repo':{'full_name':fork, 'private':False}}}
+    reviews = [review(10, 'danceflow/keywordmoves-0.4.6'),
+               review(13, 'danceflow/keywordmoves-0.5.6'),
+               review(14, 'danceflow/rastermoves-0.3.4'),
+               review(15, 'danceflow/keywordmoves-0.5.7', fork='someone/staged-recipes'),
+               review(16, 'danceflow/keywordmoves-0.5.7', owner='someone')]
+    def fake_api(path):
+        if path.startswith('search/issues?'):
+            return {'total_count':len(reviews), 'items':[{'number':r['number']} for r in reviews]}
+        return next(r for r in reviews if path.endswith('/'+str(r['number'])))
+    monkeypatch.setattr(recipes, 'api', fake_api)
+    assert [r['number'] for r in recipes.pending_conda_reviews('keywordmoves')] == [13, 10]
+
+
+def test_pending_review_updates_source_without_discarding_maintainer_edits(monkeypatch):
+    before = 'context:\n  version: "0.5.6"\nsource:\n  url: https://old.example/source\n  sha256: ' + 'a'*64 + '\nbuild:\n  number: 1\nrequirements:\n  run: [python, maintainer-added-dependency]\nextra:\n  recipe-maintainers: [reviewer, kieransimkin]\n'
+    paths = {'recipes/keywordmoves/recipe.yaml':before, 'recipes/keywordmoves/build.sh':'reviewed build instructions\n'}
+    def fake_api(path):
+        filename = path.split('/contents/', 1)[1].split('?', 1)[0]
+        return {'content':base64.b64encode(paths[filename].encode()).decode()}
+    monkeypatch.setattr(recipes, 'api', fake_api)
+    review = {'head':{'repo':{'full_name':'kieransimkin/staged-recipes'}, 'sha':'a'*40}}
+    files = recipes.preserve_pending_conda_files('keywordmoves', dict.fromkeys(paths, 'new template'),
+        review, '0.5.7', {'url':'https://files.pythonhosted.org/new', 'sha256':'b'*64})
+    changed = files['recipes/keywordmoves/recipe.yaml']
+    assert yaml.safe_load(changed)['context']['version'] == '0.5.7'
+    assert changed[changed.index('requirements:'):] == before[before.index('requirements:'):]
+    assert files['recipes/keywordmoves/build.sh'] == paths['recipes/keywordmoves/build.sh']
+
+
+def test_overflowing_pending_review_query_holds_instead_of_creating_duplicates(monkeypatch):
+    monkeypatch.setattr(recipes, 'api', lambda path:{'total_count':101, 'items':[]})
+    with pytest.raises(ValueError, match='inspect'):
+        recipes.pending_conda_reviews('keywordmoves')
+
+
+def test_concurrent_review_edit_holds_before_any_mutation(monkeypatch):
+    upstream = 'conda-forge/staged-recipes'
+    fork = 'kieransimkin/staged-recipes'
+    branch = 'danceflow/keywordmoves-0.5.6'
+    def fake_api(path, method='GET', data=None):
+        assert method == 'GET', 'A concurrent review must not be mutated'
+        if path == f'repos/{upstream}':
+            return {'default_branch':'main','private':False}
+        if '/pulls?' in path:
+            return [{'state':'open', 'title':'Add keywordmoves 0.5.6','number':13}]
+        if path == f'repos/{fork}':
+            return {'private':False, 'fork':True, 'parent':{'full_name':upstream}}
+        if path == f'repos/{upstream}/git/ref/heads/main':
+            return {'object':{'sha':'u'*40}}
+        if '/git/commits/' in path:
+            return {'tree':{'sha':'t'*40}}
+        if path == f'repos/{fork}/git/ref/heads/{branch}':
+            return {'object':{'sha':'b'*40}}
+        raise AssertionError(path)
+    monkeypatch.setattr(recipes, 'api', fake_api)
+    with pytest.raises(ValueError, match='changed during staging'):
+        recipes.open_recipe_pr(upstream, branch, {}, 'Add keywordmoves 0.5.7', 'body',
+                               expected_review_head='a'*40)
