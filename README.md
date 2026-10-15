@@ -97,7 +97,7 @@ python -m pip install -e ".[dev]"
 python -m pytest
 python scripts/validate_toolkit.py
 python -m build
-python -m twine check --strict dist/*
+python -m twine check --strict dist/*.whl dist/*.tar.gz
 python scripts/package_toolkit.py
 ```
 
