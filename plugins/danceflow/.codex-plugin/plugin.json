@@ -1,13 +1,13 @@
 {
   "name": "danceflow",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Music, motion and media tools for agents. https://kieransimkin.co.uk/danceflow/",
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "DanceFlow",
     "shortDescription": "Music, motion and media tools for agents",
-    "longDescription": "Ten independently useful tools with portable skills, tested local KeywordMoves/PixelCue MCP adapters and contribution guidance. Website: https://kieransimkin.co.uk/danceflow/",
+    "longDescription": "Eleven independently useful tools with portable skills, tested local KeywordMoves/PixelCue MCP adapters and contribution guidance. Website: https://kieransimkin.co.uk/danceflow/",
     "developerName": "Kieran Simkin",
     "category": "Productivity",
     "capabilities": [
