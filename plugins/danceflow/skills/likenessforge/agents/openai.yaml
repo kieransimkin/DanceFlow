@@ -1,0 +1,4 @@
+interface:
+  display_name: "LikenessForge"
+  short_description: "Repair likeness and compare local identity LoRAs"
+  default_prompt: "Use $likenessforge to inspect my image and prepare a reviewable facial-likeness repair."

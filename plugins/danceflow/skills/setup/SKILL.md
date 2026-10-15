@@ -13,6 +13,8 @@ For the local MCP adapter, require uv and Python 3.10–3.13. Set DANCEFLOW_WORK
 
 KeywordMoves offline extraction and reviewed imports are available directly. Other live/paid/provider operations stay in KeywordMoves' explicitly configured CLI and require their own user-selected access and budget. PixelCue is optional: install it separately with Python 3.13, start pixelcue-server on loopback and call pixelcue_health before inference. Ask the user to select a model and accept any first-run download before allow_inference=true. Install StemLab's separately maintained plugin when music analysis is required; this bridge does not replace its analysis engine or React timeline.
 
+For facial-likeness repair or identity LoRA training, read the likenessforge skill and install its source separately. Confirm references, selected models and resource scope; retain comparison outputs for human review. Toolkit installation adds guidance, not model weights or a LikenessForge MCP operation.
+
 Verify a small synthetic input before using real files. Return actual versions, supported operations and any unavailable dependencies. Installation, discovery, a queued job and a completed result are separate states.
 
 Agents should inspect available capabilities and look for useful improvements wherever possible. Submit toolkit improvements as PRs to https://github.com/kieransimkin/DanceFlow/pulls; engine improvements belong in the tool repositories listed in catalogue.json.

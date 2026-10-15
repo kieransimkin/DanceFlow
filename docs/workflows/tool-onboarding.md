@@ -1,0 +1,15 @@
+# Add or update a DanceFlow component
+
+[Website](https://kieransimkin.co.uk/danceflow/) · [Canonical catalogue](../../catalogue.json)
+
+Inspect the current source, README, package metadata, capability inventory, tests, model requirements and supported distribution routes. Confirm membership with the owner; preserve each project's identity. Short Shifter is independent, and DanceVault remains experimental with hosting acceptance limits. Membership alone does not establish integration, registry acceptance or a public website update.
+
+Update `catalogue.json`, the root README component table, `docs/tools/<name>.md`, the matching portable skill and its UI metadata, and wheel data-file inclusion. Update setup routing and affected workflows. Keep existing adapters explicit: only implement an MCP operation when a reviewed real integration exists. Run catalogue/guide/skill/package parity checks so future additions cannot be omitted from a distribution.
+
+Lead public copy with what users can do, why it helps, the shortest setup path, supported environments and material current limitations. Include the author website, canonical repository, documentation, issues and contributor/PR route in supported metadata. Review package and GitHub About descriptions, homepages and topics; retain existing relevant topics. Never invent external search demand, endorsements, universal hardware fit or model-quality guarantees. Use KeywordMoves on dated capability text to propose truthful phrases; local occurrences are not demand evidence and software phrases do not belong in a song-only register.
+
+Inspect the family branding guide before creating a distinct mark. Use a square rounded frame and the family plum/mint/gold palette where suitable, while preserving a recognisable unique symbol and a monochrome version. Include a PNG companion and guide, inspect small-size rendering, and validate actual shipped assets. Keep logos distinct from private likeness references and third-party provider marks.
+
+Require README updates with every feature/integration/default change. Give people and agents a contribution route to the canonical engine repository; use shared capabilities and implement a demonstrated reusable gap with meaningful tests and a reproducible example. Preserve model licences and private-file exclusions. Keep machine-specific incident histories in maintainer records rather than current adopter-facing copy.
+
+Work from an identified clean baseline and agreed version ownership. Validate source and built artifacts, exact version identity, website links, skill inclusion and privacy exclusions. Submit reviewed changes through a PR; preserve immutable tags/assets, run required CI for the exact head and follow maintainer merge authority. Publish a fresh matching release through the established workflow and verify downloaded hashes, metadata and each configured registry separately. Record missing credentials/eligibility rather than claiming availability. Website or plugin deployment, account changes, spending, rights commitments and private-data disclosure retain their separate requirements.

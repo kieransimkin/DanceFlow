@@ -40,6 +40,14 @@
     "experimental": false
   },
   {
+    "name": "likenessforge",
+    "title": "LikenessForge",
+    "repository": "https://github.com/kieransimkin/LikenessForge",
+    "website": "https://kieransimkin.co.uk/danceflow/",
+    "capabilities": "local CLI and desktop facial-likeness repair, identity LoRA training and candidate comparisons",
+    "experimental": false
+  },
+  {
     "name": "pixelcue",
     "title": "PixelCue",
     "repository": "https://github.com/kieransimkin/PixelCue",

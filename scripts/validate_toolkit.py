@@ -42,7 +42,13 @@ assert 1 <= len(registry['description']) <= 100 and registry['websiteUrl'] == SI
 assert registry['packages'][0]['identifier'] == project['name']
 assert registry['version'] == project['version']
 catalogue = json.loads((ROOT/'catalogue.json').read_text('utf-8'))
-assert len(catalogue) == 10 and len({x['name'] for x in catalogue}) == 10
+names = {x['name'] for x in catalogue}
+assert len(catalogue) == len(names), 'Duplicate component identity'
+skill_names = {p.parent.name for p in (ROOT/'plugins/danceflow/skills').glob('*/SKILL.md')} - {'setup'}
+doc_names = {p.stem for p in (ROOT/'docs/tools').glob('*.md')}
+assert names == skill_names == doc_names, 'Catalogue, component skills and tool guides must agree'
+installed = tomllib.loads((ROOT/'pyproject.toml').read_text('utf-8'))['tool']['setuptools']['data-files']
+assert all(any(f'plugins/danceflow/skills/{name}/SKILL.md' in files for files in installed.values()) for name in names), 'Every component skill must ship in the wheel'
 assert all(x['website'] == SITE for x in catalogue)
 assert not any('short-shifter' in x['name'] for x in catalogue)
-print('Validated ten component skills, setup, both marketplace paths, manifests, registry identity and website links')
+print(f'Validated {len(names)} component skills and guides, setup, wheel inclusion, marketplaces, registry identity and website links')
