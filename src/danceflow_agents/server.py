@@ -42,6 +42,12 @@ def create_server(bridge: DanceFlowBridge) -> MCPServer:
         """Tag one local media file through PixelCue; explicit opt-in permits inference/model caching."""
         return bridge.pixelcue_keywords(path, model, allow_inference)
 
+    @server.tool(annotations=read)
+    def pixelcue_visual_analysis(path: str, models: list[str] | None = None,
+                                allow_inference: bool = False) -> dict:
+        """Measure one image through PixelCue; optional cached model inference requires opt-in; no downloads."""
+        return bridge.pixelcue_visual_analysis(path, models, allow_inference)
+
     return server
 
 

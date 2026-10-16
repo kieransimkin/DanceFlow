@@ -60,7 +60,15 @@
     "title": "PixelCue",
     "repository": "https://github.com/kieransimkin/PixelCue",
     "website": "https://kieransimkin.co.uk/danceflow/",
-    "capabilities": "local visual-media tagging with selectable VLMs, a desktop scanner and REST/Socket.IO service",
+    "capabilities": "local visual-media tagging, bounded image statistics, selected visual models and REST/Socket.IO analysis APIs",
+    "experimental": false
+  },
+  {
+    "name": "prismmoves",
+    "title": "PrismMoves",
+    "repository": "https://github.com/kieransimkin/PrismMoves",
+    "website": "https://kieransimkin.co.uk/danceflow/",
+    "capabilities": "visual-language image profiles and inspectable reports composed from PixelCue statistics and selected model evidence",
     "experimental": false
   },
   {

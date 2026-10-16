@@ -89,10 +89,10 @@ class DanceFlowBridge:
             raise ValueError("Result exceeds four MiB; use a smaller input or limit")
         return result
 
-    def _request(self, route: str, payload: dict | None = None) -> object:
+    def _request(self, route: str, payload: dict | None = None, timeout: int | None = None) -> object:
         data = json.dumps(payload).encode("utf-8") if payload is not None else None
         request = Request(self.pixelcue_url + route, data=data, headers={"Content-Type": "application/json"})
-        with self.opener.open(request, timeout=120 if data else 10) as response:
+        with self.opener.open(request, timeout=timeout or (120 if data else 10)) as response:
             raw = response.read(MAX_RESULT_BYTES + 1)
         if len(raw) > MAX_RESULT_BYTES:
             raise ValueError("PixelCue response exceeds four MiB")
@@ -114,4 +114,21 @@ class DanceFlowBridge:
         result = self._request("/v1/keywords", {"path": str(file), "model": model})
         if not isinstance(result, list) or not all(isinstance(x, str) for x in result):
             raise ValueError("PixelCue did not return its expected list of strings")
+        return result
+
+    def pixelcue_visual_analysis(self, path: str, models: list[str] | None = None,
+                                allow_inference: bool = False) -> dict:
+        """Call PixelCue's analysis engine; no image/statistical implementation here."""
+        selected = list(dict.fromkeys(models or []))
+        if selected and not allow_inference:
+            raise ValueError("Confirm local model inference, then set allow_inference=true")
+        if set(selected)-{"clip", "dinov2", "blip", "ocr"}:
+            raise ValueError("Select clip, dinov2, blip or ocr")
+        file = self._file(path, max_bytes=128*1024*1024)
+        health = self.pixelcue_health()
+        if not health.get("visual_analysis"):
+            raise ValueError("PixelCue 0.9.0+ with /v1/analysis is required")
+        result = self._request("/v1/analysis", {"path": str(file), "models": selected, "allow_download": False}, timeout=600)
+        if not isinstance(result, dict) or result.get("schema") != "pixelcue.visual-analysis/1":
+            raise ValueError("PixelCue returned an unsupported analysis receipt")
         return result

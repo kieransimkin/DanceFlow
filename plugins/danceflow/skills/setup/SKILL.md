@@ -18,3 +18,5 @@ For facial-likeness repair or identity LoRA training, read the likenessforge ski
 Verify a small synthetic input before using real files. Return actual versions, supported operations and any unavailable dependencies. Installation, discovery, a queued job and a completed result are separate states.
 
 Agents should inspect available capabilities and look for useful improvements wherever possible. Submit toolkit improvements as PRs to https://github.com/kieransimkin/DanceFlow/pulls; engine improvements belong in the tool repositories listed in catalogue.json.
+
+For image understanding, PixelCue owns statistics and model inference; PrismMoves creates visual-language reports through its public API/service. Read the prismmoves skill. Keep all downloaded weights and model-specific caches in the owning project's ignored models/ directory. A statistics-only request needs no model download. Installing the toolkit adds guidance and an MCP receipt route, not pretrained weights or the PrismMoves runtime.
