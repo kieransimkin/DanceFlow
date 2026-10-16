@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "danceflow-agent-tools"
-version = "0.1.4"
+version = "0.1.5"
 description = "Portable DanceFlow skills and local KeywordMoves/PixelCue MCP tools. https://kieransimkin.co.uk/danceflow/"
 readme = "README.md"
 requires-python = ">=3.10,<3.14"
@@ -62,3 +62,6 @@ pythonpath = ["src"]
 "share/danceflow-agent-tools/plugins/danceflow/skills/thumbmoves/agents" = ["plugins/danceflow/skills/thumbmoves/agents/openai.yaml"]
 "share/danceflow-agent-tools/plugins/danceflow/skills/likenessforge" = ["plugins/danceflow/skills/likenessforge/SKILL.md"]
 "share/danceflow-agent-tools/plugins/danceflow/skills/likenessforge/agents" = ["plugins/danceflow/skills/likenessforge/agents/openai.yaml"]
+
+"share/danceflow-agent-tools/plugins/danceflow/skills/framerudiments" = ["plugins/danceflow/skills/framerudiments/SKILL.md"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/framerudiments/agents" = ["plugins/danceflow/skills/framerudiments/agents/openai.yaml"]

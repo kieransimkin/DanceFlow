@@ -98,7 +98,7 @@ jobs:
           if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
             echo 'Refusing to overwrite an existing release'; exit 1
           fi
-          printf 'Portable skills for eleven DanceFlow components, Claude/Codex marketplace catalogs and a local KeywordMoves/PixelCue MCP bridge.\n\nWebsite: https://kieransimkin.co.uk/danceflow/\n\nSource: %s\nValidated: real stdio protocol and synthetic local HTTP contracts on Windows/Linux, Python 3.10 and 3.13; skill/marketplace identity; strict package metadata. PixelCue GPU inference and physical-device motion are not established by these checks.\n' "$GITHUB_SHA" > release-notes.md
+          printf 'Portable skills for twelve DanceFlow components, Claude/Codex marketplace catalogs and a local KeywordMoves/PixelCue MCP bridge.\n\nWebsite: https://kieransimkin.co.uk/danceflow/\n\nSource: %s\nValidated: real stdio protocol and synthetic local HTTP contracts on Windows/Linux, Python 3.10 and 3.13; skill/marketplace identity; strict package metadata. PixelCue GPU inference and physical-device motion are not established by these checks.\n' "$GITHUB_SHA" > release-notes.md
           gh release create "$GITHUB_REF_NAME" dist/* --title "DanceFlow $GITHUB_REF_NAME" --notes-file release-notes.md --verify-tag
           mkdir readback
           gh release download "$GITHUB_REF_NAME" --dir readback

@@ -1,0 +1,4 @@
+interface:
+  display_name: "FrameRudiments"
+  short_description: "Render Shorts and lyric visualisers from musical evidence"
+  default_prompt: "Use $framerudiments to render an authorised video from pinned audio, artwork and timing evidence."

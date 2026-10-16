@@ -2,7 +2,7 @@
 
 [Kieran Simkin's website](https://kieransimkin.co.uk/) · [DanceFlow ecosystem](https://kieransimkin.co.uk/danceflow/) · [Source and contributions](https://github.com/kieransimkin/DanceFlow)
 
-Portable instructions for eleven independently useful music, motion and media tools, plus a local MCP adapter that composes the published KeywordMoves and PixelCue interfaces. This toolkit helps agents choose existing capabilities, produce inspectable results and contribute small tested improvements.
+Portable instructions for twelve independently useful music, motion and media tools, plus a local MCP adapter that composes the published KeywordMoves and PixelCue interfaces. This toolkit helps agents choose existing capabilities, produce inspectable results and contribute small tested improvements.
 
 <!-- mcp-name: io.github.kieransimkin/danceflow -->
 
@@ -28,7 +28,7 @@ Select DanceFlow in the plugin directory and install it. Repository marketplace 
 Requires uv and Python 3.10–3.13. Choose one workspace containing authorised input files:
 
 ```sh
-uvx --python 3.13 --from danceflow-agent-tools==0.1.4 danceflow-mcp --workspace ./my-workspace
+uvx --python 3.13 --from danceflow-agent-tools==0.1.5 danceflow-mcp --workspace ./my-workspace
 ```
 
 For a client-managed server, add this configuration and replace the workspace with your selected local directory:
@@ -38,7 +38,7 @@ For a client-managed server, add this configuration and replace the workspace wi
   "mcpServers": {
     "danceflow": {
       "command": "uvx",
-      "args": ["--python", "3.13", "--from", "danceflow-agent-tools==0.1.4", "danceflow-mcp"],
+      "args": ["--python", "3.13", "--from", "danceflow-agent-tools==0.1.5", "danceflow-mcp"],
       "env": {"DANCEFLOW_WORKSPACE": "/absolute/path/to/my-workspace"}
     }
   }
@@ -62,6 +62,7 @@ The adapter does not expose paid providers, hosted LLMs or live collectors. Thos
 | --- | --- |
 | [StemLab](docs/tools/stemlab.md) | Music analysis, stems, timing, harmony, lyrics and exact loop evidence |
 | [DanceRudiments](docs/tools/dancerudiments.md) | Deterministic rhythmic patterns and native position sampling |
+| [FrameRudiments](docs/tools/framerudiments.md) | Offline Shorts and lyric visualiser rendering from native motion and saved musical evidence |
 | [DanceMoves](docs/tools/dancemoves.md) | Web clocks, effects, input, accessibility, lifecycle and adaptive quality |
 | [KeywordMoves](docs/tools/keywordmoves.md) | Source-specific keyword discovery and evidence imports |
 | [RasterMoves](docs/tools/rastermoves.md) | Local image upscaling and enhancement |
@@ -71,6 +72,8 @@ The adapter does not expose paid providers, hosted LLMs or live collectors. Thos
 | [React Timeline Sequence](docs/tools/react-timeline-sequence.md) | Audio timeline, transport and sample-frame loops |
 | [EPK Social Metadata](docs/tools/epk-social-metadata.md) | WordPress Open Graph, X cards and Schema.org |
 | [DanceVault](docs/tools/dancevault.md) | Experimental encrypted WordPress delivery; hosting acceptance pending |
+
+For offline videos, use the [FrameRudiments workflow](docs/workflows/framerudiments.md). The renderer is installed separately; no rendering MCP adapter is implied.
 
 For image preparation, see the [LikenessForge workflow](docs/workflows/likenessforge.md) and [tool onboarding procedure](docs/workflows/tool-onboarding.md). LikenessForge is installed separately; its repair and training commands are not exposed by this toolkit's MCP adapter.
 
