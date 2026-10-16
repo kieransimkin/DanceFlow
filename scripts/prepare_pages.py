@@ -61,6 +61,10 @@ def main():
             package.extractall(target)
         landing = subprocess.check_output(['git','show',f'{args.tag}:hosting/github-pages/index.html'])
         (args.output/'index.html').write_bytes(landing)
+        # Fixed viewer filenames come from the same immutable tested tag.
+        for name in ('framerudiments.html', 'framerudiments-captions.vtt'):
+            media_page = subprocess.check_output(['git','show',f'{args.tag}:hosting/github-pages/{name}'])
+            (args.output/name).write_bytes(media_page)
         (target/'release.json').write_text(json.dumps({'version':version,'sourceCommit':source,'demoArchiveSHA256':checksum,'website':'https://kieransimkin.co.uk/danceflow/'},indent=2)+'\n')
     print(f'Prepared exact tested {args.tag} demo from {source}; existing main deployment policy retained.')
 

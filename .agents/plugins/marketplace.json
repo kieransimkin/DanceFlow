@@ -14,7 +14,9 @@
         "installation": "AVAILABLE",
         "authentication": "ON_INSTALL"
       },
-      "category": "Productivity"
+      "category": "Productivity",
+      "version": "0.1.10",
+      "description": "Music, motion and visual evidence tools for agents. https://kieransimkin.co.uk/danceflow/"
     }
   ]
 }
