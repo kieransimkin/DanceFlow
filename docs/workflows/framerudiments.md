@@ -41,3 +41,21 @@ Use a trusted Python scene hook only for release-owned drawing. It receives the
 shared frame/source/output/beat/lyric/cue context; do not add another scheduler,
 native sampler or encoder. Validate its custom bounds, occlusion and collisions.
 Update the README/tests and submit a canonical PR for a demonstrated shared gap.
+
+
+Modular rudiment layers use `type: "rudiment"` with `renderer: "particles"`,
+`"bars"`, `"waveform"`, `"path"` or `"spectrum"`. The views share named, table,
+matched, composite and recording motion adapters; a trusted Python registry
+adds renderers without another clock or encoder. History is frame-addressed
+and viewports are bounded. `framerudiments renderers` lists the built-ins;
+`demo --rudiments` shows the four general views.
+
+Spectrum views consume calibrated saved StemLab Fourier recordings, recover
+RMS/dBFS from gain/normalization metadata, respect silent bands and export
+dominant/local peaks and peak holds to a hashed per-frame JSONL sidecar. Peak
+frequencies are band ranges, and hold uses bounded observed-frame history;
+neither is an exact-pitch or audio true-peak claim. The optional `demo --spectrum`
+uses StemLab 1.6+ to analyse a synthetic sweep; ordinary saved-recording rendering
+does not import StemLab. See the canonical
+[renderer API](https://github.com/kieransimkin/FrameRudiments/blob/main/docs/rudiment-renderers.md)
+and [spectrum contract](https://github.com/kieransimkin/FrameRudiments/blob/main/docs/spectrum.md).

@@ -40,4 +40,15 @@ must pin their own assets and verify their own painted bounds/collisions.
 Contribute focused fixes with current README, synthetic tests and a reproducible
 example to https://github.com/kieransimkin/FrameRudiments/pulls. Run the full
 FFmpeg/font-enabled suite, ruff, build, strict package checks and an installed
-wheel render. Preserve immutable versions and separate publication approvals.
+wheel render. Preserve immutable versions and automatic software publication after checks; media schedules and site deployment retain their own requirements.
+
+
+For rudiment-driven particles, bars, waveform traces, XY paths or spectra, use
+the modular `type: "rudiment"` layer and the canonical renderer/spectrum guides.
+Select original recording dimensions, bounded history and viewports; keep
+waveform traces distinct from PCM. Spectrum requires recoverable StemLab Fourier
+calibration, exact frequency ranges and silent-band handling. Retain the hashed
+`rudiment-analysis.jsonl` peak/hold reports and verify encoded representative
+states. Extend the trusted Python registry for a reusable view rather than
+copying sampling, analysis or frame loops. Optional demo generation uses
+StemLab 1.6+; saved-recording rendering requires no new model run.
