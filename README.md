@@ -2,7 +2,7 @@
 
 [Kieran Simkin's website](https://kieransimkin.co.uk/) · [DanceFlow ecosystem](https://kieransimkin.co.uk/danceflow/) · [Source and contributions](https://github.com/kieransimkin/DanceFlow)
 
-Portable instructions for twelve independently useful music, motion and media tools, plus a local MCP adapter that composes the published KeywordMoves and PixelCue interfaces. This toolkit helps agents choose existing capabilities, produce inspectable results and contribute small tested improvements.
+Portable instructions for thirteen independently useful music, motion and media tools, plus a local MCP adapter that composes the published KeywordMoves and PixelCue interfaces. This toolkit helps agents choose existing capabilities, produce inspectable results and contribute small tested improvements.
 
 <!-- mcp-name: io.github.kieransimkin/danceflow -->
 
@@ -52,6 +52,7 @@ Without a workspace, capability discovery works and all file operations reject. 
 | `danceflow_capabilities` | Discover installed KeywordMoves plugins and the supported adapter operations |
 | `keywordmoves_run` | Local literal phrase extraction or reviewed Trends/native/browser evidence imports; bounded files and results |
 | `pixelcue_health` | Read version and selectable profiles from an existing loopback PixelCue server |
+| `pixelcue_visual_analysis` | Bounded image measurements and explicit cached-model hypotheses from PixelCue 0.9.0+; no downloads |
 | `pixelcue_keywords` | Tag one workspace file with explicit inference/model-download opt-in |
 
 The adapter does not expose paid providers, hosted LLMs or live collectors. Those remain explicitly configured operations in KeywordMoves. Install PixelCue separately with Python 3.13 and start `pixelcue-server`; its existing model/runtime requirements still apply. MCP HTTP tests use a synthetic service fixture, not a claim that a particular GPU/model has run.
@@ -68,6 +69,7 @@ The adapter does not expose paid providers, hosted LLMs or live collectors. Thos
 | [RasterMoves](docs/tools/rastermoves.md) | Local image upscaling and enhancement |
 | [LikenessForge](docs/tools/likenessforge.md) | Facial-likeness repair, identity LoRA training and reviewable comparison sheets |
 | [PixelCue](docs/tools/pixelcue.md) | Local visual-media tagging and service workflows |
+| [PrismMoves](docs/tools/prismmoves.md) | Visual-language profiles and reports powered by PixelCue image analysis |
 | [ThumbMoves](docs/tools/thumbmoves.md) | Cache-only OS thumbnails with explicit misses |
 | [React Timeline Sequence](docs/tools/react-timeline-sequence.md) | Audio timeline, transport and sample-frame loops |
 | [EPK Social Metadata](docs/tools/epk-social-metadata.md) | WordPress Open Graph, X cards and Schema.org |
@@ -140,3 +142,13 @@ with [transcript](https://github.com/kieransimkin/FrameRudiments/blob/v0.1.4/doc
 The diagram is an illustration; the comparison and video are captured renderer
 output. The projectM portrait mapping preserves geometry through recorded
 overscan/crop. Review processed text for legibility and destination safe zones.
+
+## Understand visual language
+
+Inspect the image before extending its style. [PrismMoves](docs/tools/prismmoves.md) brings PixelCue colour, texture, composition and selected model evidence into JSON, Markdown, HTML and a measured SVG summary. Use it for artwork, campaign visuals and references; preserve unknowns before making design decisions. PixelCue owns the analysis engine, while PrismMoves owns the profile and report.
+
+![Original synthetic fixture and actual PixelCue measurements showing the PrismMoves reporting handoff](https://raw.githubusercontent.com/kieransimkin/PrismMoves/main/docs/images/visual-profile-example.png)
+
+Generated measurement figure from PixelCue 0.9.0; it is not a UI screenshot or a semantic-accuracy evaluation. See the [visual-language workflow](docs/workflows/visual-language.md). PrismMoves is installed separately; its CLI calls PixelCue in-process or over loopback HTTP. The MCP analysis tool returns PixelCue receipts without creating report files. Its 600-second request timeout does not cancel server work.
+
+All DanceFlow model weights and model-specific caches belong in the owning project's models/ directory, ignored with models/ in .gitignore and excluded from distributions. Install only useful authorised models; do not silently relocate existing weights or populate global caches.

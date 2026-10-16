@@ -43,7 +43,7 @@ def test_actual_stdio_tools_and_rejection(tmp_path):
         proc.stdin.write('{"jsonrpc":"2.0","method":"notifications/initialized"}\n')
         proc.stdin.flush()
         tools = request('tools/list', {})['tools']
-        assert {x['name'] for x in tools} == {'danceflow_capabilities', 'keywordmoves_run', 'pixelcue_health', 'pixelcue_keywords'}
+        assert {x['name'] for x in tools} == {'danceflow_capabilities', 'keywordmoves_run', 'pixelcue_health', 'pixelcue_keywords', 'pixelcue_visual_analysis'}
         response = request('tools/call', {'name':'keywordmoves_run', 'arguments':{'plugin':'text-library','operation':'extract-literal','inputs':['source.txt']}})
         assert not response.get('isError'), response
         result = json.loads(next(x['text'] for x in response['content'] if x['type'] == 'text'))

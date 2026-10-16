@@ -11,7 +11,7 @@ requires-python = ">=3.10,<3.14"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "Kieran Simkin" }]
-keywords = ["DanceFlow", "MCP", "agent-skills", "keywords", "visual-media"]
+keywords = ["DanceFlow", "MCP", "agent-skills", "keywords", "visual-media", "visual-identity", "image-analysis"]
 dependencies = ["mcp>=2.2,<3", "keywordmoves>=0.4.2,<0.5"]
 
 [project.optional-dependencies]
@@ -65,3 +65,6 @@ pythonpath = ["src"]
 
 "share/danceflow-agent-tools/plugins/danceflow/skills/framerudiments" = ["plugins/danceflow/skills/framerudiments/SKILL.md"]
 "share/danceflow-agent-tools/plugins/danceflow/skills/framerudiments/agents" = ["plugins/danceflow/skills/framerudiments/agents/openai.yaml"]
+
+"share/danceflow-agent-tools/plugins/danceflow/skills/prismmoves" = ["plugins/danceflow/skills/prismmoves/SKILL.md"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/prismmoves/assets" = ["plugins/danceflow/skills/prismmoves/assets/visual-profile-example.png"]

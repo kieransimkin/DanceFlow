@@ -14,3 +14,11 @@ uv run pytest
 ```
 
 Submit contributions to https://github.com/kieransimkin/PixelCue/pulls. See the repository's current instructions before editing.
+
+## Image understanding with PrismMoves
+
+PixelCue 0.9.0+ also provides /v1/analysis and Python APIs for bounded colour, texture, composition and frequency measurements, with explicit CLIP, DINOv2, BLIP and OCR hypotheses. PrismMoves organises those receipts into inspectable visual-language reports; its analysis engine stays in PixelCue. Use the hub's pixelcue_visual_analysis tool for a raw receipt. Cached-model inference requires explicit opt-in; this adapter never downloads weights. Store selected weights/cache in the owning project's ignored models/ directory.
+
+![Synthetic fixture beside actual PixelCue palette and texture measurements](https://raw.githubusercontent.com/kieransimkin/PrismMoves/main/docs/images/visual-profile-example.png)
+
+Generated measurement figure, not a UI screenshot or proof of model accuracy. See [PrismMoves](prismmoves.md) and the [visual-language workflow](../workflows/visual-language.md).

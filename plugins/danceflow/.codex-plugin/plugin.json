@@ -1,7 +1,7 @@
 {
   "name": "danceflow",
   "version": "0.1.8",
-  "description": "Music, motion and media tools for agents. https://kieransimkin.co.uk/danceflow/",
+  "description": "Music, motion and visual evidence tools for agents. https://kieransimkin.co.uk/danceflow/",
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
@@ -25,5 +25,11 @@
     "com.openai": {
       "onboardingSkill": "./skills/setup/SKILL.md"
     }
-  }
+  },
+  "keywords": [
+    "visual-identity",
+    "image-analysis",
+    "PixelCue",
+    "PrismMoves"
+  ]
 }

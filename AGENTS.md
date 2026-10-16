@@ -17,3 +17,5 @@ Submit toolkit, skill and demo improvements as PRs to https://github.com/kierans
 - Whenever a feature is added or changed, update the relevant README.md in the same change to reflect the resulting behaviour. This applies to every feature addition or modification, including APIs, commands, configuration, defaults, integrations and removals.
 - Update affected feature descriptions, usage instructions, options, examples and limitations. For tools or packages with their own README.md, update that README as well as the repository README when its overview or usage is affected.
 - Check the README against the implemented and verified behaviour before committing, opening or merging a PR, publishing a release or handing off the work. A feature change is incomplete until its README documentation is current; a changelog or other documentation does not replace this requirement.
+
+All DanceFlow downloaded model weights and model-specific caches belong in the owning project models/ directory, ignored with models/ and excluded from distributions. Preserve explicit download permission and migrate existing paths only after checking consumers.
