@@ -1,0 +1,1 @@
+DanceFlow 0.1.7 documents FrameRudiments full-frame Butterchurn and pinned projectM effects, including lyrics, native sprites/atlases, exact clocks/PCM, sequential feedback, final glyph QA and cleanup. Portable skills carry the same contract. No new MCP adapter or WordPress deployment is claimed.
