@@ -1,6 +1,6 @@
 # DanceFlow ecosystem
 
-Confirmed scope: 15 October 2026 (LikenessForge added by Kieran). Public overview: https://kieransimkin.co.uk/danceflow/.
+Confirmed scope: 16 October 2026 (FrameRudiments added by Kieran). Public overview: https://kieransimkin.co.uk/danceflow/.
 
 DanceFlow describes a family of independently useful tools. Its core path is
 music understanding, rhythmic movement and rendering. Supporting tools cover
@@ -11,6 +11,7 @@ Membership does not imply that every pair of tools has an automatic integration.
 | --- | --- | --- |
 | StemLab | Music, stem, rhythm, structure, harmony, lyric and sonic analysis; inspectable timing and loop evidence | https://github.com/kieransimkin/stemlab |
 | DanceRudiments | Deterministic rhythmic movement functions and a pattern visualizer | https://github.com/kieransimkin/DanceRudiments |
+| FrameRudiments | Offline Python Shorts and lyric visualisers from DanceRudiments and saved StemLab evidence | https://github.com/kieransimkin/FrameRudiments |
 | DanceMoves | Clocks, rendering, effects, input, scheduling, accessibility, lifecycle and adaptive quality for web motion | https://github.com/kieransimkin/DanceMoves |
 | KeywordMoves | Source-specific keyword research, imports, observations and evidence comparison | https://github.com/kieransimkin/keywordmoves |
 | RasterMoves | Reusable raster-media and image preparation | https://github.com/kieransimkin/RasterMoves |

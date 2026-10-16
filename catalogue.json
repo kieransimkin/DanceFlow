@@ -16,6 +16,14 @@
     "experimental": false
   },
   {
+    "name": "framerudiments",
+    "title": "FrameRudiments",
+    "repository": "https://github.com/kieransimkin/FrameRudiments",
+    "website": "https://kieransimkin.co.uk/danceflow/",
+    "capabilities": "offline Shorts and lyric visualisers from native motion and saved StemLab evidence",
+    "experimental": false
+  },
+  {
     "name": "dancemoves",
     "title": "DanceMoves",
     "repository": "https://github.com/kieransimkin/DanceMoves",
