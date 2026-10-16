@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FrameRudiments: lyrics and animated sprites through both visualisers</title>
+<style>body{margin:0;background:#101b2e;color:#f5eddf;font:17px/1.6 system-ui,sans-serif}main{max-width:1000px;margin:auto;padding:24px}a{color:#76d4cf}video{display:block;background:#000;max-width:100%;max-height:75vh;margin:20px auto}img{display:block;max-width:100%;height:auto;margin:16px auto}figure{margin:28px 0}figcaption{font-size:.9rem}code{overflow-wrap:anywhere}h1{line-height:1.2}details{margin:24px 0}li{margin:.4em 0}</style></head>
+<body><main>
+<nav><a href="./">DanceFlow</a> · <a href="https://github.com/kieransimkin/FrameRudiments/blob/v0.1.4/docs/visualisers.md">Setup and rendering guide</a></nav>
+<h1>Lyrics and native sprites through both visualisers</h1>
+<p>Actual synthetic FrameRudiments 0.1.4 candidate output. A native DanceRudiments bounce moves the check-mark sprite; a circular movement drives a beat-animated triangle atlas. Captions, artwork and recording bars enter the same Butterchurn and projectM feedback pipeline.</p>
+<p><button type="button" onclick="document.getElementById('demo').play().catch(()=>{document.getElementById('playback-state').textContent='Playback unavailable; use the MP4 download or transcript.'})">Play demonstration</button> <span id="playback-state" role="status"></span></p>
+<video id="demo" controls preload="metadata" crossorigin="anonymous" width="360" height="640" aria-label="Four-second synthetic lyric and animated-sprite visualiser demonstration">
+<source src="https://raw.githubusercontent.com/kieransimkin/FrameRudiments/v0.1.4/docs/media/full-frame-demo.mp4" type="video/mp4">
+<track kind="captions" srclang="en" label="Synthetic caption transcript" src="framerudiments-captions.vtt">
+Your browser cannot play this example. <a href="https://raw.githubusercontent.com/kieransimkin/FrameRudiments/v0.1.4/docs/media/full-frame-demo.mp4">Download the MP4</a> or read the transcript below.
+</video>
+<p>The soundtrack is a synthetic oscillator, not sung vocals. Optional player captions are an accessibility aid; the video pixels contain the processed lyrics. Playback starts only when you choose Play.</p>
+<details><summary>Transcript and visual description</summary>
+<ul><li>0.00–1.25 seconds: “Signals into motion”.</li><li>1.25–2.50 seconds: “Words into light”.</li><li>2.50–3.75 seconds: “Keep the clock in sight”.</li><li>3.75–4.00 seconds: caption cleared; shapes and feedback remain.</li></ul>
+<p>The title and current line appear above a moving round check mark and a four-cell triangle atlas. Native recording bars appear below. The whole frame rotates gently and leaves feedback trails. The before/after comparison uses the encoded frame at 2.00 seconds.</p></details>
+<figure><img src="https://raw.githubusercontent.com/kieransimkin/FrameRudiments/v0.1.4/docs/media/full-frame-comparison.png" width="744" height="700" alt="Actual composed frame beside the encoded frame after both visualisers, showing lyrics, sprites and recording bars"><figcaption>Actual renderer output: composition before effects at left; encoded output after both real engines at right.</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/kieransimkin/FrameRudiments/v0.1.4/docs/media/effects-pipeline.svg" width="1000" height="280" alt="Generated illustration showing complete composition, optional Butterchurn and projectM, then MP4 encoding"><figcaption>Generated processing-order illustration, not screenshot evidence.</figcaption></figure>
+<p>Runtime pins: Butterchurn 2.6.7; unmodified projectM 4.2 development commit <code>349b7cc2db312d47cef6be24c6856ced6643a385</code>. Portrait geometry uses recorded overscan/crop. GPU pixels may vary by driver; inspect final legibility and destination safe zones.</p>
+<p><a href="https://github.com/kieransimkin/FrameRudiments/blob/v0.1.4/docs/media/media-evidence.json">Media hashes and provenance</a> · <a href="https://pypi.org/project/framerudiments/">Python package</a></p>
+</main></body></html>
