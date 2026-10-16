@@ -71,7 +71,7 @@ engine setup, licences and trusted executable presets explicit.
 
 Actual synthetic FrameRudiments 0.1.4 candidate output, before and after both
 real engines. Captions and native moving sprites/atlas share the effect path.
-[Play the four-second demonstration](https://raw.githubusercontent.com/kieransimkin/FrameRudiments/v0.1.4/docs/media/full-frame-demo.mp4)
+[Play the four-second demonstration](https://kieransimkin.github.io/DanceFlow/framerudiments.html)
 with [transcript](https://github.com/kieransimkin/FrameRudiments/blob/v0.1.4/docs/media/demo-transcript.md).
 
 ![Generated processing-order illustration, not a screenshot](https://raw.githubusercontent.com/kieransimkin/FrameRudiments/v0.1.4/docs/media/effects-pipeline.svg)
