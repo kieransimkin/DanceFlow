@@ -20,7 +20,7 @@ Membership does not imply that every pair of tools has an automatic integration.
 | ThumbMoves | Reusable thumbnail caching within the PixelCue repository | https://github.com/kieransimkin/PixelCue |
 | React Timeline Sequence | React timelines, loop regions and shared audio transport | https://github.com/kieransimkin/react-timeline-sequence |
 | EPK Social Metadata | WordPress EPK social and search metadata | https://github.com/kieransimkin/kieran-epk-social-metadata |
-| DanceVault | Experimental encrypted, password-controlled WordPress file delivery; Apache/nginx integration acceptance pending | https://github.com/kieransimkin/DanceVault |
+| DanceVault | Encrypted, password-controlled WordPress file delivery; stable 1.0.0 with real Apache/nginx test acceptance; destination-host acceptance still required | https://github.com/kieransimkin/DanceVault |
 
 Kieran explicitly confirmed that **Short Shifter is entirely unrelated to
 DanceFlow**. Keep it out of DanceFlow membership lists, diagrams, copy and
