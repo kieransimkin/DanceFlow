@@ -28,7 +28,7 @@ Select DanceFlow in the plugin directory and install it. Repository marketplace 
 Requires uv and Python 3.10–3.13. Choose one workspace containing authorised input files:
 
 ```sh
-uvx --python 3.13 --from danceflow-agent-tools==0.1.10 danceflow-mcp --workspace ./my-workspace
+uvx --python 3.13 --from danceflow-agent-tools==0.1.11 danceflow-mcp --workspace ./my-workspace
 ```
 
 For a client-managed server, add this configuration and replace the workspace with your selected local directory:
@@ -38,7 +38,7 @@ For a client-managed server, add this configuration and replace the workspace wi
   "mcpServers": {
     "danceflow": {
       "command": "uvx",
-      "args": ["--python", "3.13", "--from", "danceflow-agent-tools==0.1.10", "danceflow-mcp"],
+      "args": ["--python", "3.13", "--from", "danceflow-agent-tools==0.1.11", "danceflow-mcp"],
       "env": {"DANCEFLOW_WORKSPACE": "/absolute/path/to/my-workspace"}
     }
   }
@@ -152,3 +152,9 @@ Inspect the image before extending its style. [PrismMoves](docs/tools/prismmoves
 Generated measurement figure from PixelCue 0.9.0; it is not a UI screenshot or a semantic-accuracy evaluation. See the [visual-language workflow](docs/workflows/visual-language.md). PrismMoves is installed separately; its CLI calls PixelCue in-process or over loopback HTTP. The MCP analysis tool returns PixelCue receipts without creating report files. Its 600-second request timeout does not cancel server work.
 
 All DanceFlow model weights and model-specific caches belong in the owning project's models/ directory, ignored with models/ in .gitignore and excluded from distributions. Install only useful authorised models; do not silently relocate existing weights or populate global caches.
+
+FrameRudiments 0.3.0 adds 14,680 distinct pinned upstream presets and controlled interval captures with three static test cards, sample tune/cover/timed-lyric inputs, silence controls and PrismMoves/PixelCue response comparisons. [Read the capture and synthesis workflow](https://github.com/kieransimkin/FrameRudiments/blob/v0.3.0/docs/preset-profiling.md). Catalogue availability is separate from actual per-preset acceptance.
+
+![Generated static input cards for preset response experiments](https://raw.githubusercontent.com/kieransimkin/FrameRudiments/v0.3.0/docs/media/preset-test-cards.png)
+
+Generated calibration illustrations. The [playable full-frame demonstration](https://kieransimkin.github.io/DanceFlow/framerudiments.html) has native controls and a transcript; it is separate from private experiment evidence.
