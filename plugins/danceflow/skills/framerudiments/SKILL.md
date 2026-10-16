@@ -5,7 +5,7 @@ description: Render offline Shorts, Canvas-style videos and lyric visualisers fr
 
 # FrameRudiments
 
-[DanceFlow](https://kieransimkin.co.uk/danceflow/) Â· [Source](https://github.com/kieransimkin/FrameRudiments)
+[DanceFlow](https://kieransimkin.co.uk/danceflow/) · [Source](https://github.com/kieransimkin/FrameRudiments)
 
 Use the shared Python renderer for new or materially revised offline videos.
 Read its current README and project-format guide; use the existing historical
@@ -66,3 +66,16 @@ receipts. Feedback is sequential; recreate/replay to seek. GPU pixels vary by
 driver, and pre-effect text bounds do not prove final legibility or safe zones.
 Verify real shader/glyph/sprite feedback and encoded output; keep optional
 engine setup, licences and trusted executable presets explicit.
+
+![Actual composed and processed lyric/sprite frames](https://raw.githubusercontent.com/kieransimkin/FrameRudiments/v0.1.4/docs/media/full-frame-comparison.png)
+
+Actual synthetic FrameRudiments 0.1.4 candidate output, before and after both
+real engines. Captions and native moving sprites/atlas share the effect path.
+[Play the four-second demonstration](https://raw.githubusercontent.com/kieransimkin/FrameRudiments/v0.1.4/docs/media/full-frame-demo.mp4)
+with [transcript](https://github.com/kieransimkin/FrameRudiments/blob/v0.1.4/docs/media/demo-transcript.md).
+
+![Generated processing-order illustration, not a screenshot](https://raw.githubusercontent.com/kieransimkin/FrameRudiments/v0.1.4/docs/media/effects-pipeline.svg)
+
+The diagram is an illustration; the comparison and video are captured renderer
+output. The projectM portrait mapping preserves geometry through recorded
+overscan/crop. Review processed text for legibility and destination safe zones.
