@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "danceflow-agent-tools"
-version = "0.1.11"
+version = "0.1.12"
 description = "Portable DanceFlow skills and local KeywordMoves/PixelCue MCP tools. https://kieransimkin.co.uk/danceflow/"
 readme = "README.md"
 requires-python = ">=3.10,<3.14"
@@ -12,7 +12,7 @@ license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "Kieran Simkin" }]
 keywords = ["DanceFlow", "MCP", "agent-skills", "keywords", "visual-media", "visual-identity", "image-analysis"]
-dependencies = ["mcp>=2.2,<3", "keywordmoves>=0.4.2,<0.5"]
+dependencies = ["mcp>=2.2,<3", "keywordmoves>=0.5.8,<0.6"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<10", "build>=1.2", "twine>=6", "PyYAML>=6", "jsonschema>=4", "tomli>=2; python_version < '3.11'"]
@@ -27,6 +27,7 @@ Documentation = "https://github.com/kieransimkin/DanceFlow/tree/main/docs"
 [project.scripts]
 danceflow-mcp = "danceflow_agents.server:main"
 danceflow-agent-tools = "danceflow_agents.server:main"
+danceflow-releases = "danceflow_agents.releases:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -68,3 +69,6 @@ pythonpath = ["src"]
 
 "share/danceflow-agent-tools/plugins/danceflow/skills/prismmoves" = ["plugins/danceflow/skills/prismmoves/SKILL.md"]
 "share/danceflow-agent-tools/plugins/danceflow/skills/prismmoves/assets" = ["plugins/danceflow/skills/prismmoves/assets/visual-profile-example.png"]
+
+"share/danceflow-agent-tools/docs/capabilities" = ["docs/capabilities/dancemoves.md", "docs/capabilities/dancerudiments.md", "docs/capabilities/dancevault.md", "docs/capabilities/epk-social-metadata.md", "docs/capabilities/framerudiments.md", "docs/capabilities/index.md", "docs/capabilities/keywordmoves.md", "docs/capabilities/likenessforge.md", "docs/capabilities/pixelcue.md", "docs/capabilities/prismmoves.md", "docs/capabilities/rastermoves.md", "docs/capabilities/react-timeline-sequence.md", "docs/capabilities/stemlab.md", "docs/capabilities/toolkit.md", "docs/capabilities/thumbmoves.md"]
+"share/danceflow-agent-tools/docs/workflows" = ["docs/workflows/release-preflight.md", "docs/workflows/framerudiments-complete.md"]

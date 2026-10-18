@@ -22,3 +22,7 @@ PixelCue 0.9.0+ also provides /v1/analysis and Python APIs for bounded colour, t
 ![Synthetic fixture beside actual PixelCue palette and texture measurements](https://raw.githubusercontent.com/kieransimkin/PrismMoves/main/docs/images/visual-profile-example.png)
 
 Generated measurement figure, not a UI screenshot or proof of model accuracy. See [PrismMoves](prismmoves.md) and the [visual-language workflow](../workflows/visual-language.md).
+
+## Full feature workflow
+
+[Read the released feature references](../capabilities/pixelcue.md) and [check current releases before every new run](../workflows/release-preflight.md). Consider the whole ecosystem, use and improve applicable shared capabilities, and keep actual runtime/output evidence separate from availability.

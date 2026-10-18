@@ -1,0 +1,43 @@
+from danceflow_agents.releases import check_releases, compare_version, latest_runtime, stable_version
+
+
+def release(tag, **kwargs):
+    return dict(tag_name=tag,html_url='https://github.com/kieransimkin/PixelCue/releases/tag/'+tag,assets=[],**kwargs)
+
+
+def test_runtime_selection_ignores_documentation_and_prereleases():
+    rows=[release('readme-policy-v99.0.0'),release('v0.9.1'),release('v1.0.0',prerelease=True),
+          release('v1.1.0',draft=True),release('thumbmoves-v0.1.2'),release('v0.9.0')]
+    assert latest_runtime(rows)['tag_name']=='v0.9.1'
+    assert latest_runtime(rows,'thumbmoves-v')['tag_name']=='thumbmoves-v0.1.2'
+    assert latest_runtime([release('docs-v1.0.0')]) is None
+    assert stable_version('v01.2.3') is None
+
+
+def test_installed_identity_does_not_imply_registry_or_runtime_acceptance():
+    assert compare_version(None,'1.2.3')=='not_observed'
+    assert compare_version('1.2.2','1.2.3')=='update_available'
+    assert compare_version('1.2.3','1.2.3')=='current'
+    assert compare_version('1.2.4','1.2.3')=='ahead_of_release'
+    assert compare_version('1.2.3+development','1.2.3')=='unverified_identity'
+
+
+def test_shared_repository_fetched_once_and_prefixes_stay_distinct():
+    calls=[]
+    def fetch(repo):
+        calls.append(repo)
+        return [release('v0.9.1'),release('thumbmoves-v0.1.2')]
+    report=check_releases({'PixelCue':'0.9.1','ThumbMoves':'0.1.0'},fetch)
+    rows={r['component']:r for r in report['components']}
+    assert calls.count('PixelCue')==1
+    assert rows['PixelCue']['status']=='current'
+    assert rows['ThumbMoves']['status']=='update_available'
+    assert rows['ThumbMoves']['released']=='0.1.2'
+
+
+def test_network_failure_retains_unavailable_without_cached_success():
+    def fail(repo):
+        raise OSError('private proxy diagnostic that must not be copied')
+    report=check_releases({'StemLab':'1.8.0'},fail)
+    assert all(row['status']=='unavailable' for row in report['components'])
+    assert all('private' not in row['reason'] for row in report['components'])

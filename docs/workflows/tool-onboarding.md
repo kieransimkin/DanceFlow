@@ -2,7 +2,7 @@
 
 [Website](https://kieransimkin.co.uk/danceflow/) · [Canonical catalogue](../../catalogue.json)
 
-Inspect the current source, README, package metadata, capability inventory, tests, model requirements and supported distribution routes. Confirm membership with the owner; preserve each project's identity. Short Shifter is independent, and DanceVault remains experimental with hosting acceptance limits. Membership alone does not establish integration, registry acceptance or a public website update.
+Inspect the current source, README, package metadata, capability inventory, tests, model requirements and supported distribution routes. Confirm membership with the owner; preserve each project's identity. Short Shifter is independent, and DanceVault has stable releases with real test-host acceptance and still requires destination-host acceptance. Membership alone does not establish integration, registry acceptance or a public website update.
 
 Update `catalogue.json`, the root README component table, `docs/tools/<name>.md`, the matching portable skill and its UI metadata, and wheel data-file inclusion. Update setup routing and affected workflows. Keep existing adapters explicit: only implement an MCP operation when a reviewed real integration exists. Run catalogue/guide/skill/package parity checks so future additions cannot be omitted from a distribution.
 

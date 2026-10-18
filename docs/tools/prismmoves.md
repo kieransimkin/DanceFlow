@@ -13,3 +13,7 @@ Install PrismMoves from its tested GitHub release. It calls installed PixelCue 0
 Measurements, model interpretations and unavailable evidence remain distinct. One image does not establish recurring brand rules, rights, artist intent or audience response. Use assess-visual-identity with approved independent comparison evidence for those collection conclusions.
 
 See the canonical README for options, explicit model installation, versions and limitations. Engine improvements belong in PixelCue; reporting improvements belong in PrismMoves.
+
+## Full feature workflow
+
+[Read the released feature references](../capabilities/prismmoves.md) and [check current releases before every new run](../workflows/release-preflight.md). Consider the whole ecosystem, use and improve applicable shared capabilities, and keep actual runtime/output evidence separate from availability.
