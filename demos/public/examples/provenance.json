@@ -1,0 +1,43 @@
+{
+  "context": "Actual synthetic software fixtures, 18 October 2026. No private masters or model inference.",
+  "versions": {
+    "FrameRudiments": "0.4.0",
+    "DanceRudiments": "0.3.0",
+    "PixelCue": "0.9.1",
+    "PrismMoves": "0.2.0"
+  },
+  "files": {
+    "provenance.json": {
+      "bytes": 1269,
+      "sha256": "0246b3aabe963dd41ae5362085b35a7d9778f891f853541f72c19cd197c1f500"
+    },
+    "frame/captions.vtt": {
+      "bytes": 180,
+      "sha256": "57de2f95a4d04289836256ee39da9b4218e1ca1e448113d937127fb3dbd8b5bc"
+    },
+    "frame/poster.png": {
+      "bytes": 12139,
+      "sha256": "7efdbb10e4610710a926132d5f973b19c0fd5b9db5caa6a94f74865fa8d7b0f0"
+    },
+    "frame/video.mp4": {
+      "bytes": 204893,
+      "sha256": "9671b4455f4fb4677eb072443e6da7f063aaf164c1262e6247d2a10914d24695"
+    },
+    "prism/input.png": {
+      "bytes": 22964,
+      "sha256": "44bd6132fef49120879359d8c2a0f6242c902d8f2d8e78e73646a462b42ec058"
+    },
+    "prism/report.html": {
+      "bytes": 6520,
+      "sha256": "c18405693a104a1ca09ad3d108caf17066e8a346fd272f40ecb3dbe8e59f41e2"
+    },
+    "prism/report.md": {
+      "bytes": 3596,
+      "sha256": "80606997491d4d0566f86dee8b0f0527d0c45ab5eb0afd2d6ef6508a15dfb918"
+    },
+    "prism/visual-summary.svg": {
+      "bytes": 1397,
+      "sha256": "996f04cb748a7539620fad67336c0c5cbde752c9f38c63559a2d69a7d05980d0"
+    }
+  }
+}
