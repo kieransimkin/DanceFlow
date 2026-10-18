@@ -20,3 +20,7 @@ Verify a small synthetic input before using real files. Return actual versions, 
 Agents should inspect available capabilities and look for useful improvements wherever possible. Submit toolkit improvements as PRs to https://github.com/kieransimkin/DanceFlow/pulls; engine improvements belong in the tool repositories listed in catalogue.json.
 
 For image understanding, PixelCue owns statistics and model inference; PrismMoves creates visual-language reports through its public API/service. Read the prismmoves skill. Keep all downloaded weights and model-specific caches in the owning project's ignored models/ directory. A statistics-only request needs no model download. Installing the toolkit adds guidance and an MCP receipt route, not pretrained weights or the PrismMoves runtime.
+
+## Current releases and full feature routing
+
+Before every new workflow, follow the [release preflight](https://github.com/kieransimkin/DanceFlow/blob/main/docs/workflows/release-preflight.md) and [complete capability reference](https://github.com/kieransimkin/DanceFlow/blob/main/docs/capabilities/index.md). Observe the real installed runtime, review every relevant feature and compose supported ecosystem tools. Improve a demonstrated reusable gap in its canonical repository, or record why the tool already meets the need. This guidance does not trigger unrelated processing or downloads.

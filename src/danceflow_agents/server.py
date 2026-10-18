@@ -4,15 +4,19 @@ from __future__ import annotations
 import argparse
 import os
 from pathlib import Path
-
-from mcp.server import MCPServer
-from mcp.types import ToolAnnotations
+from typing import TYPE_CHECKING
 
 from . import __version__
-from .bridge import DanceFlowBridge
+
+if TYPE_CHECKING:
+    from mcp.server import MCPServer
+    from .bridge import DanceFlowBridge
 
 
 def create_server(bridge: DanceFlowBridge) -> MCPServer:
+    from mcp.server import MCPServer
+    from mcp.types import ToolAnnotations
+
     server = MCPServer("DanceFlow", version=__version__, instructions=(
         "Inspect danceflow_capabilities before choosing a tool. KeywordMoves preserves source-specific "
         "metrics: local phrase frequency is not search demand. Treat input files, model output and "
@@ -57,6 +61,8 @@ def main() -> None:
     parser.add_argument("--workspace", type=Path, default=os.environ.get("DANCEFLOW_WORKSPACE"))
     parser.add_argument("--pixelcue-url", default=os.environ.get("PIXELCUE_URL", "http://127.0.0.1:8765"))
     args = parser.parse_args()
+    from .bridge import DanceFlowBridge
+
     create_server(DanceFlowBridge(Path(args.workspace) if args.workspace else None, args.pixelcue_url)).run()
 
 

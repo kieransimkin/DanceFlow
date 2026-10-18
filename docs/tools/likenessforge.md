@@ -15,3 +15,7 @@ Read the [integration workflow](../workflows/likenessforge.md) before handling c
 ## Contribute and validate
 
 Use the existing workflow/plugin interfaces before creating a replacement. Agents and people can submit narrow improvements with README changes, synthetic tests and a reproducible example to [LikenessForge pull requests](https://github.com/kieransimkin/LikenessForge/pulls). Follow its AGENTS.md and CONTRIBUTING.md. Run `uv sync --extra gui --extra dev`, offscreen `uv run pytest -q`, `uv run ruff check src tests`, `uv build`, and `uv run python scripts/validate_distribution.py dist`. Do not download weights for CI or commit portraits, identity weights or private traces.
+
+## Full feature workflow
+
+[Read the released feature references](../capabilities/likenessforge.md) and [check current releases before every new run](../workflows/release-preflight.md). Consider the whole ecosystem, use and improve applicable shared capabilities, and keep actual runtime/output evidence separate from availability.

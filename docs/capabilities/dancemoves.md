@@ -1,0 +1,308 @@
+# DanceMoves: complete capability reference
+
+Inspected stable source: [v3.4.0](https://github.com/kieransimkin/DanceMoves/releases/tag/v3.4.0), commit `2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3`. This is a dated baseline; [check current releases before every new workflow](../workflows/release-preflight.md).
+
+## Choose and use a route
+
+| Goal | Supported route and evidence |
+|---|---|
+| Register clocks and transport | Use shared/child native and YouTube players with verified source offsets, source hashes, fixed or opt-in variable-tempo beat maps; preserve line, word and cue source time. |
+| Mount visual consumers | Inspect the complete runtime.visualisers catalogue, calibrated spectra, native movement, sprites, lyric stages and reusable effects. Lazy recording/atlas ownership must reach painted consumers. |
+| Connect input and lifecycle | Use shared pointer/phone controllers, bounded calibrated readings, visibility, media switches, reduced motion, forced colours, quality downgrade/recovery and teardown. Permission alone is not sensor data. |
+| Use the correct integration | Choose standalone, React/Next, WordPress or authorised server capture APIs. Keep single-song metadata and multi-song associations exact; a released plugin is not an installed website version. |
+
+## Released reference coverage
+
+Each entry links to the exact released explanation, options, example or limitation. These are documented capabilities, not a claim that every option was run on this computer. Review the relevant source before configuring it.
+
+- [Agents and contributors](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#agents-and-contributors) — `README.md`.
+- [Shared JavaScript library and WordPress](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#shared-javascript-library-and-wordpress) — `README.md`.
+- [Existing WordPress recipes and 2.x reference material](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#existing-wordpress-recipes-and-2x-reference-material) — `README.md`.
+- [WordPress examples: Arcadians and complete feature coverage](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#wordpress-examples-arcadians-and-complete-feature-coverage) — `README.md`.
+- [Run the simulated WordPress gallery](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#run-the-simulated-wordpress-gallery) — `README.md`.
+- [Set up a real WordPress Page](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#set-up-a-real-wordpress-page) — `README.md`.
+- [Every stored metadata key](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#every-stored-metadata-key) — `README.md`.
+- [Coverage map](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#coverage-map) — `README.md`.
+- [Feature-by-feature WordPress recipes](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#feature-by-feature-wordpress-recipes) — `README.md`.
+- [Release a new DanceMoves version](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#release-a-new-dancemoves-version) — `README.md`.
+- [Example validation](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#example-validation) — `README.md`.
+- [Rudiment animation integration](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#rudiment-animation-integration) — `README.md`.
+- [Reusable effect primitives (2.8.0)](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#reusable-effect-primitives-280) — `README.md`.
+- [Paper Dreams flight adapter (2.6.3)](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#paper-dreams-flight-adapter-263) — `README.md`.
+- [Paper Dreams performance acceptance](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#paper-dreams-performance-acceptance) — `README.md`.
+- [Page properties](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#page-properties) — `README.md`.
+- [Musical clock](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#musical-clock) — `README.md`.
+- [Cue behavior and page API](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#cue-behavior-and-page-api) — `README.md`.
+- [Timed lyric pop-ups and visual-language workflow](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#timed-lyric-pop-ups-and-visual-language-workflow) — `README.md`.
+- [Release adapters](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#release-adapters) — `README.md`.
+- [Adaptive Clay/Stars performance](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#adaptive-claystars-performance) — `README.md`.
+- [Performance guidance](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#performance-guidance) — `README.md`.
+- [Performance acceptance target](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#performance-acceptance-target) — `README.md`.
+- [Validation and packaging](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#validation-and-packaging) — `README.md`.
+- [Rollback](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#rollback) — `README.md`.
+- [Potential problems](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#potential-problems) — `README.md`.
+- [WordPress.org publication](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#wordpressorg-publication) — `README.md`.
+- [Agent guidance releases](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#agent-guidance-releases) — `README.md`.
+- [Optional variable-tempo / corrected Beat 1 maps from StemLab](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#optional-variable-tempo--corrected-beat-1-maps-from-stemlab) — `README.md`.
+- [Optional word-level lyrics and multi-song Pages](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/README.md#optional-word-level-lyrics-and-multi-song-pages) — `README.md`.
+- [Catalogue, orientation and release-adapter APIs](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/adapters.md#catalogue-orientation-and-release-adapter-apis) — `docs/api/adapters.md`.
+- [Catalogue timing](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/adapters.md#catalogue-timing) — `docs/api/adapters.md`.
+- [Methods and aliases](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/adapters.md#methods-and-aliases) — `docs/api/adapters.md`.
+- [What gets converted](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/adapters.md#what-gets-converted) — `docs/api/adapters.md`.
+- [`CatalogueSnapshot`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/adapters.md#cataloguesnapshot) — `docs/api/adapters.md`.
+- [Orientation page map](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/adapters.md#orientation-page-map) — `docs/api/adapters.md`.
+- [`window.ksEpkOrientationConfig`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/adapters.md#windowksepkorientationconfig) — `docs/api/adapters.md`.
+- [Input and permission lifecycle](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/adapters.md#input-and-permission-lifecycle) — `docs/api/adapters.md`.
+- [Internal lifecycle handle](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/adapters.md#internal-lifecycle-handle) — `docs/api/adapters.md`.
+- [`KSEpkOrientationCore`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/adapters.md#ksepkorientationcore) — `docs/api/adapters.md`.
+- [Scalar and environment helpers](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/adapters.md#scalar-and-environment-helpers) — `docs/api/adapters.md`.
+- [`createRollingMapper(windowMilliseconds?, minimumSpanDegrees?) -> Mapper`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/adapters.md#createrollingmapperwindowmilliseconds-minimumspandegrees---mapper) — `docs/api/adapters.md`.
+- [`createLatestSampleRafScheduler(options) -> Scheduler`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/adapters.md#createlatestsamplerafscheduleroptions---scheduler) — `docs/api/adapters.md`.
+- [`createTransitionTargetScheduler(options) -> TargetScheduler`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/adapters.md#createtransitiontargetscheduleroptions---targetscheduler) — `docs/api/adapters.md`.
+- [`DanceMovesClayStars`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/adapters.md#dancemovesclaystars) — `docs/api/adapters.md`.
+- [Properties and parameters](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/adapters.md#properties-and-parameters) — `docs/api/adapters.md`.
+- [Methods](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/adapters.md#methods) — `docs/api/adapters.md`.
+- [Snapshot shape](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/adapters.md#snapshot-shape) — `docs/api/adapters.md`.
+- [Recoverable Clay/Stars performance tiers](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/adapters.md#recoverable-claystars-performance-tiers) — `docs/api/adapters.md`.
+- [Pre-load configuration: `window.danceMovesClayPerformanceConfig`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/adapters.md#pre-load-configuration-windowdancemovesclayperformanceconfig) — `docs/api/adapters.md`.
+- [Signed MP3 download API](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/downloads.md#signed-mp3-download-api) — `docs/api/downloads.md`.
+- [Authoring and automatic link transformation](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/downloads.md#authoring-and-automatic-link-transformation) — `docs/api/downloads.md`.
+- [URL and HTTP contract](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/downloads.md#url-and-http-contract) — `docs/api/downloads.md`.
+- [Successful GET and HEAD](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/downloads.md#successful-get-and-head) — `docs/api/downloads.md`.
+- [Failure handling](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/downloads.md#failure-handling) — `docs/api/downloads.md`.
+- [PHP functions](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/downloads.md#php-functions) — `docs/api/downloads.md`.
+- [Security and operational boundaries](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/downloads.md#security-and-operational-boundaries) — `docs/api/downloads.md`.
+- [Tests](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/downloads.md#tests) — `docs/api/downloads.md`.
+- [Shared effect API — DanceMovesEffects](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#shared-effect-api--dancemoveseffects) — `docs/api/effects.md`.
+- [Loading and ready event](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#loading-and-ready-event) — `docs/api/effects.md`.
+- [Shared options, errors and instance registry](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#shared-options-errors-and-instance-registry) — `docs/api/effects.md`.
+- [cooperativeArena(options)](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#cooperativearenaoptions) — `docs/api/effects.md`.
+- [pointer(options)](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#pointeroptions) — `docs/api/effects.md`.
+- [playbackPulse(options)](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#playbackpulseoptions) — `docs/api/effects.md`.
+- [cueClass(options)](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#cueclassoptions) — `docs/api/effects.md`.
+- [cueTimeline(options)](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#cuetimelineoptions) — `docs/api/effects.md`.
+- [Options and cue schema](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#options-and-cue-schema) — `docs/api/effects.md`.
+- [Callback payloads](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#callback-payloads) — `docs/api/effects.md`.
+- [Crossing, restoration and transport lifecycle](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#crossing-restoration-and-transport-lifecycle) — `docs/api/effects.md`.
+- [Instance methods and snapshot](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#instance-methods-and-snapshot) — `docs/api/effects.md`.
+- [Complete interval-state example](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#complete-interval-state-example) — `docs/api/effects.md`.
+- [spritePlayback(options)](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#spriteplaybackoptions) — `docs/api/effects.md`.
+- [Options and atlas mapping](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#options-and-atlas-mapping) — `docs/api/effects.md`.
+- [Media, preference and quality lifecycle](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#media-preference-and-quality-lifecycle) — `docs/api/effects.md`.
+- [Paired-sheet example](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#paired-sheet-example) — `docs/api/effects.md`.
+- [Instance methods and snapshot](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#instance-methods-and-snapshot) — `docs/api/effects.md`.
+- [lyricStage(options)](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#lyricstageoptions) — `docs/api/effects.md`.
+- [quality(options)](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#qualityoptions) — `docs/api/effects.md`.
+- [Testing and limits](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/effects.md#testing-and-limits) — `docs/api/effects.md`.
+- [JavaScript API reference](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#javascript-api-reference) — `docs/api/javascript.md`.
+- [Loading, globals and types](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#loading-globals-and-types) — `docs/api/javascript.md`.
+- [Core properties](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#core-properties) — `docs/api/javascript.md`.
+- [Boot object: `window.danceMovesConfig`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#boot-object-windowdancemovesconfig) — `docs/api/javascript.md`.
+- [Duration and clock methods](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#duration-and-clock-methods) — `docs/api/javascript.md`.
+- [`quantizeTicks(value) -> number`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#quantizeticksvalue---number) — `docs/api/javascript.md`.
+- [`durationMilliseconds(ticks, bpmOverride?) -> number`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#durationmillisecondsticks-bpmoverride---number) — `docs/api/javascript.md`.
+- [`currentTick(options?) -> number`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#currenttickoptions---number) — `docs/api/javascript.md`.
+- [`nextIntervalTick(intervalTicks, fromTick, strictlyFuture?) -> number`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#nextintervaltickintervalticks-fromtick-strictlyfuture---number) — `docs/api/javascript.md`.
+- [Scheduling and interval subscriptions](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#scheduling-and-interval-subscriptions) — `docs/api/javascript.md`.
+- [Boundary detail](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#boundary-detail) — `docs/api/javascript.md`.
+- [Diagnostic identity](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#diagnostic-identity) — `docs/api/javascript.md`.
+- [`scheduleAtInterval(intervalTicks, callback, options?) -> Cancel`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#scheduleatintervalintervalticks-callback-options---cancel) — `docs/api/javascript.md`.
+- [`deferStart(target, intervalTicks, options?) -> Cancel`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#deferstarttarget-intervalticks-options---cancel) — `docs/api/javascript.md`.
+- [`onNextInterval(func, interval, metadata?) -> Cancel`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#onnextintervalfunc-interval-metadata---cancel) — `docs/api/javascript.md`.
+- [`onEveryInterval(func, interval, metadata?) -> Cancel`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#oneveryintervalfunc-interval-metadata---cancel) — `docs/api/javascript.md`.
+- [Beat and bar aliases](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#beat-and-bar-aliases) — `docs/api/javascript.md`.
+- [Timing parsers](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#timing-parsers) — `docs/api/javascript.md`.
+- [`normaliseCueName(value) -> string`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#normalisecuenamevalue---string) — `docs/api/javascript.md`.
+- [`parseTimingFile(text) -> CueEntry[]`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#parsetimingfiletext---cueentry) — `docs/api/javascript.md`.
+- [`parseLyricTimingFile(text) -> LyricEntry[]`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#parselyrictimingfiletext---lyricentry) — `docs/api/javascript.md`.
+- [Cue and lyric subscriptions](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#cue-and-lyric-subscriptions) — `docs/api/javascript.md`.
+- [`onCue(name, handler, metadata?) -> Cancel`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#oncuename-handler-metadata---cancel) — `docs/api/javascript.md`.
+- [Cue detail and dispatch order](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#cue-detail-and-dispatch-order) — `docs/api/javascript.md`.
+- [`fireCue(input) -> CueDetail`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#firecueinput---cuedetail) — `docs/api/javascript.md`.
+- [`onLyric(handler, metadata?) -> Cancel`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#onlyrichandler-metadata---cancel) — `docs/api/javascript.md`.
+- [Exact cue landings](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#exact-cue-landings) — `docs/api/javascript.md`.
+- [Animation ownership and audio discovery](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#animation-ownership-and-audio-discovery) — `docs/api/javascript.md`.
+- [`registerAnimationScope(root, selectors) -> Cancel`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#registeranimationscoperoot-selectors---cancel) — `docs/api/javascript.md`.
+- [`resetRunningAnimations(audio?) -> number`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#resetrunninganimationsaudio---number) — `docs/api/javascript.md`.
+- [`discoverAudio() -> void`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#discoveraudio---void) — `docs/api/javascript.md`.
+- [Optional catalogue additions](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#optional-catalogue-additions) — `docs/api/javascript.md`.
+- [Diagnostics](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#diagnostics) — `docs/api/javascript.md`.
+- [`setDiagnosticsSink(sink) -> boolean`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#setdiagnosticssinksink---boolean) — `docs/api/javascript.md`.
+- [`diagnosticsEnabled() -> boolean`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/javascript.md#diagnosticsenabled---boolean) — `docs/api/javascript.md`.
+- [Paper-plane effect API](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/paper-planes.md#paper-plane-effect-api) — `docs/api/paper-planes.md`.
+- [Enable and supply the required DOM](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/paper-planes.md#enable-and-supply-the-required-dom) — `docs/api/paper-planes.md`.
+- [Boot configuration: window.danceMovesPaperDreamsConfig](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/paper-planes.md#boot-configuration-windowdancemovespaperdreamsconfig) — `docs/api/paper-planes.md`.
+- [Rendering and lifecycle](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/paper-planes.md#rendering-and-lifecycle) — `docs/api/paper-planes.md`.
+- [Window API and snapshot](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/paper-planes.md#window-api-and-snapshot) — `docs/api/paper-planes.md`.
+- [Styling contract](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/paper-planes.md#styling-contract) — `docs/api/paper-planes.md`.
+- [CSS and HTML contract](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/styling.md#css-and-html-contract) — `docs/api/styling.md`.
+- [Timing custom properties](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/styling.md#timing-custom-properties) — `docs/api/styling.md`.
+- [Declarative interval starts](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/styling.md#declarative-interval-starts) — `docs/api/styling.md`.
+- [Shared controls and lyric disclosures](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/styling.md#shared-controls-and-lyric-disclosures) — `docs/api/styling.md`.
+- [Timed lyric component](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/styling.md#timed-lyric-component) — `docs/api/styling.md`.
+- [Core and catalogue DOM diagnostics](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/styling.md#core-and-catalogue-dom-diagnostics) — `docs/api/styling.md`.
+- [Orientation DOM state and release outputs](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/styling.md#orientation-dom-state-and-release-outputs) — `docs/api/styling.md`.
+- [Clay/Stars DOM and styling state](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/styling.md#claystars-dom-and-styling-state) — `docs/api/styling.md`.
+- [Shared-effect and paper-plane outputs](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/styling.md#shared-effect-and-paper-plane-outputs) — `docs/api/styling.md`.
+- [WordPress, PHP and REST API reference](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/wordpress.md#wordpress-php-and-rest-api-reference) — `docs/api/wordpress.md`.
+- [Constants](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/wordpress.md#constants) — `docs/api/wordpress.md`.
+- [Page metadata](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/wordpress.md#page-metadata) — `docs/api/wordpress.md`.
+- [Trusted PHP integration](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/wordpress.md#trusted-php-integration) — `docs/api/wordpress.md`.
+- [Configuration and sanitisation helpers](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/wordpress.md#configuration-and-sanitisation-helpers) — `docs/api/wordpress.md`.
+- [Timing attachment validation](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/wordpress.md#timing-attachment-validation) — `docs/api/wordpress.md`.
+- [`dance_moves_validate_timing_attachment($attachment_id, $kind)`](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/wordpress.md#dance_moves_validate_timing_attachmentattachment_id-kind) — `docs/api/wordpress.md`.
+- [Upload hooks versus selection validation](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/wordpress.md#upload-hooks-versus-selection-validation) — `docs/api/wordpress.md`.
+- [Motion-capture REST API](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/wordpress.md#motion-capture-rest-api) — `docs/api/wordpress.md`.
+- [Endpoint and permission contract](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/wordpress.md#endpoint-and-permission-contract) — `docs/api/wordpress.md`.
+- [Request shape](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/wordpress.md#request-shape) — `docs/api/wordpress.md`.
+- [Response, errors and storage](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/wordpress.md#response-errors-and-storage) — `docs/api/wordpress.md`.
+- [Enqueued asset contract](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/wordpress.md#enqueued-asset-contract) — `docs/api/wordpress.md`.
+- [Registered hooks and callback reference](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/wordpress.md#registered-hooks-and-callback-reference) — `docs/api/wordpress.md`.
+- [Project prefixes and compatibility](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/api/wordpress.md#project-prefixes-and-compatibility) — `docs/api/wordpress.md`.
+- [Audio-derived recording playback](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/audio-recording-playback.md#audio-derived-recording-playback) — `docs/audio-recording-playback.md`.
+- [Source-bound beat alignment](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/beat-alignment.md#source-bound-beat-alignment) — `docs/beat-alignment.md`.
+- [Optional variable-tempo replacement for the fixed grid](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/beat-alignment.md#optional-variable-tempo-replacement-for-the-fixed-grid) — `docs/beat-alignment.md`.
+- [Playback from a child watch page](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/child-playback.md#playback-from-a-child-watch-page) — `docs/child-playback.md`.
+- [Clay/Stars transform validation on a clean checkout](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/clay-transform-validation.md#claystars-transform-validation-on-a-clean-checkout) — `docs/clay-transform-validation.md`.
+- [Offline Unit checks](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/clay-transform-validation.md#offline-unit-checks) — `docs/clay-transform-validation.md`.
+- [Separate approved release-payload comparison](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/clay-transform-validation.md#separate-approved-release-payload-comparison) — `docs/clay-transform-validation.md`.
+- [What a pass does not establish](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/clay-transform-validation.md#what-a-pass-does-not-establish) — `docs/clay-transform-validation.md`.
+- [California scaffold parameter groups](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/clay-transform-validation.md#california-scaffold-parameter-groups) — `docs/clay-transform-validation.md`.
+- [Motion permission control feedback](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/control-feedback.md#motion-permission-control-feedback) — `docs/control-feedback.md`.
+- [Bounds and lifecycle](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/control-feedback.md#bounds-and-lifecycle) — `docs/control-feedback.md`.
+- [Verification](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/control-feedback.md#verification) — `docs/control-feedback.md`.
+- [Potential problems](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/control-feedback.md#potential-problems) — `docs/control-feedback.md`.
+- [Development, validation and operations](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/development.md#development-validation-and-operations) — `docs/development.md`.
+- [Repository layout](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/development.md#repository-layout) — `docs/development.md`.
+- [Normal unit validation](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/development.md#normal-unit-validation) — `docs/development.md`.
+- [Local harness workflow](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/development.md#local-harness-workflow) — `docs/development.md`.
+- [Release selection before changing documentation](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/development.md#release-selection-before-changing-documentation) — `docs/development.md`.
+- [Acceptance checks for an integration](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/development.md#acceptance-checks-for-an-integration) — `docs/development.md`.
+- [Packaging and upgrade identity](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/development.md#packaging-and-upgrade-identity) — `docs/development.md`.
+- [Troubleshooting](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/development.md#troubleshooting) — `docs/development.md`.
+- [Documentation maintenance](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/development.md#documentation-maintenance) — `docs/development.md`.
+- [EPK DOM/CSS stability check](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/epk-dom-stability.md#epk-domcss-stability-check) — `docs/epk-dom-stability.md`.
+- [Potential problems](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/epk-dom-stability.md#potential-problems) — `docs/epk-dom-stability.md`.
+- [User and integration guide](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/guide.md#user-and-integration-guide) — `docs/guide.md`.
+- [Install and upgrade](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/guide.md#install-and-upgrade) — `docs/guide.md`.
+- [Set page properties](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/guide.md#set-page-properties) — `docs/guide.md`.
+- [Prepare cue and lyric files](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/guide.md#prepare-cue-and-lyric-files) — `docs/guide.md`.
+- [Understand ticks before writing effects](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/guide.md#understand-ticks-before-writing-effects) — `docs/guide.md`.
+- [Connect audio](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/guide.md#connect-audio) — `docs/guide.md`.
+- [Subscribe and clean up](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/guide.md#subscribe-and-clean-up) — `docs/guide.md`.
+- [Adopt timed lyrics](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/guide.md#adopt-timed-lyrics) — `docs/guide.md`.
+- [Use the shared effects API](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/guide.md#use-the-shared-effects-api) — `docs/guide.md`.
+- [Provide MP3 downloads without breaking playback](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/guide.md#provide-mp3-downloads-without-breaking-playback) — `docs/guide.md`.
+- [Adopt catalogue and orientation motion](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/guide.md#adopt-catalogue-and-orientation-motion) — `docs/guide.md`.
+- [Diagnostics and deployment](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/guide.md#diagnostics-and-deployment) — `docs/guide.md`.
+- [Shared JavaScript API](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/javascript-api.md#shared-javascript-api) — `docs/javascript-api.md`.
+- [Installation and first mount](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/javascript-api.md#installation-and-first-mount) — `docs/javascript-api.md`.
+- [Mount configuration](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/javascript-api.md#mount-configuration) — `docs/javascript-api.md`.
+- [Core methods: complete inherited surface](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/javascript-api.md#core-methods-complete-inherited-surface) — `docs/javascript-api.md`.
+- [Timed files and lyrics](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/javascript-api.md#timed-files-and-lyrics) — `docs/javascript-api.md`.
+- [Shared effect primitives](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/javascript-api.md#shared-effect-primitives) — `docs/javascript-api.md`.
+- [Native rudiments and custom renderers](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/javascript-api.md#native-rudiments-and-custom-renderers) — `docs/javascript-api.md`.
+- [Catalogue and original adapters](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/javascript-api.md#catalogue-and-original-adapters) — `docs/javascript-api.md`.
+- [Captures, metadata and events](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/javascript-api.md#captures-metadata-and-events) — `docs/javascript-api.md`.
+- [JavaScript host services (Node)](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/javascript-server.md#javascript-host-services-node) — `docs/javascript-server.md`.
+- [Page properties and revisions](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/javascript-server.md#page-properties-and-revisions) — `docs/javascript-server.md`.
+- [Timing upload validation](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/javascript-server.md#timing-upload-validation) — `docs/javascript-server.md`.
+- [Signed MP3 attachment delivery](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/javascript-server.md#signed-mp3-attachment-delivery) — `docs/javascript-server.md`.
+- [Private motion capture](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/javascript-server.md#private-motion-capture) — `docs/javascript-server.md`.
+- [Connect existing spatial effects to phone input](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/phone-motion-connections.md#connect-existing-spatial-effects-to-phone-input) — `docs/phone-motion-connections.md`.
+- [Remembering phone motion across pages](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/phone-motion-preference.md#remembering-phone-motion-across-pages) — `docs/phone-motion-preference.md`.
+- [Verification](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/phone-motion-preference.md#verification) — `docs/phone-motion-preference.md`.
+- [Potential problems](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/phone-motion-preference.md#potential-problems) — `docs/phone-motion-preference.md`.
+- [Every page shows the enable button although permission may still exist](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/phone-motion-preference.md#every-page-shows-the-enable-button-although-permission-may-still-exist) — `docs/phone-motion-preference.md`.
+- [The local build or TypeScript gate cannot spawn its worker](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/phone-motion-preference.md#the-local-build-or-typescript-gate-cannot-spawn-its-worker) — `docs/phone-motion-preference.md`.
+- [Audio, video and excerpt playback](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/playback-sources.md#audio-video-and-excerpt-playback) — `docs/playback-sources.md`.
+- [React and Next.js](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/react-next.md#react-and-nextjs) — `docs/react-next.md`.
+- [A React component](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/react-next.md#a-react-component) — `docs/react-next.md`.
+- [Hook and component reference](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/react-next.md#hook-and-component-reference) — `docs/react-next.md`.
+- [Next.js App Router](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/react-next.md#nextjs-app-router) — `docs/react-next.md`.
+- [Run the Arcadians demos](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/react-next.md#run-the-arcadians-demos) — `docs/react-next.md`.
+- [Tests and production builds](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/react-next.md#tests-and-production-builds) — `docs/react-next.md`.
+- [CSP and accessibility](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/react-next.md#csp-and-accessibility) — `docs/react-next.md`.
+- [DanceMoves documentation](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/README.md#dancemoves-documentation) — `docs/README.md`.
+- [Read by task](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/README.md#read-by-task) — `docs/README.md`.
+- [Feature map](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/README.md#feature-map) — `docs/README.md`.
+- [API scope and compatibility](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/README.md#api-scope-and-compatibility) — `docs/README.md`.
+- [Shared builds, CI and npm/GitHub publication](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/releasing-shared.md#shared-builds-ci-and-npmgithub-publication) — `docs/releasing-shared.md`.
+- [First checkout: dependency lock is required before a release](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/releasing-shared.md#first-checkout-dependency-lock-is-required-before-a-release) — `docs/releasing-shared.md`.
+- [Local independent builds](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/releasing-shared.md#local-independent-builds) — `docs/releasing-shared.md`.
+- [CI](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/releasing-shared.md#ci) — `docs/releasing-shared.md`.
+- [One-time npm setup](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/releasing-shared.md#one-time-npm-setup) — `docs/releasing-shared.md`.
+- [Release tags](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/releasing-shared.md#release-tags) — `docs/releasing-shared.md`.
+- [Updating the next version](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/releasing-shared.md#updating-the-next-version) — `docs/releasing-shared.md`.
+- [Verify the result](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/releasing-shared.md#verify-the-result) — `docs/releasing-shared.md`.
+- [DanceRudiments package integrity and selected builds](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/rudiments-source-integrity.md#dancerudiments-package-integrity-and-selected-builds) — `docs/rudiments-source-integrity.md`.
+- [Verification rules](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/rudiments-source-integrity.md#verification-rules) — `docs/rudiments-source-integrity.md`.
+- [Why the browser bundle is selected](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/rudiments-source-integrity.md#why-the-browser-bundle-is-selected) — `docs/rudiments-source-integrity.md`.
+- [Native rebuilding](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/rudiments-source-integrity.md#native-rebuilding) — `docs/rudiments-source-integrity.md`.
+- [Review boundary](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/rudiments-source-integrity.md#review-boundary) — `docs/rudiments-source-integrity.md`.
+- [Feature coverage and execution boundaries](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/shared-feature-coverage.md#feature-coverage-and-execution-boundaries) — `docs/shared-feature-coverage.md`.
+- [DanceMoves 3: one source, three distributions](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/shared-runtime-migration.md#dancemoves-3-one-source-three-distributions) — `docs/shared-runtime-migration.md`.
+- [Repository architecture](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/shared-runtime-migration.md#repository-architecture) — `docs/shared-runtime-migration.md`.
+- [Instance lifetime and compatibility](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/shared-runtime-migration.md#instance-lifetime-and-compatibility) — `docs/shared-runtime-migration.md`.
+- [Important boundaries](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/shared-runtime-migration.md#important-boundaries) — `docs/shared-runtime-migration.md`.
+- [WordPress migration](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/shared-runtime-migration.md#wordpress-migration) — `docs/shared-runtime-migration.md`.
+- [Guides](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/shared-runtime-migration.md#guides) — `docs/shared-runtime-migration.md`.
+- [Documentation source audit](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/source-audit.md#documentation-source-audit) — `docs/source-audit.md`.
+- [Baseline and scope](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/source-audit.md#baseline-and-scope) — `docs/source-audit.md`.
+- [Source-to-reference map](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/source-audit.md#source-to-reference-map) — `docs/source-audit.md`.
+- [Corrections and details that matter to integrations](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/source-audit.md#corrections-and-details-that-matter-to-integrations) — `docs/source-audit.md`.
+- [Maintaining the reference](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/source-audit.md#maintaining-the-reference) — `docs/source-audit.md`.
+- [Troubleshooting cleanup](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/source-audit.md#troubleshooting-cleanup) — `docs/source-audit.md`.
+- [Validation from a clean checkout](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/validation-setup.md#validation-from-a-clean-checkout) — `docs/validation-setup.md`.
+- [Inputs and outputs](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/validation-setup.md#inputs-and-outputs) — `docs/validation-setup.md`.
+- [Why the old command failed](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/validation-setup.md#why-the-old-command-failed) — `docs/validation-setup.md`.
+- [Unit versus pre-live acceptance](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/validation-setup.md#unit-versus-pre-live-acceptance) — `docs/validation-setup.md`.
+- [Missing or changed tracked input](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/validation-setup.md#missing-or-changed-tracked-input) — `docs/validation-setup.md`.
+- [Optional variable-tempo maps from StemLab](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/variable-tempo.md#optional-variable-tempo-maps-from-stemlab) — `docs/variable-tempo.md`.
+- [WordPress EPK Timing](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/variable-tempo.md#wordpress-epk-timing) — `docs/variable-tempo.md`.
+- [JS / React / Next.js](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/variable-tempo.md#js--react--nextjs) — `docs/variable-tempo.md`.
+- [Compatibility and limitations](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/variable-tempo.md#compatibility-and-limitations) — `docs/variable-tempo.md`.
+- [Word-timed lyrics and multi-song WordPress Pages](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/word-and-multi-song.md#word-timed-lyrics-and-multi-song-wordpress-pages) — `docs/word-and-multi-song.md`.
+- [Per-word lyrics beside existing line lyrics](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/word-and-multi-song.md#per-word-lyrics-beside-existing-line-lyrics) — `docs/word-and-multi-song.md`.
+- [Multi-song page type (optional)](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/word-and-multi-song.md#multi-song-page-type-optional) — `docs/word-and-multi-song.md`.
+- [Data flow](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/word-and-multi-song.md#data-flow) — `docs/word-and-multi-song.md`.
+- [Security and validation](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/word-and-multi-song.md#security-and-validation) — `docs/word-and-multi-song.md`.
+- [Build and verification](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/word-and-multi-song.md#build-and-verification) — `docs/word-and-multi-song.md`.
+- [WordPress setup and Arcadians examples](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/wordpress-examples.md#wordpress-setup-and-arcadians-examples) — `docs/wordpress-examples.md`.
+- [Before you start](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/wordpress-examples.md#before-you-start) — `docs/wordpress-examples.md`.
+- [Editor workflow](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/wordpress-examples.md#editor-workflow) — `docs/wordpress-examples.md`.
+- [Copyable child-theme implementation](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/wordpress-examples.md#copyable-child-theme-implementation) — `docs/wordpress-examples.md`.
+- [WP-CLI setup with full file validation](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/wordpress-examples.md#wp-cli-setup-with-full-file-validation) — `docs/wordpress-examples.md`.
+- [REST setup](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/wordpress-examples.md#rest-setup) — `docs/wordpress-examples.md`.
+- [Settings which are not metadata](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/wordpress-examples.md#settings-which-are-not-metadata) — `docs/wordpress-examples.md`.
+- [Downloads and captures](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/wordpress-examples.md#downloads-and-captures) — `docs/wordpress-examples.md`.
+- [Data provenance and reproducibility](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/wordpress-examples.md#data-provenance-and-reproducibility) — `docs/wordpress-examples.md`.
+- [Evidence and limits](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/wordpress-examples.md#evidence-and-limits) — `docs/wordpress-examples.md`.
+- [Primary sources](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/wordpress-examples.md#primary-sources) — `docs/wordpress-examples.md`.
+- [WordPress.org publication](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/wordpress-org.md#wordpressorg-publication) — `docs/wordpress-org.md`.
+- [Potential problems](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/wordpress-org.md#potential-problems) — `docs/wordpress-org.md`.
+- [WordPress with the shared DanceMoves library](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/wordpress-shared-runtime.md#wordpress-with-the-shared-dancemoves-library) — `docs/wordpress-shared-runtime.md`.
+- [Build and install](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/wordpress-shared-runtime.md#build-and-install) — `docs/wordpress-shared-runtime.md`.
+- [Metadata for each Page](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/wordpress-shared-runtime.md#metadata-for-each-page) — `docs/wordpress-shared-runtime.md`.
+- [Existing EPK JavaScript](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/wordpress-shared-runtime.md#existing-epk-javascript) — `docs/wordpress-shared-runtime.md`.
+- [Script handles and assets](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/wordpress-shared-runtime.md#script-handles-and-assets) — `docs/wordpress-shared-runtime.md`.
+- [Server behaviour and acceptance](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/wordpress-shared-runtime.md#server-behaviour-and-acceptance) — `docs/wordpress-shared-runtime.md`.
+- [Optional StemLab edited tempo-map metadata](https://github.com/kieransimkin/DanceMoves/blob/v3.4.0/docs/wordpress-shared-runtime.md#optional-stemlab-edited-tempo-map-metadata) — `docs/wordpress-shared-runtime.md`.
+
+## Development differences
+
+The inspected main checkout has different documentation at the following paths. Verify its own matching release before adopting changes beyond the baseline above:
+
+- `README.md`
+- `docs/javascript-api.md`
+- `docs/README.md`
+- `docs/rudiment-visualisers.md`
+- `docs/shared-feature-coverage.md`
+- `docs/spectrum-visualisations.md`
+- `docs/word-and-multi-song.md`
+- `docs/wordpress-org.md`
+- `docs/wordpress-shared-runtime.md`
+
+## Examples and media
+
+Use the runnable examples and actual screenshots/videos linked from the released references. Keep their documented version/context and distinguish synthetic fixtures, model hypotheses and real captured output. Do not represent a guide link as proof that a model, GPU, physical phone or production host was tested. New decorative generated imagery adds no feature evidence to this reference index.

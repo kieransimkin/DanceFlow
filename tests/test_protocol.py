@@ -31,7 +31,10 @@ def test_actual_stdio_tools_and_rejection(tmp_path):
         proc.stdin.flush()
         while True:
             try:
-                value = json.loads(messages.get(timeout=25))
+                # SDK cold import on Windows storage can take >30 seconds.
+                # Bound startup separately; keep every initialized request's
+                # original 25-second response deadline and all assertions.
+                value = json.loads(messages.get(timeout=90 if method == 'initialize' else 25))
             except queue.Empty as exc:
                 raise AssertionError('No stdio response: '+''.join(errors)) from exc
             if value.get('id') == identifier:

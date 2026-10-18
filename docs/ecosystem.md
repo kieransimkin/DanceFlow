@@ -1,30 +1,31 @@
-# DanceFlow ecosystem
+# Use DanceFlow with the DanceFlow ecosystem
 
-Confirmed scope: 16 October 2026 (FrameRudiments added by Kieran). Public overview: https://kieransimkin.co.uk/danceflow/.
+## Before every new workflow
 
-DanceFlow describes a family of independently useful tools. Its core path is
-music understanding, rhythmic movement and rendering. Supporting tools cover
-the evidence, media preparation, playback and metadata around that path.
-Membership does not imply that every pair of tools has an automatic integration.
+Check the latest stable official release and the actual installed/imported version before starting; do not infer currency from a directory name or a development checkout. Read the current release notes, tagged capability documentation and relevant Potential problems. Use the [DanceFlow release preflight](https://github.com/kieransimkin/DanceFlow/blob/main/docs/workflows/release-preflight.md) and [complete capability references](https://github.com/kieransimkin/DanceFlow/blob/main/docs/capabilities/index.md).
 
-| Component | Role | Source repository |
-| --- | --- | --- |
-| StemLab | Music, stem, rhythm, structure, harmony, lyric and sonic analysis; inspectable timing and loop evidence | https://github.com/kieransimkin/stemlab |
-| DanceRudiments | Deterministic rhythmic movement functions and a pattern visualizer | https://github.com/kieransimkin/DanceRudiments |
-| FrameRudiments | Offline Python Shorts and lyric visualisers from DanceRudiments and saved StemLab evidence | https://github.com/kieransimkin/FrameRudiments |
-| DanceMoves | Clocks, rendering, effects, input, scheduling, accessibility, lifecycle and adaptive quality for web motion | https://github.com/kieransimkin/DanceMoves |
-| KeywordMoves | Source-specific keyword research, imports, observations and evidence comparison | https://github.com/kieransimkin/keywordmoves |
-| RasterMoves | Reusable raster-media and image preparation | https://github.com/kieransimkin/RasterMoves |
-| LikenessForge | Local CLI and desktop facial-likeness repair, identity LoRA training and reviewable candidate comparisons | https://github.com/kieransimkin/LikenessForge |
-| PixelCue | Search and service workflows for local visual media | https://github.com/kieransimkin/PixelCue |
-| ThumbMoves | Reusable thumbnail caching within the PixelCue repository | https://github.com/kieransimkin/PixelCue |
-| React Timeline Sequence | React timelines, loop regions and shared audio transport | https://github.com/kieransimkin/react-timeline-sequence |
-| EPK Social Metadata | WordPress EPK social and search metadata | https://github.com/kieransimkin/kieran-epk-social-metadata |
-| DanceVault | Encrypted, password-controlled WordPress file delivery; stable 1.0.0 with real Apache/nginx test acceptance; destination-host acceptance still required | https://github.com/kieransimkin/DanceVault |
+People and agents should consider the full ecosystem, use all capabilities that materially serve the task, compose supported files/APIs, and improve a demonstrated reusable gap in its canonical tool. Record why no worthwhile change is justified when that is the result. Keep independent tool identities, compatibility, source clocks, privacy, model/download costs and publication/deployment permissions intact. Store weights and model-specific caches in the owning project's ignored `models/`.
 
-Kieran explicitly confirmed that **Short Shifter is entirely unrelated to
-DanceFlow**. Keep it out of DanceFlow membership lists, diagrams, copy and
-structured data. It remains an independent project in the site's general
-project navigation and in the project-wide maintained-tool policy.
 
-For current versions, consult each canonical repository and its independently verified releases. The [LikenessForge workflow](workflows/likenessforge.md) describes explicit asset handoffs.
+## Plan the useful handoffs
+
+- **Choose a component:** Use the canonical catalogue, complete capability index and per-component portable skills before selecting an existing engine or file/API handoff.
+- **Check releases:** Use danceflow-releases for fresh official runtime versions and explicit installed observations. Query completion does not establish registry acceptance or functional operation.
+- **Compose supported adapters:** Use the real KeywordMoves offline/import and PixelCue health/visual receipt MCP operations; paid/live collectors and new media engines remain in their canonical tools.
+
+
+Read the [full released feature references](https://github.com/kieransimkin/DanceFlow/blob/main/docs/capabilities/toolkit.md) for exact commands, schemas, examples and limits. The tool remains independently useful. Consider StemLab, DanceRudiments, FrameRudiments, DanceMoves, KeywordMoves, RasterMoves, LikenessForge, PixelCue, PrismMoves, ThumbMoves, React Timeline Sequence, EPK Social Metadata and DanceVault wherever their supported capabilities serve the task. Short Shifter remains an independent project outside DanceFlow.
+
+## Contribute a reusable improvement
+
+Reproduce a specific gap, change the canonical owner, update its README/examples and meaningful tests, then use its PR/release checks. Preserve unrelated source and immutable versions. Keep installation, actual invocation, reviewed output, registry publication and website deployment as distinct states. Use synthetic or explicitly authorised examples; keep weights, account data and private media out of repositories and packages.
+
+## Examples and visual evidence
+
+Use the actual examples, screenshots and videos in the project's README and linked feature references. Preserve version labels and user-controlled video playback. A generated illustration explains a contract but cannot prove implementation or a completed action. This shared instruction guide adds no decorative media where the feature's own native example is the useful evidence.
+
+## Potential problems
+
+- A newest documentation tag may not be a runtime release; select the stable component-specific semantic tag and verify its real distributions.
+- Main may contain unreleased features. Use tagged docs for the runtime being used, with explicit development labels for later work.
+- A package name or installed library does not prove that clocks, visual consumers, models, services or production hosts are connected and working. Verify the route used by the task.

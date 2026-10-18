@@ -6,6 +6,20 @@ Portable instructions for thirteen independently useful music, motion and media 
 
 <!-- mcp-name: io.github.kieransimkin/danceflow -->
 
+## Before every new workflow
+
+Check the latest stable official release and the actual installed/imported version before starting; do not infer currency from a directory name or a development checkout. Read the current release notes, tagged capability documentation and relevant Potential problems. Use the [DanceFlow release preflight](https://github.com/kieransimkin/DanceFlow/blob/main/docs/workflows/release-preflight.md) and [complete capability references](https://github.com/kieransimkin/DanceFlow/blob/main/docs/capabilities/index.md).
+
+People and agents should consider the full ecosystem, use all capabilities that materially serve the task, compose supported files/APIs, and improve a demonstrated reusable gap in its canonical tool. Record why no worthwhile change is justified when that is the result. Keep independent tool identities, compatibility, source clocks, privacy, model/download costs and publication/deployment permissions intact. Store weights and model-specific caches in the owning project's ignored `models/`.
+
+## Complete workflow references
+
+Use the [complete released capability index](docs/capabilities/index.md), the [release preflight](docs/workflows/release-preflight.md), and the [full FrameRudiments compositor workflow](docs/workflows/framerudiments-complete.md). The installed `danceflow-releases --output NEW-RUN/releases.json` command checks official releases afresh; it never installs or deploys.
+
+## Find your route
+
+[Install in Claude Code](#install-in-claude-code) · [Install in Codex](#install-in-codex) · [Use the local MCP server](#use-the-local-mcp-server) · [Choose a component](#choose-a-component) · [Try the tools with Arcadians](#try-the-tools-with-arcadians) · [Contribute](#contribute) · [Development](#development) · [Automatic releases and registry submissions](#automatic-releases-and-registry-submissions) · [Understand visual language](#understand-visual-language)
+
 ## Install in Claude Code
 
 ```sh
@@ -28,7 +42,7 @@ Select DanceFlow in the plugin directory and install it. Repository marketplace 
 Requires uv and Python 3.10–3.13. Choose one workspace containing authorised input files:
 
 ```sh
-uvx --python 3.13 --from danceflow-agent-tools==0.1.11 danceflow-mcp --workspace ./my-workspace
+uvx --python 3.13 --from danceflow-agent-tools==0.1.12 danceflow-mcp --workspace ./my-workspace
 ```
 
 For a client-managed server, add this configuration and replace the workspace with your selected local directory:
@@ -38,7 +52,7 @@ For a client-managed server, add this configuration and replace the workspace wi
   "mcpServers": {
     "danceflow": {
       "command": "uvx",
-      "args": ["--python", "3.13", "--from", "danceflow-agent-tools==0.1.11", "danceflow-mcp"],
+      "args": ["--python", "3.13", "--from", "danceflow-agent-tools==0.1.12", "danceflow-mcp"],
       "env": {"DANCEFLOW_WORKSPACE": "/absolute/path/to/my-workspace"}
     }
   }
@@ -73,7 +87,7 @@ The adapter does not expose paid providers, hosted LLMs or live collectors. Thos
 | [ThumbMoves](docs/tools/thumbmoves.md) | Cache-only OS thumbnails with explicit misses |
 | [React Timeline Sequence](docs/tools/react-timeline-sequence.md) | Audio timeline, transport and sample-frame loops |
 | [EPK Social Metadata](docs/tools/epk-social-metadata.md) | WordPress Open Graph, X cards and Schema.org |
-| [DanceVault](docs/tools/dancevault.md) | Experimental encrypted WordPress delivery; hosting acceptance pending |
+| [DanceVault](docs/tools/dancevault.md) | Stable encrypted WordPress delivery; destination-host acceptance required |
 
 For offline videos, use the [FrameRudiments workflow](docs/workflows/framerudiments.md). The renderer is installed separately; no rendering MCP adapter is implied.
 

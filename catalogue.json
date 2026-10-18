@@ -20,7 +20,7 @@
     "title": "FrameRudiments",
     "repository": "https://github.com/kieransimkin/FrameRudiments",
     "website": "https://kieransimkin.co.uk/danceflow/",
-    "capabilities": "offline Shorts and lyric visualisers from native motion and saved StemLab evidence",
+    "capabilities": "offline source-bound video compositor, 222 native/spectral/sprite/3D views, rich word lyrics, particles, mattes/keyframes, feedback routing, authoring UI and preset analysis",
     "experimental": false
   },
   {
@@ -68,7 +68,7 @@
     "title": "PrismMoves",
     "repository": "https://github.com/kieransimkin/PrismMoves",
     "website": "https://kieransimkin.co.uk/danceflow/",
-    "capabilities": "visual-language image profiles and inspectable reports composed from PixelCue statistics and selected model evidence",
+    "capabilities": "image visual-language profiles and temporal-first preset descriptions composed from PixelCue measurements and bounded optional model evidence",
     "experimental": false
   },
   {
@@ -100,7 +100,7 @@
     "title": "DanceVault",
     "repository": "https://github.com/kieransimkin/DanceVault",
     "website": "https://kieransimkin.co.uk/danceflow/",
-    "capabilities": "experimental encrypted, password-controlled WordPress file delivery",
-    "experimental": true
+    "capabilities": "stable encrypted, password-controlled WordPress delivery with real Apache/nginx test acceptance; destination-host acceptance remains required",
+    "experimental": false
   }
 ]

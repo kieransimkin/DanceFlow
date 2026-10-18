@@ -1,6 +1,6 @@
 """Prepare hash-pinned public Arcadians examples with released tool engines.
 
-Waveform generation uses StemLab 1.3.3, numpy, soundfile and server dependencies.
+Waveform generation uses StemLab 1.8.0, numpy, soundfile and server dependencies.
 No source separation or neural models run.
 """
 from __future__ import annotations
@@ -42,7 +42,7 @@ def prepare(stemlab_root: Path | None = None):
         elif stemlab_root:
             data = subprocess.check_output(['git', '-C', str(stemlab_root), 'show', f'{COMMIT}:{source}'])
         else:
-            with urlopen(Request(url, headers={'User-Agent': 'DanceFlow-example/0.1.11'}), timeout=60) as response:
+            with urlopen(Request(url, headers={'User-Agent': 'DanceFlow-example/0.1.12'}), timeout=60) as response:
                 data = response.read(size + 1)
         assert len(data) == size and hashlib.sha256(data).hexdigest() == digest, f'Asset identity mismatch: {name}'
         path.write_bytes(data)
@@ -53,7 +53,7 @@ def prepare(stemlab_root: Path | None = None):
                'epk': reference['epk_url'], 'duration': waveform['duration_seconds'], 'waveform': waveform,
                'sections': reference['sections'], 'lyrics': reference['lyric_timing'],
                'timing_source': 'Artist-authored reference; not model-inferred beat/downbeat evidence',
-               'waveform_source': 'StemLab 1.3.3 waveform envelope of the decoded public MP3'}
+               'waveform_source': 'StemLab 1.8.0 waveform envelope of the decoded public MP3'}
     (public / 'arcadians.json').write_text(json.dumps(fixture, ensure_ascii=False) + '\n', encoding='utf-8')
     relative = Path('demos/public/media/lyrics.txt')
     report = PluginRegistry().get('text-library').run(
@@ -76,7 +76,7 @@ def prepare(stemlab_root: Path | None = None):
     # The npm notice references a full BSD notice embedded in generated patterns.
     # Serve the separate source notice too, pinned to the same released version.
     bsd_url = 'https://raw.githubusercontent.com/kieransimkin/DanceRudiments/v0.2.3/collections/initial/sources/d3-ease/LICENSE'
-    with urlopen(Request(bsd_url, headers={'User-Agent': 'DanceFlow-example/0.1.11'}), timeout=30) as response:
+    with urlopen(Request(bsd_url, headers={'User-Agent': 'DanceFlow-example/0.1.12'}), timeout=30) as response:
         bsd_notice = response.read(16384)
     assert b'Copyright' in bsd_notice and b'REDISTRIBUTION' in bsd_notice.upper()
     (licences / 'DanceRudiments-d3-ease-BSD.txt').write_bytes(bsd_notice)

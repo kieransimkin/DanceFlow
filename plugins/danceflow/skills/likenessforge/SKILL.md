@@ -22,3 +22,7 @@ Models download on demand and have their own licences and hardware requirements.
 ## Improve the tool
 
 Use existing ModelStore, plugin and workflow composition. Implement a demonstrated reusable gap upstream, update README.md and meaningful synthetic tests, then run the documented offscreen tests, Ruff, build and distribution checks. Never put weights or private portraits in tests. Submit improvements as PRs to https://github.com/kieransimkin/LikenessForge/pulls; explain why no change is justified when the existing capability suffices. Repository review and release permissions remain separate from permission to use an image.
+
+## Current releases and full feature routing
+
+Before every new workflow, follow the [release preflight](https://github.com/kieransimkin/DanceFlow/blob/main/docs/workflows/release-preflight.md) and [complete capability reference](https://github.com/kieransimkin/DanceFlow/blob/main/docs/capabilities/likenessforge.md). Observe the real installed runtime, review every relevant feature and compose supported ecosystem tools. Improve a demonstrated reusable gap in its canonical repository, or record why the tool already meets the need. This guidance does not trigger unrelated processing or downloads.

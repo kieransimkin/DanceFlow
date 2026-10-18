@@ -118,3 +118,7 @@ with user controls and transcript; that earlier software demo is distinct from
 the private real-song profiles. Keep raw PrismMoves reports, captured PNG hashes,
 resume settings and failure receipts. A stored rule does not prove another chat
 adopted it or that every catalogue entry has been profiled.
+
+## Full feature workflow
+
+[Read the released feature references](../capabilities/framerudiments.md) and [check current releases before every new run](../workflows/release-preflight.md). Consider the whole ecosystem, use and improve applicable shared capabilities, and keep actual runtime/output evidence separate from availability.

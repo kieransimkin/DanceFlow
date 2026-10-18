@@ -63,3 +63,7 @@ with user controls and transcript; that earlier software demo is distinct from
 the private real-song profiles. Keep raw PrismMoves reports, captured PNG hashes,
 resume settings and failure receipts. A stored rule does not prove another chat
 adopted it or that every catalogue entry has been profiled.
+
+## Current releases and full feature routing
+
+Before every new workflow, follow the [release preflight](https://github.com/kieransimkin/DanceFlow/blob/main/docs/workflows/release-preflight.md) and [complete capability reference](https://github.com/kieransimkin/DanceFlow/blob/main/docs/capabilities/prismmoves.md). Observe the real installed runtime, review every relevant feature and compose supported ecosystem tools. Improve a demonstrated reusable gap in its canonical repository, or record why the tool already meets the need. This guidance does not trigger unrelated processing or downloads.
