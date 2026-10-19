@@ -1,0 +1,4 @@
+interface:
+  display_name: MediaSlide
+  short_description: Build responsive React media galleries.
+  default_prompt: Use MediaSlide's current released API to implement or review a responsive gallery, verify the imported version and interaction paths, and compose other DanceFlow tools through supported contracts.

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "danceflow-agent-tools"
-version = "0.1.15"
+version = "0.1.16"
 description = "Portable DanceFlow skills and local KeywordMoves/PixelCue MCP tools. https://kieransimkin.co.uk/danceflow/"
 readme = "README.md"
 requires-python = ">=3.10,<3.14"
@@ -60,6 +60,8 @@ pythonpath = ["src"]
 "share/danceflow-agent-tools/plugins/danceflow/skills/stemlab" = ["plugins/danceflow/skills/stemlab/SKILL.md"]
 "share/danceflow-agent-tools/plugins/danceflow/skills/workflowmoves" = ["plugins/danceflow/skills/workflowmoves/SKILL.md"]
 "share/danceflow-agent-tools/plugins/danceflow/skills/workflowmoves/agents" = ["plugins/danceflow/skills/workflowmoves/agents/openai.yaml"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/mediaslide" = ["plugins/danceflow/skills/mediaslide/SKILL.md"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/mediaslide/agents" = ["plugins/danceflow/skills/mediaslide/agents/openai.yaml"]
 "share/danceflow-agent-tools/plugins/danceflow/skills/stemlab/agents" = ["plugins/danceflow/skills/stemlab/agents/openai.yaml"]
 "share/danceflow-agent-tools/plugins/danceflow/skills/thumbmoves" = ["plugins/danceflow/skills/thumbmoves/SKILL.md"]
 "share/danceflow-agent-tools/plugins/danceflow/skills/thumbmoves/agents" = ["plugins/danceflow/skills/thumbmoves/agents/openai.yaml"]
@@ -72,5 +74,5 @@ pythonpath = ["src"]
 "share/danceflow-agent-tools/plugins/danceflow/skills/prismmoves" = ["plugins/danceflow/skills/prismmoves/SKILL.md"]
 "share/danceflow-agent-tools/plugins/danceflow/skills/prismmoves/assets" = ["plugins/danceflow/skills/prismmoves/assets/visual-profile-example.png"]
 
-"share/danceflow-agent-tools/docs/capabilities" = ["docs/capabilities/dancemoves.md", "docs/capabilities/dancerudiments.md", "docs/capabilities/dancevault.md", "docs/capabilities/epk-social-metadata.md", "docs/capabilities/framerudiments.md", "docs/capabilities/index.md", "docs/capabilities/keywordmoves.md", "docs/capabilities/likenessforge.md", "docs/capabilities/pixelcue.md", "docs/capabilities/prismmoves.md", "docs/capabilities/rastermoves.md", "docs/capabilities/react-timeline-sequence.md", "docs/capabilities/stemlab.md", "docs/capabilities/toolkit.md", "docs/capabilities/thumbmoves.md"]
+"share/danceflow-agent-tools/docs/capabilities" = ["docs/capabilities/dancemoves.md", "docs/capabilities/dancerudiments.md", "docs/capabilities/dancevault.md", "docs/capabilities/epk-social-metadata.md", "docs/capabilities/framerudiments.md", "docs/capabilities/index.md", "docs/capabilities/keywordmoves.md", "docs/capabilities/likenessforge.md", "docs/capabilities/mediaslide.md", "docs/capabilities/pixelcue.md", "docs/capabilities/prismmoves.md", "docs/capabilities/rastermoves.md", "docs/capabilities/react-timeline-sequence.md", "docs/capabilities/stemlab.md", "docs/capabilities/toolkit.md", "docs/capabilities/thumbmoves.md", "docs/capabilities/workflowmoves.md"]
 "share/danceflow-agent-tools/docs/workflows" = ["docs/workflows/release-preflight.md", "docs/workflows/framerudiments-complete.md"]
