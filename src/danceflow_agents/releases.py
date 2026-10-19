@@ -27,6 +27,7 @@ COMPONENTS = (
     ("React Timeline Sequence", "react-timeline-sequence", "v", None),
     ("EPK Social Metadata", "kieran-epk-social-metadata", "v", None),
     ("DanceVault", "DanceVault", "v", None),
+    ("WorkflowMoves", "WorkflowMoves", "v", None),
     ("DanceFlow toolkit", "DanceFlow", "v", "danceflow-agent-tools"),
 )
 

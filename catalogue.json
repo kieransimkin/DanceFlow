@@ -96,6 +96,14 @@
     "experimental": false
   },
   {
+    "name": "workflowmoves",
+    "title": "WorkflowMoves",
+    "repository": "https://github.com/kieransimkin/WorkflowMoves",
+    "website": "https://kieransimkin.co.uk/danceflow/",
+    "capabilities": "guarded workflow rules, task guides, portable agent skills, evidence gates and additive project integration",
+    "experimental": false
+  },
+  {
     "name": "dancevault",
     "title": "DanceVault",
     "repository": "https://github.com/kieransimkin/DanceVault",

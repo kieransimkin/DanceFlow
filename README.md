@@ -42,7 +42,7 @@ Select DanceFlow in the plugin directory and install it. Repository marketplace 
 Requires uv and Python 3.10–3.13. Choose one workspace containing authorised input files:
 
 ```sh
-uvx --python 3.13 --from danceflow-agent-tools==0.1.14 danceflow-mcp --workspace ./my-workspace
+uvx --python 3.13 --from danceflow-agent-tools==0.1.15 danceflow-mcp --workspace ./my-workspace
 ```
 
 For a client-managed server, add this configuration and replace the workspace with your selected local directory:
@@ -52,7 +52,7 @@ For a client-managed server, add this configuration and replace the workspace wi
   "mcpServers": {
     "danceflow": {
       "command": "uvx",
-      "args": ["--python", "3.13", "--from", "danceflow-agent-tools==0.1.14", "danceflow-mcp"],
+      "args": ["--python", "3.13", "--from", "danceflow-agent-tools==0.1.15", "danceflow-mcp"],
       "env": {"DANCEFLOW_WORKSPACE": "/absolute/path/to/my-workspace"}
     }
   }
@@ -88,8 +88,15 @@ The adapter does not expose paid providers, hosted LLMs or live collectors. Thos
 | [React Timeline Sequence](docs/tools/react-timeline-sequence.md) | Audio timeline, transport and sample-frame loops |
 | [EPK Social Metadata](docs/tools/epk-social-metadata.md) | WordPress Open Graph, X cards and Schema.org |
 | [DanceVault](docs/tools/dancevault.md) | Stable encrypted WordPress delivery; destination-host acceptance required |
+| [WorkflowMoves](docs/tools/workflowmoves.md) | Guarded rules, task guides, skills and additive route installation for the whole ecosystem |
 
 For offline videos, use the [FrameRudiments workflow](docs/workflows/framerudiments.md). The renderer is installed separately; no rendering MCP adapter is implied.
+
+WorkflowMoves is the ecosystem's maintained workflow layer. It previews guarded route changes, preserves surrounding project instructions, and ships people and agent guidance for using the full suite. Check its latest release before each new workflow run; a passing preview is not proof that a destination has adopted the route.
+
+![Generated WorkflowMoves architecture illustration](https://raw.githubusercontent.com/kieransimkin/WorkflowMoves/v0.1.34/docs/media/workflowmoves-overview.svg)
+
+Generated illustration for WorkflowMoves 0.1.34; actual installation and readback require separate evidence.
 
 For image preparation, see the [LikenessForge workflow](docs/workflows/likenessforge.md) and [tool onboarding procedure](docs/workflows/tool-onboarding.md). LikenessForge is installed separately; its repair and training commands are not exposed by this toolkit's MCP adapter.
 
