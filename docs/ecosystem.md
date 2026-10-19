@@ -14,7 +14,7 @@ People and agents should consider the full ecosystem, use all capabilities that 
 - **Compose supported adapters:** Use the real KeywordMoves offline/import and PixelCue health/visual receipt MCP operations; paid/live collectors and new media engines remain in their canonical tools.
 
 
-Read the [full released feature references](https://github.com/kieransimkin/DanceFlow/blob/main/docs/capabilities/toolkit.md) for exact commands, schemas, examples and limits. The tool remains independently useful. Consider StemLab, DanceRudiments, FrameRudiments, DanceMoves, KeywordMoves, RasterMoves, LikenessForge, PixelCue, PrismMoves, ThumbMoves, React Timeline Sequence, EPK Social Metadata and DanceVault wherever their supported capabilities serve the task. Short Shifter remains an independent project outside DanceFlow.
+Read the [full released feature references](https://github.com/kieransimkin/DanceFlow/blob/main/docs/capabilities/toolkit.md) for exact commands, schemas, examples and limits. The tool remains independently useful. Consider StemLab, DanceRudiments, FrameRudiments, DanceMoves, KeywordMoves, RasterMoves, LikenessForge, PixelCue, PrismMoves, ThumbMoves, React Timeline Sequence, EPK Social Metadata, DanceVault and WorkflowMoves wherever their supported capabilities serve the task. Short Shifter remains an independent project outside DanceFlow.
 
 ## Contribute a reusable improvement
 

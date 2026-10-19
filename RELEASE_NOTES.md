@@ -1,3 +1,5 @@
+DanceFlow 0.1.15 adds WorkflowMoves as the fourteenth ecosystem component. The catalogue, current-release preflight, public README, complete capability index and portable skill now cover its guarded route installer, people and agent guidance, evidence gates and full-suite composition. The checked baseline is WorkflowMoves 0.1.34.
+
 DanceFlow 0.1.14 makes the release preflight decode GitHub's JSON as UTF-8 explicitly. This prevents valid non-ASCII release metadata from becoming an unavailable result on Windows systems whose console code page is CP1252.
 
 DanceFlow 0.1.13 refreshed the ecosystem index for FrameRudiments 0.4.1. The playground includes an actual 240-frame rangoli render with user-controlled playback and captions, while the capability guide covers the new Bezier-petal renderer and controlled tone, noise and silence response profiling.

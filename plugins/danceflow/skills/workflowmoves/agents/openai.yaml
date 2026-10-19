@@ -1,0 +1,4 @@
+interface:
+  display_name: "WorkflowMoves"
+  short_description: "Install and improve guarded DanceFlow workflows"
+  default_prompt: "Use $workflowmoves to inspect current releases, compose the relevant DanceFlow capabilities and safely update my workflow."

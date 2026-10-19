@@ -17,6 +17,7 @@ Before every new workflow, [check the latest stable releases and actual runtimes
 | [RasterMoves](rastermoves.md) | 100 |
 | [react-timeline-sequence](react-timeline-sequence.md) | 47 |
 | [stemlab](stemlab.md) | 219 |
+| [WorkflowMoves](workflowmoves.md) | 21 |
 
 FrameRudiments also has a [complete compositor workflow](../workflows/framerudiments-complete.md). Every reference is a documented capability; invoked, produced and reviewed examples require separate receipts. ThumbMoves is a separately versioned package inside PixelCue; its dedicated reference is included below.
 
