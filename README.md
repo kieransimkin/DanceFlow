@@ -2,7 +2,7 @@
 
 [Kieran Simkin's website](https://kieransimkin.co.uk/) · [DanceFlow ecosystem](https://kieransimkin.co.uk/danceflow/) · [Source and contributions](https://github.com/kieransimkin/DanceFlow)
 
-Portable instructions for thirteen independently useful music, motion and media tools, plus a local MCP adapter that composes the published KeywordMoves and PixelCue interfaces. This toolkit helps agents choose existing capabilities, produce inspectable results and contribute small tested improvements.
+Portable instructions for fifteen independently useful music, motion and media tools, plus a local MCP adapter that composes the published KeywordMoves and PixelCue interfaces. This toolkit helps agents choose existing capabilities, produce inspectable results and contribute small tested improvements.
 
 <!-- mcp-name: io.github.kieransimkin/danceflow -->
 
@@ -42,7 +42,7 @@ Select DanceFlow in the plugin directory and install it. Repository marketplace 
 Requires uv and Python 3.10–3.13. Choose one workspace containing authorised input files:
 
 ```sh
-uvx --python 3.13 --from danceflow-agent-tools==0.1.15 danceflow-mcp --workspace ./my-workspace
+uvx --python 3.13 --from danceflow-agent-tools==0.1.16 danceflow-mcp --workspace ./my-workspace
 ```
 
 For a client-managed server, add this configuration and replace the workspace with your selected local directory:
@@ -52,7 +52,7 @@ For a client-managed server, add this configuration and replace the workspace wi
   "mcpServers": {
     "danceflow": {
       "command": "uvx",
-      "args": ["--python", "3.13", "--from", "danceflow-agent-tools==0.1.15", "danceflow-mcp"],
+      "args": ["--python", "3.13", "--from", "danceflow-agent-tools==0.1.16", "danceflow-mcp"],
       "env": {"DANCEFLOW_WORKSPACE": "/absolute/path/to/my-workspace"}
     }
   }
@@ -89,6 +89,7 @@ The adapter does not expose paid providers, hosted LLMs or live collectors. Thos
 | [EPK Social Metadata](docs/tools/epk-social-metadata.md) | WordPress Open Graph, X cards and Schema.org |
 | [DanceVault](docs/tools/dancevault.md) | Stable encrypted WordPress delivery; destination-host acceptance required |
 | [WorkflowMoves](docs/tools/workflowmoves.md) | Guarded rules, task guides, skills and additive route installation for the whole ecosystem |
+| [MediaSlide](docs/tools/mediaslide.md) | Responsive React media browsing in list, details, thumbnails and slide views |
 
 For offline videos, use the [FrameRudiments workflow](docs/workflows/framerudiments.md). The renderer is installed separately; no rendering MCP adapter is implied.
 

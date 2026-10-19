@@ -110,5 +110,13 @@
     "website": "https://kieransimkin.co.uk/danceflow/",
     "capabilities": "stable encrypted, password-controlled WordPress delivery with real Apache/nginx test acceptance; destination-host acceptance remains required",
     "experimental": false
+  },
+  {
+    "name": "mediaslide",
+    "title": "MediaSlide",
+    "repository": "https://github.com/kieransimkin/react-mediaslide",
+    "website": "https://kieransimkin.co.uk/danceflow/",
+    "capabilities": "responsive React media browsing across list, details, adjustable thumbnails and double-buffered slide views, with custom renderers and bidirectional pagination",
+    "experimental": false
   }
 ]
