@@ -1,6 +1,6 @@
 # Use the full FrameRudiments compositor
 
-Read the [release preflight](release-preflight.md) before every new run. The baseline for this guide is the inspected FrameRudiments **0.4.0** release, not a promise that the version will stay latest. Use the [indexed released references](../capabilities/framerudiments.md) for exact option names and every documented feature. Keep music analysis in StemLab, native movement in DanceRudiments, web playback in DanceMoves and timeline mechanics in React Timeline Sequence.
+Read the [release preflight](release-preflight.md) before every new run. The baseline for this guide is the inspected FrameRudiments **0.4.1** release, not a promise that the version will stay latest. Use the [indexed released references](../capabilities/framerudiments.md) for exact option names and every documented feature. Keep music analysis in StemLab, native movement in DanceRudiments, web playback in DanceMoves and timeline mechanics in React Timeline Sequence.
 
 ## Choose inputs and clocks first
 
@@ -17,6 +17,7 @@ Keep three clocks explicit: source audio time, output excerpt/repeat time, and r
 | Rich text and active-word markers | Caption/title `font`, `effects`, `word_indicator` | Font hashes, stroke/bevel/emboss/gradient/glow/shadow, word-following native sprite and independent particle windows. Check final processed glyphs and phone crops. |
 | Native procedural or saved motion | named/table/composite/matched `motion`, or bounded recording | Select actual axes and match windows. Native sampling stays in DanceRudiments; extrapolation/interpolation require explicit choices. |
 | Modular renderer catalogue | `renderers`; layer `type: "rudiment"`, stable `renderer` name | Particles/trails, bipolar bars, waveform histories, XY/phase paths, calibrated spectral/peak views and their complete catalogue. Select a view, not another analysis engine. |
+| Native rangoli petals | `renderer: "rangoli"`; `demo --rangoli` | Independent native scale/rotation/lift axes, transparent fills, stroke/halo bounds and optional glow. The released texture-free projectM background uses existing routing; preserve clean petal/lyric overlays and review the final encoded frame. |
 | Annular views and style modulation | Circular spectra/spectrogram/waveform renderer names and native `style.*` modulation | Frequency geometry is presentation of the existing calibrated bands. Colour gradients and the native modulation lab have separate examples. |
 | Image-backed views | `sprites`; 52 sprite/atlas renderer modes and pinned assets | Preserve atlas grid, hash, alpha, axis semantics, source clock and transformed bounds. Arbitrary private art is never silently substituted. |
 | Spatial views | Wire, `spatial-solid-*` and `spatial-music-*` torus/sphere/terrain | CPU depth/lighting/fog; optional ModernGL shadows/volumetrics; calibrated FFT-history terrain. CPU and GPU acceptance remain separate. |
@@ -32,6 +33,7 @@ Keep three clocks explicit: source audio time, output excerpt/repeat time, and r
 | Author with a timeline | `authoring/`, `scripts/authoring_preview.py`, released React Timeline Sequence | LRC/word/cue/layer lanes, shared tempo grid, draggable keys, routing graph/presets, undo/redo, PNG preview and export-only drafts. Preview does not replay feedback effects and never edits canonical files. |
 | Inspect the atlas | Visualisation Atlas, complete coverage matrix and public gallery | Distinguish exact renderer identity, input class and actual tested variants. A gallery frame does not establish all GPUs or all parameter combinations. |
 | Profile preset response | `presets-install`, `presets-profile`, `scripts/profile_visualisers.py` | Cover/lyric/static-card conditions crossed with programme/silence, exact frame/sample clocks, preset hashes, resume and failed/untested receipts. |
+| Controlled audio probes | `Run-ControlledPresetAnalysis.ps1`, `scripts/controlled_preset_analysis.py` | Deterministic tone/noise/silence inputs and sample clocks describe renderer response only. Keep StemLab as music-analysis owner; retain probe/config/runtime hashes and unavailable cases. |
 | Efficient temporal descriptions | `Run-PresetBehaviourAnalysis.ps1`, coordinated `analysis-releases.json` | Measure dense frames first; select bounded nonblank representative frames for explicit cached models. `-DescribeExisting` reuses evidence without inference. Semantic budget 0 is measurement-only. |
 | Legacy full analysis | `Run-FullPresetAnalysis.ps1`, explicit `-Limit`, `-UpgradeCoverage`, ordering seed | Preserve earlier results and coverage protocol. Use bounded pilots; a complete catalogue run is a separate resource decision, not routine preflight. |
 | Windows projectM loading | `scripts/ensure_projectm_runtime.py` | Matching compiler/runtime provenance, checked transitive DLLs and fresh-process load receipt under project-local models/runtimes. No global PATH change or arbitrary DLL source. |
@@ -57,9 +59,9 @@ For spectral fixtures, `demo --spectrum` explicitly needs the supported StemLab 
 
 From the matching release checkout, install the frontend's exact dependencies, then use `scripts/authoring_preview.py PROJECT --port PORT`. Keep the server on loopback. The released shared timeline supplies playhead, zoom, loops and timing edits; do not draw an imitation. Layer keys, style presets and the routing graph produce exportable draft changes. Preserve source assets and import the exported patch deliberately. Fast preview is 1×/1-sample; sequential feedback is absent from the interactive PNG preview. Approve feedback through a real sequential encoded render.
 
-![Actual synthetic original/aligned clock composition](https://raw.githubusercontent.com/kieransimkin/FrameRudiments/v0.4.0/docs/media/beat-alignment.png)
+![Actual synthetic original/aligned clock composition](https://raw.githubusercontent.com/kieransimkin/FrameRudiments/v0.4.1/docs/media/beat-alignment.png)
 
-[Play the synthetic example](https://github.com/kieransimkin/FrameRudiments/blob/v0.4.0/docs/media/beat-alignment.mp4). The right-hand motion uses the explicit phase correction; source-timed text and recorded bands retain their clock. This is a reproducible software example, not musical approval.
+[Play the synthetic example](https://github.com/kieransimkin/FrameRudiments/blob/v0.4.1/docs/media/beat-alignment.mp4). The right-hand motion uses the explicit phase correction; source-timed text and recorded bands retain their clock. This is a reproducible software example, not musical approval.
 
 [Browse the renderer gallery](https://kieransimkin.github.io/FrameRudiments/) and its linked timing, rich-lyrics, particles and routing examples. These are actual bounded synthetic examples; retain controls and their captions. An illustration adds no evidence where the native rendered example already explains the feature.
 

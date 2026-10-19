@@ -1,16 +1,12 @@
 {
-  "context": "Actual synthetic software fixtures, 18 October 2026. No private masters or model inference.",
+  "context": "Actual synthetic software fixtures, refreshed 19 October 2026. No private masters or model inference.",
   "versions": {
-    "FrameRudiments": "0.4.0",
+    "FrameRudiments": "0.4.1",
     "DanceRudiments": "0.3.0",
     "PixelCue": "0.9.1",
     "PrismMoves": "0.2.0"
   },
   "files": {
-    "provenance.json": {
-      "bytes": 1269,
-      "sha256": "0246b3aabe963dd41ae5362085b35a7d9778f891f853541f72c19cd197c1f500"
-    },
     "frame/captions.vtt": {
       "bytes": 180,
       "sha256": "57de2f95a4d04289836256ee39da9b4218e1ca1e448113d937127fb3dbd8b5bc"
@@ -22,6 +18,18 @@
     "frame/video.mp4": {
       "bytes": 204893,
       "sha256": "9671b4455f4fb4677eb072443e6da7f063aaf164c1262e6247d2a10914d24695"
+    },
+    "rangoli/captions.vtt": {
+      "bytes": 161,
+      "sha256": "b3e58cadf0b4c639bed6e29e21152ae84aab10e60aff5588815e15427b8d6aea"
+    },
+    "rangoli/poster.png": {
+      "bytes": 15599,
+      "sha256": "106a4f8505738e9fb561c7fcce8c70e1ff707daa407899269db70f3d0742fab4"
+    },
+    "rangoli/video.mp4": {
+      "bytes": 203327,
+      "sha256": "185bc13ffb7e9fe3aa3f78ac1d0ae0df1e70ebf3c5f07c0ef7455c224e519779"
     },
     "prism/input.png": {
       "bytes": 22964,

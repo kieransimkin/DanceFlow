@@ -6,7 +6,7 @@
         "--python",
         "3.13",
         "--from",
-        "danceflow-agent-tools==0.1.12",
+        "danceflow-agent-tools==0.1.13",
         "danceflow-mcp"
       ]
     }
