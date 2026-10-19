@@ -49,8 +49,11 @@ def official_releases(repository: str) -> list[dict]:
         raise ValueError("Unknown DanceFlow repository")
     endpoint = f"repos/kieransimkin/{repository}/releases?per_page=100"
     if shutil.which("gh"):
+        # GitHub emits UTF-8 JSON. Relying on the Windows console code page can
+        # make a valid release body fail decoding before json.loads sees it.
         result = subprocess.run(["gh", "api", "--paginate", "--slurp", endpoint],
-                                capture_output=True, text=True, timeout=90)
+                                capture_output=True, text=True, encoding="utf-8",
+                                errors="strict", timeout=90)
         if result.returncode:
             # Do not copy arbitrary remote bodies or authentication diagnostics
             # into a shareable report.

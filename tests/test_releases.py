@@ -1,4 +1,8 @@
-from danceflow_agents.releases import check_releases, compare_version, latest_runtime, stable_version
+import json
+from types import SimpleNamespace
+
+import danceflow_agents.releases as release_module
+from danceflow_agents.releases import check_releases, compare_version, latest_runtime, official_releases, stable_version
 
 
 def release(tag, **kwargs):
@@ -41,3 +45,21 @@ def test_network_failure_retains_unavailable_without_cached_success():
     report=check_releases({'StemLab':'1.8.0'},fail)
     assert all(row['status']=='unavailable' for row in report['components'])
     assert all('private' not in row['reason'] for row in report['components'])
+
+
+def test_gh_release_json_is_decoded_as_utf8(monkeypatch):
+    seen = {}
+    payload = [[release('v3.4.0', name='Café — motion')]]
+
+    monkeypatch.setattr(release_module.shutil, 'which', lambda command: 'gh.exe')
+
+    def run(args, **kwargs):
+        seen.update(kwargs)
+        return SimpleNamespace(returncode=0, stdout=json.dumps(payload, ensure_ascii=False))
+
+    monkeypatch.setattr(release_module.subprocess, 'run', run)
+    rows = official_releases('DanceMoves')
+
+    assert rows[0]['name'] == 'Café — motion'
+    assert seen['encoding'] == 'utf-8'
+    assert seen['errors'] == 'strict'
