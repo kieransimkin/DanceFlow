@@ -42,7 +42,7 @@ Select DanceFlow in the plugin directory and install it. Repository marketplace 
 Requires uv and Python 3.10–3.13. Choose one workspace containing authorised input files:
 
 ```sh
-uvx --python 3.13 --from danceflow-agent-tools==0.1.12 danceflow-mcp --workspace ./my-workspace
+uvx --python 3.13 --from danceflow-agent-tools==0.1.13 danceflow-mcp --workspace ./my-workspace
 ```
 
 For a client-managed server, add this configuration and replace the workspace with your selected local directory:
@@ -52,7 +52,7 @@ For a client-managed server, add this configuration and replace the workspace wi
   "mcpServers": {
     "danceflow": {
       "command": "uvx",
-      "args": ["--python", "3.13", "--from", "danceflow-agent-tools==0.1.12", "danceflow-mcp"],
+      "args": ["--python", "3.13", "--from", "danceflow-agent-tools==0.1.13", "danceflow-mcp"],
       "env": {"DANCEFLOW_WORKSPACE": "/absolute/path/to/my-workspace"}
     }
   }

@@ -40,7 +40,7 @@ Each entry links to the exact released explanation, options, example or limitati
 - [0.1.10 continue after per-file JoyCaption failures](https://github.com/kieransimkin/PixelCue/blob/v0.9.1/README.md#0110-continue-after-per-file-joycaption-failures) — `README.md`.
 - [0.1.11 libmagic-gated media queue](https://github.com/kieransimkin/PixelCue/blob/v0.9.1/README.md#0111-libmagic-gated-media-queue) — `README.md`.
 - [0.1.11 content-based queue admission](https://github.com/kieransimkin/PixelCue/blob/v0.9.1/README.md#0111-content-based-queue-admission) — `README.md`.
-- [0.1.12 official JoyCaption NF4 loading path](https://github.com/kieransimkin/PixelCue/blob/v0.9.1/README.md#0112-official-joycaption-nf4-loading-path) — `README.md`.
+- [0.1.13 official JoyCaption NF4 loading path](https://github.com/kieransimkin/PixelCue/blob/v0.9.1/README.md#0112-official-joycaption-nf4-loading-path) — `README.md`.
 - [0.1.13 minimum JoyCaption file size](https://github.com/kieransimkin/PixelCue/blob/v0.9.1/README.md#0113-minimum-joycaption-file-size) — `README.md`.
 - [0.1.14 Transformers 5.x LLaVA component layout](https://github.com/kieransimkin/PixelCue/blob/v0.9.1/README.md#0114-transformers-5x-llava-component-layout) — `README.md`.
 - [0.1.15 low-VRAM loading and CPU offload](https://github.com/kieransimkin/PixelCue/blob/v0.9.1/README.md#0115-low-vram-loading-and-cpu-offload) — `README.md`.

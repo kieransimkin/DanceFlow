@@ -29,9 +29,9 @@ An example observation file is `{"StemLab":"1.8.0","DanceMoves":"3.4.0"}`. These
 | Research language and publication facts | KeywordMoves source-native evidence and imports; EPK Social Metadata for verified page facts |
 | Deliver private files | DanceVault encrypted delivery only with destination-host acceptance and the relevant recipient/access authority |
 
-![Actual encoded synthetic FrameRudiments clock-composition example](https://raw.githubusercontent.com/kieransimkin/FrameRudiments/v0.4.0/docs/media/beat-alignment.png)
+![Actual encoded synthetic FrameRudiments clock-composition example](https://raw.githubusercontent.com/kieransimkin/FrameRudiments/v0.4.1/docs/media/beat-alignment.png)
 
-Actual synthetic renderer output retained in FrameRudiments 0.4.0. [Play the controlled clock example](https://github.com/kieransimkin/FrameRudiments/blob/v0.4.0/docs/media/beat-alignment.mp4). This demonstrates composition, not song-analysis accuracy. The linked reference includes frame/hash evidence; playback remains user controlled.
+Actual synthetic renderer output retained in FrameRudiments 0.4.1. [Play the controlled clock example](https://github.com/kieransimkin/FrameRudiments/blob/v0.4.1/docs/media/beat-alignment.mp4). This demonstrates composition, not song-analysis accuracy. The linked reference includes frame/hash evidence; playback remains user controlled.
 
 ## Potential problems
 

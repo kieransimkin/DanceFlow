@@ -20,7 +20,7 @@
     "title": "FrameRudiments",
     "repository": "https://github.com/kieransimkin/FrameRudiments",
     "website": "https://kieransimkin.co.uk/danceflow/",
-    "capabilities": "offline source-bound video compositor, 222 native/spectral/sprite/3D views, rich word lyrics, particles, mattes/keyframes, feedback routing, authoring UI and preset analysis",
+    "capabilities": "offline source-bound video compositor, 223 native/spectral/sprite/3D views including rangoli petals, rich word lyrics, particles, mattes/keyframes, feedback routing, authoring UI and controlled audio-response/preset analysis",
     "experimental": false
   },
   {
