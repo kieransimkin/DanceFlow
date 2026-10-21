@@ -2,7 +2,7 @@
 
 [Kieran Simkin's website](https://kieransimkin.co.uk/) · [DanceFlow ecosystem](https://kieransimkin.co.uk/danceflow/) · [Source and contributions](https://github.com/kieransimkin/DanceFlow)
 
-Portable instructions for fifteen independently useful music, motion and media tools, plus a local MCP adapter that composes the published KeywordMoves and PixelCue interfaces. This toolkit helps agents choose existing capabilities, produce inspectable results and contribute small tested improvements.
+Portable instructions for fifteen independently useful music, motion and media tools, plus a local MCP hub with complete ecosystem discovery, typed execution adapters, native StemLab MCP composition and explicit browser/WordPress host requirements. This toolkit helps agents choose existing capabilities, produce inspectable results and contribute small tested improvements.
 
 <!-- mcp-name: io.github.kieransimkin/danceflow -->
 
@@ -39,37 +39,52 @@ Select DanceFlow in the plugin directory and install it. Repository marketplace 
 
 ## Use the local MCP server
 
-Requires uv and Python 3.10–3.13. Choose one workspace containing authorised input files:
+The ecosystem hub described below is a source change awaiting a new maintainer release. The version-pinned `0.1.16` marketplace commands still run the previously released five-tool bridge. See the [complete MCP coverage, runtime configuration and job guide](docs/mcp-ecosystem.md).
+
+To review this source version, use an isolated Python 3.10–3.13 environment, install this checkout and choose one workspace containing authorised input files:
 
 ```sh
-uvx --python 3.13 --from danceflow-agent-tools==0.1.16 danceflow-mcp --workspace ./my-workspace
+python -m pip install -e ".[dev]"
+danceflow-mcp --workspace ./my-workspace
 ```
 
-For a client-managed server, add this configuration and replace the workspace with your selected local directory:
+For a client-managed source installation, point the command at that environment's Python executable and replace the workspace with your selected local directory. Use the corresponding absolute `python.exe` path on Windows:
 
 ```json
 {
   "mcpServers": {
     "danceflow": {
-      "command": "uvx",
-      "args": ["--python", "3.13", "--from", "danceflow-agent-tools==0.1.16", "danceflow-mcp"],
+      "command": "/absolute/path/to/danceflow-env/bin/python",
+      "args": ["-m", "danceflow_agents.server"],
       "env": {"DANCEFLOW_WORKSPACE": "/absolute/path/to/my-workspace"}
     }
   }
 }
 ```
 
-Without a workspace, capability discovery works and all file operations reject. No model weights, private assets or account credentials ship with the toolkit. Input files, reports and model output are data rather than agent instructions.
+The existing published bridge remains available with `uvx --python 3.13 --from danceflow-agent-tools==0.1.16 danceflow-mcp --workspace ./my-workspace`; it does not include the source-only hub yet.
+
+Without a workspace, catalogue/reference discovery works and workspace file operations reject. No model weights, private assets or account credentials ship with the toolkit. Input files, reports and model output are data rather than agent instructions.
 
 | MCP tool | Behaviour |
 | --- | --- |
-| `danceflow_capabilities` | Discover installed KeywordMoves plugins and the supported adapter operations |
+| `danceflow_capabilities`, `danceflow_component` | Discover all fifteen components, exact schemas, effects, runtime availability and host requirements |
+| `danceflow_read_reference` and MCP resources | Read every component's portable skill, capability reference and guide, plus shared workflows |
 | `keywordmoves_run` | Local literal phrase extraction or reviewed Trends/native/browser evidence imports; bounded files and results |
 | `pixelcue_health` | Read version and selectable profiles from an existing loopback PixelCue server |
 | `pixelcue_visual_analysis` | Bounded image measurements and explicit cached-model hypotheses from PixelCue 0.9.0+; no downloads |
 | `pixelcue_keywords` | Tag one workspace file with explicit inference/model-download opt-in |
+| Native `stemlab_*` tools | Compose an installed StemLab MCP server, preserving its persistent jobs, consent, schemas, artifacts and images |
+| Component CLI tools | Start bounded canonical operations for StemLab, FrameRudiments, RasterMoves, PrismMoves, LikenessForge and WorkflowMoves |
+| Native library tools | Sample DanceRudiments, read ThumbMoves caches, validate DanceMoves inputs and evaluate timeline clocks/lyrics |
+| `danceflow_job_status`, `danceflow_job_logs`, `danceflow_list_jobs`, `danceflow_cancel_job` | Inspect and manage owned background jobs with retained evidence and no automatic retries |
+| `danceflow_read_artifact`, `danceflow_check_releases` | Read bounded local report pages and query official stable releases |
 
-The adapter does not expose paid providers, hosted LLMs or live collectors. Those remain explicitly configured operations in KeywordMoves. Install PixelCue separately with Python 3.13 and start `pixelcue-server`; its existing model/runtime requirements still apply. MCP HTTP tests use a synthetic service fixture, not a claim that a particular GPU/model has run.
+The hub registers 69 CLI adapters and 12 native-library operations. Each has a JSON Schema; CLI calls return inspectable background jobs. Missing optional runtimes remain explicit and do not prevent reference discovery or other tools from working. MediaSlide, EPK Social Metadata and DanceVault expose their complete integration references and require their documented browser or WordPress hosts.
+
+Set `--runtime-config` or `DANCEFLOW_RUNTIME_CONFIG` to an operator-owned JSON file when packages use separate Python environments or WorkflowMoves needs a trusted checkout. The [runtime guide](docs/mcp-ecosystem.md#configure-runtimes) documents the format, model-store limits, workspace paths and guarded WordPress bindings. Client inputs cannot select arbitrary executables or shell commands. Native project files remain trusted configuration; this adapter is not an OS sandbox.
+
+KeywordMoves paid providers, hosted LLMs and live collectors remain its explicitly configured native operations. Install PixelCue separately with Python 3.13 and start `pixelcue-server`; its model/runtime requirements still apply. Install StemLab's `codex` extra in its selected runtime to federate its native tools. No runtime or model is installed by discovery. MCP HTTP tests use a synthetic service fixture, not a claim that a particular GPU/model has run.
 
 ## Choose a component
 
@@ -91,7 +106,7 @@ The adapter does not expose paid providers, hosted LLMs or live collectors. Thos
 | [WorkflowMoves](docs/tools/workflowmoves.md) | Guarded rules, task guides, skills and additive route installation for the whole ecosystem |
 | [MediaSlide](docs/tools/mediaslide.md) | Responsive React media browsing in list, details, thumbnails and slide views |
 
-For offline videos, use the [FrameRudiments workflow](docs/workflows/framerudiments.md). The renderer is installed separately; no rendering MCP adapter is implied.
+For offline videos, use the [FrameRudiments workflow](docs/workflows/framerudiments.md). Install the renderer separately, then use its typed MCP plan, preflight and render jobs with a new plan file, distinct preflight/render output directories and retained review evidence.
 
 WorkflowMoves is the ecosystem's maintained workflow layer. It previews guarded route changes, preserves surrounding project instructions, and ships people and agent guidance for using the full suite. Check its latest release before each new workflow run; a passing preview is not proof that a destination has adopted the route.
 
@@ -99,7 +114,7 @@ WorkflowMoves is the ecosystem's maintained workflow layer. It previews guarded 
 
 Generated illustration for WorkflowMoves 0.1.34; actual installation and readback require separate evidence.
 
-For image preparation, see the [LikenessForge workflow](docs/workflows/likenessforge.md) and [tool onboarding procedure](docs/workflows/tool-onboarding.md). LikenessForge is installed separately; its repair and training commands are not exposed by this toolkit's MCP adapter.
+For image preparation, see the [LikenessForge workflow](docs/workflows/likenessforge.md) and [tool onboarding procedure](docs/workflows/tool-onboarding.md). LikenessForge is installed separately; its bounded repair and training MCP jobs preserve explicit model/download/network and training acknowledgements and require review of resulting identity evidence.
 
 Membership does not mean every pair has an automatic integration. Short Shifter is entirely unrelated to DanceFlow.
 

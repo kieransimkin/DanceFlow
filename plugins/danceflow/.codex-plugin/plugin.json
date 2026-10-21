@@ -7,7 +7,7 @@
   "interface": {
     "displayName": "DanceFlow",
     "shortDescription": "Music, motion and media tools for agents",
-    "longDescription": "Fifteen independently useful tools with guarded WorkflowMoves integration, portable skills, tested local KeywordMoves/PixelCue MCP adapters and contribution guidance. Website: https://kieransimkin.co.uk/danceflow/",
+    "longDescription": "Fifteen independently useful components with complete MCP discovery, typed component jobs, native StemLab federation, library adapters and portable skills. Browser and WordPress hosts remain explicit. Website: https://kieransimkin.co.uk/danceflow/",
     "developerName": "Kieran Simkin",
     "category": "Productivity",
     "capabilities": [

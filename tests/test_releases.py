@@ -37,6 +37,7 @@ def test_shared_repository_fetched_once_and_prefixes_stay_distinct():
     assert rows['PixelCue']['status']=='current'
     assert rows['ThumbMoves']['status']=='update_available'
     assert rows['ThumbMoves']['released']=='0.1.2'
+    assert rows['MediaSlide']['repository']=='https://github.com/kieransimkin/react-mediaslide'
 
 
 def test_network_failure_retains_unavailable_without_cached_success():

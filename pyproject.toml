@@ -5,17 +5,17 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "danceflow-agent-tools"
 version = "0.1.16"
-description = "Portable DanceFlow skills and local KeywordMoves/PixelCue MCP tools. https://kieransimkin.co.uk/danceflow/"
+description = "Portable skills and a complete DanceFlow ecosystem MCP hub. https://kieransimkin.co.uk/danceflow/"
 readme = "README.md"
 requires-python = ">=3.10,<3.14"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "Kieran Simkin" }]
 keywords = ["DanceFlow", "MCP", "agent-skills", "keywords", "visual-media", "visual-identity", "image-analysis"]
-dependencies = ["mcp>=2.2,<3", "keywordmoves>=0.5.8,<0.6"]
+dependencies = ["mcp>=2.3,<3", "keywordmoves>=0.5.8,<0.6", "jsonschema>=4,<5"]
 
 [project.optional-dependencies]
-dev = ["pytest>=8,<10", "build>=1.2", "twine>=6", "PyYAML>=6", "jsonschema>=4", "tomli>=2; python_version < '3.11'"]
+dev = ["pytest>=8,<10", "build>=1.2", "twine>=6", "PyYAML>=6", "tomli>=2; python_version < '3.11'"]
 
 [project.urls]
 Homepage = "https://kieransimkin.co.uk/danceflow/"
@@ -32,11 +32,17 @@ danceflow-releases = "danceflow_agents.releases:main"
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+danceflow_agents = ["library_bridge.mjs"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
 
 [tool.setuptools.data-files]
+"share/danceflow-agent-tools" = ["catalogue.json"]
+"share/danceflow-agent-tools/docs" = ["docs/ecosystem.md", "docs/mcp-ecosystem.md"]
+"share/danceflow-agent-tools/docs/tools" = ["docs/tools/*.md"]
 "share/danceflow-agent-tools/plugins/danceflow" = ["plugins/danceflow/.mcp.json", "plugins/danceflow/mcp.json", "plugins/danceflow/plugin.json"]
 "share/danceflow-agent-tools/plugins/danceflow/.claude-plugin" = ["plugins/danceflow/.claude-plugin/plugin.json"]
 "share/danceflow-agent-tools/plugins/danceflow/.codex-plugin" = ["plugins/danceflow/.codex-plugin/plugin.json"]
@@ -75,4 +81,4 @@ pythonpath = ["src"]
 "share/danceflow-agent-tools/plugins/danceflow/skills/prismmoves/assets" = ["plugins/danceflow/skills/prismmoves/assets/visual-profile-example.png"]
 
 "share/danceflow-agent-tools/docs/capabilities" = ["docs/capabilities/dancemoves.md", "docs/capabilities/dancerudiments.md", "docs/capabilities/dancevault.md", "docs/capabilities/epk-social-metadata.md", "docs/capabilities/framerudiments.md", "docs/capabilities/index.md", "docs/capabilities/keywordmoves.md", "docs/capabilities/likenessforge.md", "docs/capabilities/mediaslide.md", "docs/capabilities/pixelcue.md", "docs/capabilities/prismmoves.md", "docs/capabilities/rastermoves.md", "docs/capabilities/react-timeline-sequence.md", "docs/capabilities/stemlab.md", "docs/capabilities/toolkit.md", "docs/capabilities/thumbmoves.md", "docs/capabilities/workflowmoves.md"]
-"share/danceflow-agent-tools/docs/workflows" = ["docs/workflows/release-preflight.md", "docs/workflows/framerudiments-complete.md"]
+"share/danceflow-agent-tools/docs/workflows" = ["docs/workflows/*.md"]

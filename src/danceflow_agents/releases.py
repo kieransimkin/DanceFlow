@@ -25,6 +25,7 @@ COMPONENTS = (
     ("PrismMoves", "PrismMoves", "v", "prismmoves"),
     ("ThumbMoves", "PixelCue", "thumbmoves-v", "thumbmoves"),
     ("React Timeline Sequence", "react-timeline-sequence", "v", None),
+    ("MediaSlide", "react-mediaslide", "v", None),
     ("EPK Social Metadata", "kieran-epk-social-metadata", "v", None),
     ("DanceVault", "DanceVault", "v", None),
     ("WorkflowMoves", "WorkflowMoves", "v", None),

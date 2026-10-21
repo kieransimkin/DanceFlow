@@ -2,6 +2,8 @@
 
 Inspected stable source: [v0.1.11](https://github.com/kieransimkin/DanceFlow/releases/tag/v0.1.11), commit `b14bbb06eaf3be38e5a9644f911a5ea5cc517354`. This is a dated baseline; [check current releases before every new workflow](../workflows/release-preflight.md).
 
+The current source adds the [ecosystem MCP hub](../mcp-ecosystem.md), with complete component discovery, typed CLI/library adapters and native StemLab federation. That change awaits a maintainer release. The released reference index below preserves its inspected baseline; use live `danceflow_capabilities` and `danceflow_component` for the interfaces actually provided by a running server.
+
 ## Choose and use a route
 
 | Goal | Supported route and evidence |

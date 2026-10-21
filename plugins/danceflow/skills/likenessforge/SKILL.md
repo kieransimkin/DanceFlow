@@ -7,7 +7,7 @@ description: Repair facial likeness in an existing image, prepare authorised fac
 
 [DanceFlow](https://kieransimkin.co.uk/danceflow/) · [Canonical source and README](https://github.com/kieransimkin/LikenessForge)
 
-Inspect the current README, plugin inventory and upstream AGENTS.md before choosing a route. LikenessForge has independent detector, segmenter, modifier and trainer families; the GUI orchestrates the same workflows as the CLI. It is installed separately and has no repair/training MCP adapter in DanceFlow.
+Inspect the current README, plugin inventory and upstream AGENTS.md before choosing a route. LikenessForge has independent detector, segmenter, modifier and trainer families; the GUI orchestrates the same workflows as the CLI. Provision its runtime separately. For MCP, call danceflow_component with likenessforge, inspect the typed operation and required effects, then poll the returned job and review the native report. Compute routes require explicit inference/download/network acknowledgement; training has a separate acknowledgement. These flags do not grant identity rights or replace existing user authority.
 
 ## Select a route
 

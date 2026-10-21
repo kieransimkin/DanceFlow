@@ -26,7 +26,7 @@
       "interface": {
         "displayName": "DanceFlow",
         "shortDescription": "Music, motion and visual evidence tools",
-        "longDescription": "Fifteen independently useful tools, guarded WorkflowMoves integration, portable skills, PixelCue-powered visual-language reports and tested local keyword/visual analysis APIs. Website: https://kieransimkin.co.uk/danceflow/",
+        "longDescription": "Fifteen independently useful components with complete MCP discovery, typed component jobs, native StemLab federation, library adapters and portable skills. Browser and WordPress hosts remain explicit. Website: https://kieransimkin.co.uk/danceflow/",
         "developerName": "Kieran Simkin",
         "category": "Productivity",
         "capabilities": [

@@ -11,7 +11,7 @@ People and agents should consider the full ecosystem, use all capabilities that 
 
 - **Choose a component:** Use the canonical catalogue, complete capability index and per-component portable skills before selecting an existing engine or file/API handoff.
 - **Check releases:** Use danceflow-releases for fresh official runtime versions and explicit installed observations. Query completion does not establish registry acceptance or functional operation.
-- **Compose supported adapters:** Use the real KeywordMoves offline/import and PixelCue health/visual receipt MCP operations; paid/live collectors and new media engines remain in their canonical tools.
+- **Compose supported adapters:** Use the [ecosystem MCP hub](mcp-ecosystem.md) for full discovery, native StemLab federation, typed CLI jobs and library APIs. Engines remain in their canonical tools; browser/WordPress components retain their actual host requirements and paid/live collectors retain their configured native routes.
 
 
 Read the [full released feature references](https://github.com/kieransimkin/DanceFlow/blob/main/docs/capabilities/toolkit.md) for exact commands, schemas, examples and limits. The tool remains independently useful. Consider StemLab, DanceRudiments, FrameRudiments, DanceMoves, KeywordMoves, RasterMoves, LikenessForge, PixelCue, PrismMoves, ThumbMoves, React Timeline Sequence, MediaSlide, EPK Social Metadata, DanceVault and WorkflowMoves wherever their supported capabilities serve the task. Short Shifter remains an independent project outside DanceFlow.

@@ -49,6 +49,20 @@ doc_names = {p.stem for p in (ROOT/'docs/tools').glob('*.md')}
 assert names == skill_names == doc_names, 'Catalogue, component skills and tool guides must agree'
 installed = tomllib.loads((ROOT/'pyproject.toml').read_text('utf-8'))['tool']['setuptools']['data-files']
 assert all(any(f'plugins/danceflow/skills/{name}/SKILL.md' in files for files in installed.values()) for name in names), 'Every component skill must ship in the wheel'
+assert names <= {p.stem for p in (ROOT/'docs/capabilities').glob('*.md')}, 'Every component needs a capability reference'
+installed_paths = {
+    f'{destination}/{source.name}'
+    for destination, patterns in installed.items()
+    for pattern in patterns
+    for source in ROOT.glob(pattern)
+}
+reference_paths = {'catalogue.json', 'docs/ecosystem.md', 'docs/mcp-ecosystem.md', 'plugins/danceflow/skills/setup/SKILL.md'}
+reference_paths.update(
+    path.relative_to(ROOT).as_posix()
+    for folder in ('docs/tools', 'docs/capabilities', 'docs/workflows')
+    for path in (ROOT/folder).glob('*.md')
+)
+assert {f'share/danceflow-agent-tools/{path}' for path in reference_paths} <= installed_paths, 'Every MCP catalogue/reference resource must ship in the wheel'
 assert all(x['website'] == SITE for x in catalogue)
 assert not any('short-shifter' in x['name'] for x in catalogue)
-print(f'Validated {len(names)} component skills and guides, setup, wheel inclusion, marketplaces, registry identity and website links')
+print(f'Validated {len(names)} component skills and guides, setup, MCP reference inclusion, marketplaces, registry identity and website links')
