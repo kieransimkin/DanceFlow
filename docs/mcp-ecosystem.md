@@ -4,7 +4,19 @@ This source change extends the five-tool bridge into a catalogue-backed MCP hub.
 
 ## Discover before execution
 
-Call `danceflow_capabilities` for all fifteen components and observed runtime availability. Call `danceflow_component` with a catalogue ID for exact operation schemas, conditional effects, native-host routes, source references and requirements. Missing optional packages do not stop unrelated components.
+Start with `danceflow_search` to find a feature using words from a task, or `danceflow_list_workflows` with no arguments to browse procedures. These tools do not require prior knowledge of component names, workflow IDs or resource URIs. The server's initialization instructions point new clients to both entry points.
+
+| Tool | Inputs | Result |
+| --- | --- | --- |
+| `danceflow_search` | Optional `query`, `kind` (`all`, `component`, `tool`, `workflow`, `skill`, `reference`), `component`, `limit`, `offset` | Ranked matches with summaries, actual tool schemas where applicable, runtime/effect information, references and explicit `next_call` values |
+| `danceflow_list_workflows` | Optional `query`, `component`, `limit`, `offset` | Workflow titles, summaries, related components, source identity and the call to read each procedure |
+| `danceflow_get_workflow` | `name` returned by search/listing | Full workflow instructions or linked source reference with source identity; it does not execute the workflow |
+
+For example, call `danceflow_search` with `{"query":"render video"}`, `{"query":"WordPress","kind":"tool"}`, or `{"query":"thumbnail"}`. An empty query browses every entry in the selected kind. Listing/search responses include total counts, coverage and a `next_offset` when more results exist. Follow the returned calls rather than constructing IDs or file paths. Tool schemas come from the server's actual `tools/list`, including federated native StemLab tools; there is no separately maintained list of callable tools.
+
+The searchable documentation includes all fifteen component skills, capability references and guides, shared overviews, and seven bundled DanceFlow workflow guides. When the operator configures `components.workflowmoves.source_root`, discovery also reads that checkout's Markdown workflow guides, portable skill recipes and supporting references. These records use namespaced IDs such as `workflowmoves/workflows/wordpress-blog-rest-api`. Source paths are confined to the configured checkout, reads are bounded, and malformed, unreadable or skipped documents appear in coverage information. Without that source, discovery explicitly reports the missing WorkflowMoves coverage and provides a setup/reference call. The seven packaged guides are not described as the complete WorkflowMoves workflow library. Search does not fetch remote documentation, run engine operations or install models.
+
+Call `danceflow_capabilities` for all fifteen components and observed runtime availability. Call `danceflow_component` with a discovered catalogue ID for exact operation schemas, conditional effects, native-host routes, source references and requirements. Missing optional packages do not stop unrelated components. A related component mentioned in a document is not a verified runtime dependency.
 
 Every component has three MCP resources:
 
@@ -36,7 +48,7 @@ Read `danceflow://overview/mcp` for this guide. References retain their dated up
 | EPK Social Metadata | Complete skill, registered WordPress metadata contract and host requirements | Authorized WordPress REST/editor context with the plugin installed |
 | DanceVault | Complete skill, actual WordPress action contract and acceptance requirements | Selected WordPress host; destination-host acceptance remains mandatory |
 
-There are 94 toolkit tools with this source version: the original five, eight discovery/job/reference helpers, 69 CLI adapters and 12 native-library operations. Installed StemLab contributes its own tools at `tools/list`, with its original input/output schemas and annotations. It is a persistent official-SDK MCP connection, not a new analysis implementation. A tool's presence proves its interface is available; it does not prove that its optional engine or model is installed.
+There are 97 toolkit tools with this source version: the original five, eleven discovery/job/reference helpers, 69 CLI adapters and 12 native-library operations. Installed StemLab contributes its own tools at `tools/list`, with its original input/output schemas and annotations. It is a persistent official-SDK MCP connection, not a new analysis implementation. A tool's presence proves its interface is available; it does not prove that its optional engine or model is installed.
 
 Object-valued local tools return MCP `structuredContent` alongside their JSON text content. Native StemLab results preserve their original structured data, images and error status. Workflows remain portable skill/reference instructions; the hub's job receipts and runtime configuration are DanceFlow-specific contracts, not a separate workflow-language standard.
 
@@ -101,6 +113,6 @@ The host checks temporary-directory create/read/rename/cleanup before jobs. Work
 
 ## Verification and limits
 
-The test suite exercises real MCP stdio discovery/calls/resources, persistent native-provider sessions, schema/result/image passthrough, job lifecycle, consent flags, path boundaries, output ownership and installed-wheel reference discovery. Library adapters also have synthetic error/deadline tests. Canonical engines remain independently tested in their own repositories.
+The test suite exercises real MCP stdio discovery/calls/resources, task-word search, workflow listing and retrieval, optional source coverage and path boundaries, persistent native-provider sessions, schema/result/image passthrough, job lifecycle, consent flags, output ownership and installed-wheel reference discovery. Library adapters also have synthetic error/deadline tests. Canonical engines remain independently tested in their own repositories.
 
 Integration checks for this change exercised published DanceRudiments 0.3.0, ThumbMoves 0.1.2, DanceMoves 3.4.0 and React Timeline Sequence 0.8.0 against synthetic inputs. The CLI registry was checked against the tagged argument parsers linked in its descriptors. These checks do not establish GPU inference, real-song render quality, Windows/macOS thumbnail behavior, physical motion, live WordPress publication or production DanceVault acceptance.

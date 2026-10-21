@@ -70,6 +70,12 @@ class EcosystemBridge:
                          **({"native_mcp": detail["native_mcp"]} if "native_mcp" in detail else {})})
         return {"schema": "danceflow.ecosystem.v1", "components": rows,
                 "workflows": self.catalogue.workflows(), "overviews": self.catalogue.overviews(),
+                "discovery": {
+                    "search": {"tool": "danceflow_search", "arguments": {}},
+                    "list_workflows": {"tool": "danceflow_list_workflows", "arguments": {}},
+                    "workflow_scope": "Bundled guides plus workflow guides and skill recipes from the configured WorkflowMoves source_root; inspect coverage for unavailable documents.",
+                    "execution": "Discovery returns instructions and tool schemas; it does not run workflows.",
+                },
                 "limits": ["Catalogue coverage, runtime availability, invocation and reviewed output are separate states.",
                            "Browser UI and WordPress plugins require their documented hosts; resources do not simulate those hosts.",
                            "Optional packages, services, GPU models and Node peers are installed separately.",

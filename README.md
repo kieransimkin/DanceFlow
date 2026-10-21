@@ -68,6 +68,8 @@ Without a workspace, catalogue/reference discovery works and workspace file oper
 
 | MCP tool | Behaviour |
 | --- | --- |
+| `danceflow_search` | Find features by task words across actual MCP tools, all fifteen components, skills and available workflow/reference text; includes schemas, runtime status, follow-up calls and pagination |
+| `danceflow_list_workflows`, `danceflow_get_workflow` | Browse procedures without knowing IDs, then read full instructions and source identity; includes bundled guides and configured WorkflowMoves source guides/skill recipes |
 | `danceflow_capabilities`, `danceflow_component` | Discover all fifteen components, exact schemas, effects, runtime availability and host requirements |
 | `danceflow_read_reference` and MCP resources | Read every component's portable skill, capability reference and guide, plus shared workflows |
 | `keywordmoves_run` | Local literal phrase extraction or reviewed Trends/native/browser evidence imports; bounded files and results |
@@ -80,7 +82,9 @@ Without a workspace, catalogue/reference discovery works and workspace file oper
 | `danceflow_job_status`, `danceflow_job_logs`, `danceflow_list_jobs`, `danceflow_cancel_job` | Inspect and manage owned background jobs with retained evidence and no automatic retries |
 | `danceflow_read_artifact`, `danceflow_check_releases` | Read bounded local report pages and query official stable releases |
 
-The hub registers 69 CLI adapters and 12 native-library operations. Each has a JSON Schema; CLI calls return inspectable background jobs. Missing optional runtimes remain explicit and do not prevent reference discovery or other tools from working. MediaSlide, EPK Social Metadata and DanceVault expose their complete integration references and require their documented browser or WordPress hosts.
+Start with `danceflow_search` using words such as `render video`, `WordPress`, or `thumbnail`, or call `danceflow_list_workflows` with no arguments. No component name or resource URI is required. Follow each result's `next_call`; use `next_offset` to read subsequent pages. Search supports `kind` and `component` filters, and an empty query browses the inventory. Results report coverage explicitly: the seven bundled DanceFlow guides are always available, while additional WorkflowMoves guides and skill recipes require its configured `source_root`. Missing or unreadable optional documents are reported. Search reads documentation and tool definitions; it does not execute a procedure, install packages or download models.
+
+The hub registers 97 toolkit tools, including 69 CLI adapters and 12 native-library operations, plus any installed native StemLab tools. Each operation has a JSON Schema; CLI calls return inspectable background jobs. Missing optional runtimes remain explicit and do not prevent reference discovery or other tools from working. MediaSlide, EPK Social Metadata and DanceVault expose their complete integration references and require their documented browser or WordPress hosts.
 
 Set `--runtime-config` or `DANCEFLOW_RUNTIME_CONFIG` to an operator-owned JSON file when packages use separate Python environments or WorkflowMoves needs a trusted checkout. The [runtime guide](docs/mcp-ecosystem.md#configure-runtimes) documents the format, model-store limits, workspace paths and guarded WordPress bindings. Client inputs cannot select arbitrary executables or shell commands. Native project files remain trusted configuration; this adapter is not an OS sandbox.
 

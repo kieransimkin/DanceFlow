@@ -7,7 +7,7 @@ from contextlib import asynccontextmanager
 import json
 import os
 from pathlib import Path
-from typing import TYPE_CHECKING, Annotated, Any
+from typing import TYPE_CHECKING, Annotated, Any, Literal
 
 from . import __version__
 
@@ -21,6 +21,7 @@ def create_server(bridge: DanceFlowBridge, ecosystem: EcosystemBridge | None = N
     from mcp.server import MCPServer
     from mcp.types import ToolAnnotations
     from pydantic import Field
+    from .discovery import DiscoveryIndex
     from .ecosystem import EcosystemBridge, tool_name
     from .runtime import PERMISSIONS
 
@@ -49,6 +50,10 @@ def create_server(bridge: DanceFlowBridge, ecosystem: EcosystemBridge | None = N
             return await super().call_tool(name, arguments, context)
 
     server = DanceFlowServer("DanceFlow", version=__version__, lifespan=lifespan, instructions=(
+        "Start with danceflow_search for an unfamiliar task, or danceflow_list_workflows to browse "
+        "available procedures without knowing component names. Use danceflow_get_workflow for full "
+        "instructions; listings and search never execute workflows. Search includes actual tool schemas, "
+        "skills and available WorkflowMoves source guides; inspect its coverage and pagination. "
         "Inspect danceflow_capabilities and danceflow_component before choosing a tool. The catalogue "
         "covers the complete ecosystem, including components that require browser or WordPress hosts. "
         "Read each component's skill and capability resources. Native StemLab tools preserve their "
@@ -62,6 +67,48 @@ def create_server(bridge: DanceFlowBridge, ecosystem: EcosystemBridge | None = N
         "permission to publish private assets or release changes. Website: https://kieransimkin.co.uk/danceflow/"
     ))
     read = ToolAnnotations(read_only_hint=True, open_world_hint=False)
+
+    async def discovery_index() -> DiscoveryIndex:
+        # Use the same definitions the client sees, including federated native
+        # tools, rather than maintaining a second list of callable features.
+        definitions = [tool.model_dump(by_alias=True, exclude_none=True)
+                       for tool in await server.list_tools()]
+
+        def build() -> DiscoveryIndex:
+            components = [ecosystem.component(row["name"])
+                          for row in ecosystem.catalogue.components()]
+            source_root = ecosystem.config.component("workflowmoves").get("source_root")
+            return DiscoveryIndex(ecosystem.catalogue, components, definitions,
+                                  Path(source_root) if source_root else None)
+
+        return await asyncio.to_thread(build)
+
+    @server.tool(annotations=read)
+    async def danceflow_search(
+        query: str = "",
+        kind: Literal["all", "component", "tool", "workflow", "skill", "reference"] = "all",
+        component: str | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> dict[str, Any]:
+        """Start here to find tools, workflows, skills and features by words from a task. Empty query browses all; results include schemas, runtime requirements, follow-up calls, coverage and pagination. Discovery never runs a workflow."""
+        index = await discovery_index()
+        return index.search(query, kind, component, limit, offset)
+
+    @server.tool(annotations=read)
+    async def danceflow_list_workflows(
+        query: str = "", component: str | None = None,
+        limit: int = 20, offset: int = 0,
+    ) -> dict[str, Any]:
+        """Browse workflow guides and WorkflowMoves skill recipes without knowing their IDs. Includes bundled guides and configured WorkflowMoves source documents, with summaries, coverage, pagination and the call to read each procedure; does not execute them."""
+        index = await discovery_index()
+        return index.list_workflows(query, component, limit, offset)
+
+    @server.tool(annotations=read)
+    async def danceflow_get_workflow(name: str) -> dict[str, Any]:
+        """Read a workflow or linked reference ID returned by danceflow_list_workflows or danceflow_search, with full text and source identity. Procedures still require their documented runtimes, inputs and permissions; this call does not execute them."""
+        index = await discovery_index()
+        return index.get_workflow(name)
 
     @server.tool(annotations=read)
     def danceflow_capabilities() -> dict[str, Any]:

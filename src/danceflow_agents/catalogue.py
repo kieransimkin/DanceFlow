@@ -31,6 +31,68 @@ OVERVIEW_PATHS = {
 _IDENTIFIER = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 
 
+def document_metadata(content: str, components: list[dict]) -> dict:
+    """Describe the actual shipped document without a second workflow inventory.
+
+    Component mentions are related references, never inferred dependencies or
+    permission to execute their tools. Markdown remains the source of truth.
+    """
+    def plain(value: str) -> str:
+        value = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", value)
+        value = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", value)
+        return " ".join(value.replace("`", "").replace("**", "").split())
+
+    lines = content.splitlines()
+    if lines:
+        lines[0] = lines[0].lstrip("\ufeff")
+    title = next((plain(line.lstrip("# ")) for line in lines
+                  if re.match(r"^#{1,6}\s+\S", line)), "Untitled reference")
+    # Agent Skills descriptions provide better routing text than a setup heading.
+    summary = ""
+    if lines and lines[0].strip() == "---":
+        for line in lines[1:]:
+            if line.strip() == "---":
+                break
+            if line.startswith("description:"):
+                summary = plain(line.partition(":")[2].strip().strip("\"'"))
+                if summary in ("|", ">", "|-", ">-"):
+                    summary = ""
+                break
+    if not summary:
+        paragraph = []
+        fenced = False
+        frontmatter = bool(lines and lines[0].strip() == "---")
+        for number, line in enumerate(lines):
+            stripped = line.strip()
+            if frontmatter:
+                if number and stripped == "---":
+                    frontmatter = False
+                continue
+            if stripped.startswith(("```", "~~~")):
+                fenced = not fenced
+                continue
+            if fenced:
+                continue
+            if not stripped:
+                if paragraph:
+                    break
+                continue
+            if stripped.startswith(("#", "![", "|", "<!--")):
+                continue
+            if not paragraph and (stripped.casefold().startswith("website:") or
+                                  re.fullmatch(r"<?https?://\S+>?", stripped)):
+                continue
+            paragraph.append(stripped)
+        summary = plain(" ".join(paragraph))
+    related = []
+    folded = content.casefold()
+    for component in components:
+        if any(re.search(r"(?<!\w)" + re.escape(value.casefold()) + r"(?!\w)", folded)
+               for value in (component["name"], component["title"])):
+            related.append(component["name"])
+    return {"title": title, "summary": summary[:600], "related_components": related}
+
+
 def _data_root() -> Path:
     """Resolve this checkout or this distribution's installed data-file record."""
     module = Path(__file__).resolve()
@@ -144,9 +206,12 @@ class EcosystemCatalogue:
         return self._read(f"docs/workflows/{name}.md")
 
     def workflows(self) -> list[dict]:
-        """List available workflow identifiers and resource URIs without loading their bodies."""
+        """List shipped workflow guides with summaries drawn from their bodies."""
         return [
-            {"name": name, "uri": f"danceflow://workflows/{name}"}
+            {"name": name, "uri": f"danceflow://workflows/{name}",
+             **document_metadata(self.read_workflow(name), self.components()),
+             "execution": "instructions_only",
+             "next_call": {"tool": "danceflow_get_workflow", "arguments": {"name": name}}}
             for name in WORKFLOW_NAMES
         ]
 

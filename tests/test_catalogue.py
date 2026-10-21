@@ -62,9 +62,11 @@ def test_full_catalogue_and_every_component_reference_are_available():
 def test_all_workflows_and_shared_overviews_are_discoverable():
     catalogue = EcosystemCatalogue()
     assert set(WORKFLOW_NAMES) == {path.stem for path in (ROOT / "docs/workflows").glob("*.md")}
-    assert catalogue.workflows() == [
+    workflows = catalogue.workflows()
+    assert [{"name": row["name"], "uri": row["uri"]} for row in workflows] == [
         {"name": name, "uri": f"danceflow://workflows/{name}"} for name in WORKFLOW_NAMES
     ]
+    assert all(row["title"] and row["summary"] for row in workflows)
     for name in WORKFLOW_NAMES:
         assert catalogue.read_workflow(name) == (ROOT / f"docs/workflows/{name}.md").read_text("utf-8")
     assert catalogue.overviews() == [
