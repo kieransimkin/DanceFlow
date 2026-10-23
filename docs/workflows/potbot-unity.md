@@ -48,6 +48,7 @@ Unity package dependencies must declare every built-in module used by runtime co
 - **Unity sample appears complete:** managed/static tests do not establish actual skinning, framebuffer rendering, audio-to-photon timing or external asset permission.
 - **MCP feature appears in a plan:** distinguish the hub's discoverable references, preview transport/adapter code, the unqualified Potbot-to-DanceFlow connection and the Unity Editor host.
 - **Package docs drift:** compare catalogue, skill, capability reference, guide, release preflight, wheel and portable ZIP membership; verify installed resource readback rather than only a source tree.
+- **A diagram passes page-overflow checks but is still cropped:** an ancestor's `overflow:hidden` can hide missing content without increasing document width. Inspect actual narrow-screen media, and verify responsive sizing or a labelled, keyboard-accessible scroll area reaches every part of the diagram. A width assertion alone does not prove readable, complete output.
 
 ## Deployed WebGL example, separately verified
 
