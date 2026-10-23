@@ -28,13 +28,13 @@ def make_source(tmp_path):
 def test_browse_exposes_every_component_and_shipped_reference_without_ids():
     index = make_index()
     components = index.search(kind="component", limit=100)
-    assert components["total"] == 15
+    assert components["total"] == 17
     assert {row["id"] for row in components["results"]} == {
         component["name"] for component in index.catalogue.components()}
     assert all(row["next_call"]["tool"] == "danceflow_component" for row in components["results"])
-    assert index.search(kind="skill", limit=100)["total"] == 15
+    assert index.search(kind="skill", limit=100)["total"] == 17
     coverage = components["coverage"]
-    assert coverage["packaged_references"] == {"status": "complete", "count": 57, "issues": []}
+    assert coverage["packaged_references"] == {"status": "complete", "count": 64, "issues": []}
     assert coverage["workflowmoves"]["status"] == "not_configured"
     assert coverage["workflowmoves"]["setup"]["tool"] == "danceflow_read_reference"
 
@@ -172,7 +172,7 @@ def test_self_symlink_instruction_is_omitted_without_hiding_valid_discovery(tmp_
     valid = index.get_workflow("workflowmoves/workflows/valid")
     assert valid["content"] == body
     assert valid["source"]["sha256"] == hashlib.sha256(body.encode("utf-8")).hexdigest()
-    assert index.search(kind="component")["total"] == 15
+    assert index.search(kind="component")["total"] == 17
 
 
 def test_looped_configured_source_is_unavailable_without_breaking_packaged_discovery(tmp_path):
@@ -187,7 +187,7 @@ def test_looped_configured_source_is_unavailable_without_breaking_packaged_disco
     assert status["status"] == "unavailable" and status["count"] == 0
     assert result["total"] == len(WORKFLOW_NAMES)
     assert result["coverage"]["packaged_references"]["status"] == "complete"
-    assert index.search(kind="component")["total"] == 15
+    assert index.search(kind="component")["total"] == 17
 
 
 def test_looped_instruction_folder_does_not_hide_other_source_folders(tmp_path):
@@ -292,10 +292,10 @@ def test_unreadable_packaged_reference_is_reported_without_hiding_other_features
     monkeypatch.setattr(catalogue, "read_workflow", read)
     index = make_index(catalogue=catalogue)
     result = index.list_workflows(limit=100)
-    assert result["total"] == 6
+    assert result["total"] == len(WORKFLOW_NAMES) - 1
     assert result["coverage"]["packaged_references"]["status"] == "partial"
-    assert result["coverage"]["packaged_references"]["count"] == 56
-    assert index.search(kind="component")["total"] == 15
+    assert result["coverage"]["packaged_references"]["count"] == 63
+    assert index.search(kind="component")["total"] == 17
 
 
 @pytest.mark.parametrize("arguments", [

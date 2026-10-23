@@ -1,3 +1,75 @@
+# KeywordMoves: capability and package reference
+
+Audited 23 October 2026: **v0.5.8**, exact source [`e07db45c506d1b31a9a6d8703130c150723fd5b1`](https://github.com/kieransimkin/keywordmoves/tree/e07db45c506d1b31a9a6d8703130c150723fd5b1). This is a dated source/documentation audit, not installed-runtime or end-to-end acceptance. [Check current releases before use](../workflows/release-preflight.md).
+
+## Current README feature routes
+
+- [Agents and contributors](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/README.md#agents-and-contributors)
+- [Current plugins](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/README.md#current-plugins)
+- [Credentials](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/README.md#credentials)
+- [Install](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/README.md#install)
+- [Use](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/README.md#use)
+- [Extract proper nouns and noun chunks with spaCy](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/README.md#extract-proper-nouns-and-noun-chunks-with-spacy)
+- [Extract with NLTK](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/README.md#extract-with-nltk)
+- [Rank reference-text phrases with KeyBERT](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/README.md#rank-reference-text-phrases-with-keybert)
+- [Use OpenAI models](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/README.md#use-openai-models)
+- [Online keyword sources](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/README.md#online-keyword-sources)
+- [Write a keyword plugin](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/README.md#write-a-keyword-plugin)
+- [Write an LLM plugin](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/README.md#write-an-llm-plugin)
+- [Development](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/README.md#development)
+- [Bundled skill](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/README.md#bundled-skill)
+- [Monitor keyword evidence over time](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/README.md#monitor-keyword-evidence-over-time)
+- [Current limitations and integration notes](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/README.md#current-limitations-and-integration-notes)
+
+## Source documentation and examples
+
+- [`README.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/README.md)
+- [`docs/authenticated-access.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/authenticated-access.md)
+- [`docs/automatic-free-collection.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/automatic-free-collection.md)
+- [`docs/bing-search.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/bing-search.md)
+- [`docs/branding/README.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/branding/README.md)
+- [`docs/browser-observations.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/browser-observations.md)
+- [`docs/candidate-context.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/candidate-context.md)
+- [`docs/candidate-shortlist.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/candidate-shortlist.md)
+- [`docs/credentials.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/credentials.md)
+- [`docs/free-public-source-modules.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/free-public-source-modules.md)
+- [`docs/free-youtube-volume-sources.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/free-youtube-volume-sources.md)
+- [`docs/google-search.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/google-search.md)
+- [`docs/instagram.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/instagram.md)
+- [`docs/keybert.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/keybert.md)
+- [`docs/keywordmoves-local-privacy.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/keywordmoves-local-privacy.md)
+- [`docs/keywordmoves-local-terms.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/keywordmoves-local-terms.md)
+- [`docs/literal-text.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/literal-text.md)
+- [`docs/monitoring.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/monitoring.md)
+- [`docs/multi-source-research.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/multi-source-research.md)
+- [`docs/native-export.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/native-export.md)
+- [`docs/nltk.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/nltk.md)
+- [`docs/online-sources.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/online-sources.md)
+- [`docs/openai.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/openai.md)
+- [`docs/platform-client-notices.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/platform-client-notices.md)
+- [`docs/plugin-opportunities.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/plugin-opportunities.md)
+- [`docs/pypi-publication.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/pypi-publication.md)
+- [`docs/reddit.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/reddit.md)
+- [`docs/spacy.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/spacy.md)
+- [`docs/tiktok.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/tiktok.md)
+- [`docs/trends-demand-assessment.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/trends-demand-assessment.md)
+- [`docs/vidiq-benchmark.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/vidiq-benchmark.md)
+- [`docs/youtube-demand-sources.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/youtube-demand-sources.md)
+- [`docs/youtube.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/docs/youtube.md)
+
+## Package evidence
+
+- [`README.md`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/README.md) — SHA-256 `32f5c3a7556bcb0e8812fff1c10cfcc47b0a72a02792550bca965870473f5c19`.
+- [`pyproject.toml`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/pyproject.toml) — SHA-256 `862a40206c6738be8d8041932518fbea08a9b42d11af90583261d8aa72020f71`.
+- [`MANIFEST.in`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/MANIFEST.in) — SHA-256 `ccec2f38fd33c38e3ea2c0a9b85805c6fe3c42b0aea4ada6fbd289c8aa73d0d6`.
+- [`LICENSE`](https://github.com/kieransimkin/keywordmoves/blob/e07db45c506d1b31a9a6d8703130c150723fd5b1/LICENSE) — SHA-256 `7f353aca65f8e26252d5785218c8c8329f819172e8c35b5dd62b4ebb981abf34`.
+
+Package files were read at the pinned source. Published distributions, installed identity, working host examples, rights and reviewed output require their own verification.
+
+## Historical detailed reference
+
+The following older index is retained for detailed routes. Its earlier version is historical; the audited source links above identify current documented availability.
+
 # keywordmoves: complete capability reference
 
 Inspected stable source: [v0.5.8](https://github.com/kieransimkin/keywordmoves/releases/tag/v0.5.8), commit `e07db45c506d1b31a9a6d8703130c150723fd5b1`. This is a dated baseline; [check current releases before every new workflow](../workflows/release-preflight.md).
@@ -298,3 +370,7 @@ Each entry links to the exact released explanation, options, example or limitati
 ## Examples and media
 
 Use the runnable examples and actual screenshots/videos linked from the released references. Keep their documented version/context and distinguish synthetic fixtures, model hypotheses and real captured output. Do not represent a guide link as proof that a model, GPU, physical phone or production host was tested. New decorative generated imagery adds no feature evidence to this reference index.
+
+## Default-branch availability
+
+The official default branch was also inspected at [`46100c92ef88032537982a0eeb5413920b8072ac`](https://github.com/kieransimkin/keywordmoves/tree/46100c92ef88032537982a0eeb5413920b8072ac). It differs from the audited stable tag. [Read that exact README](https://github.com/kieransimkin/keywordmoves/blob/46100c92ef88032537982a0eeb5413920b8072ac/README.md) for later source/documentation work; this does not establish a newer release, registry version or installed runtime.

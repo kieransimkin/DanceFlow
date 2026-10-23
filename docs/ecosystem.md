@@ -1,31 +1,27 @@
-# Use DanceFlow with the DanceFlow ecosystem
+# DanceFlow ecosystem integration
 
-## Before every new workflow
+Read the [catalogue](../catalogue.json), [current feature references](capabilities/index.md), [release preflight](workflows/release-preflight.md) and [MCP guide](mcp-ecosystem.md). The catalogue has seventeen component identities; the toolkit is their discovery/composition layer.
 
-Check the latest stable official release and the actual installed/imported version before starting; do not infer currency from a directory name or a development checkout. Read the current release notes, tagged capability documentation and relevant Potential problems. Use the [DanceFlow release preflight](https://github.com/kieransimkin/DanceFlow/blob/main/docs/workflows/release-preflight.md) and [complete capability references](https://github.com/kieransimkin/DanceFlow/blob/main/docs/capabilities/index.md).
+- [StemLab](tools/stemlab.md): music, stem, rhythm, structure, harmony, lyrics, sonic features and loop evidence; StemEdit timing/word/cue editor, StemMoves gallery, source-bound beat timelines and lyric audition.
+- [DanceRudiments](tools/dancerudiments.md): deterministic rhythmic position functions, authored pattern collections and a visualizer; typed rig profiles/motions, Rigify controls and native finite capture playback.
+- [FrameRudiments](tools/framerudiments.md): offline source-bound video compositor, 223 native/spectral/sprite/3D views including rangoli petals, rich word lyrics, particles, mattes/keyframes, feedback routing, authoring UI and controlled audio-response/preset analysis.
+- [DanceMoves](tools/dancemoves.md): BPM-synchronised web motion, shared clocks, effects, input, lifecycle and adaptive quality.
+- [KeywordMoves](tools/keywordmoves.md): source-specific keyword research, local phrase extraction and reviewed evidence imports.
+- [RasterMoves](tools/rastermoves.md): local image upscaling with catalogue plugins, PyTorch/ONNX backends and optional refinement.
+- [LikenessForge](tools/likenessforge.md): local CLI and desktop facial-likeness repair, identity LoRA training and candidate comparisons.
+- [PixelCue](tools/pixelcue.md): local visual-media tagging, bounded image statistics, selected visual models and REST/Socket.IO analysis APIs.
+- [PrismMoves](tools/prismmoves.md): image visual-language profiles and temporal-first preset descriptions composed from PixelCue measurements and bounded optional model evidence.
+- [ThumbMoves](tools/thumbmoves.md): cache-only thumbnail access with explicit cache misses.
+- [React Timeline Sequence](tools/react-timeline-sequence.md): React audio transport, sequence lanes, seeking, zoom and sample-frame loop regions; editable timing/keyframes and line/word lyric audition on the selected source transport.
+- [EPK Social Metadata](tools/epk-social-metadata.md): WordPress Open Graph, X card and Schema.org music/webpage metadata from canonical page facts.
+- [WorkflowMoves](tools/workflowmoves.md): guarded workflow rules, task guides, portable agent skills, evidence gates and additive project integration.
+- [DanceVault](tools/dancevault.md): stable encrypted, password-controlled WordPress delivery with real Apache/nginx test acceptance; destination-host acceptance remains required.
+- [MediaSlide](tools/mediaslide.md): responsive React media browsing across list, details, adjustable thumbnails and double-buffered slide views, with custom renderers and bidirectional pagination.
+- [Potbot](tools/potbot.md): durable coding-agent tasks, evidence, model jobs, budgets and native PostgreSQL/worker APIs; source preview, DanceFlow MCP consumption planned.
+- [DanceFlow for Unity](tools/danceflow-unity.md): Unity 6 UPM musical clocks, GPU phases, source-bound finite recordings and preview rig playback; Editor/GPU acceptance outstanding.
 
-People and agents should consider the full ecosystem, use all capabilities that materially serve the task, compose supported files/APIs, and improve a demonstrated reusable gap in its canonical tool. Record why no worthwhile change is justified when that is the result. Keep independent tool identities, compatibility, source clocks, privacy, model/download costs and publication/deployment permissions intact. Store weights and model-specific caches in the owning project's ignored `models/`.
+Potbot and Unity are source previews. Their native hosts and remaining acceptance gates are explicit in [the joint workflow](workflows/potbot-unity.md). Membership does not imply an automatic integration. Short Shifter remains independent.
 
+![Generated supported-handoff diagram](media/potbot-unity-handoffs.svg)
 
-## Plan the useful handoffs
-
-- **Choose a component:** Use the canonical catalogue, complete capability index and per-component portable skills before selecting an existing engine or file/API handoff.
-- **Check releases:** Use danceflow-releases for fresh official runtime versions and explicit installed observations. Query completion does not establish registry acceptance or functional operation.
-- **Compose supported adapters:** Use the [ecosystem MCP hub](mcp-ecosystem.md) for full discovery, native StemLab federation, typed CLI jobs and library APIs. Engines remain in their canonical tools; browser/WordPress components retain their actual host requirements and paid/live collectors retain their configured native routes.
-
-
-Read the [full released feature references](https://github.com/kieransimkin/DanceFlow/blob/main/docs/capabilities/toolkit.md) for exact commands, schemas, examples and limits. The tool remains independently useful. Consider StemLab, DanceRudiments, FrameRudiments, DanceMoves, KeywordMoves, RasterMoves, LikenessForge, PixelCue, PrismMoves, ThumbMoves, React Timeline Sequence, MediaSlide, EPK Social Metadata, DanceVault and WorkflowMoves wherever their supported capabilities serve the task. Short Shifter remains an independent project outside DanceFlow.
-
-## Contribute a reusable improvement
-
-Reproduce a specific gap, change the canonical owner, update its README/examples and meaningful tests, then use its PR/release checks. Preserve unrelated source and immutable versions. Keep installation, actual invocation, reviewed output, registry publication and website deployment as distinct states. Use synthetic or explicitly authorised examples; keep weights, account data and private media out of repositories and packages.
-
-## Examples and visual evidence
-
-Use the actual examples, screenshots and videos in the project's README and linked feature references. Preserve version labels and user-controlled video playback. A generated illustration explains a contract but cannot prove implementation or a completed action. This shared instruction guide adds no decorative media where the feature's own native example is the useful evidence.
-
-## Potential problems
-
-- A newest documentation tag may not be a runtime release; select the stable component-specific semantic tag and verify its real distributions.
-- Main may contain unreleased features. Use tagged docs for the runtime being used, with explicit development labels for later work.
-- A package name or installed library does not prove that clocks, visual consumers, models, services or production hosts are connected and working. Verify the route used by the task.
+Generated contract illustration; dashed routes require implementation/host acceptance. Read back installed references, run bounded examples and retain actual result evidence. Models/caches belong in the owning project models/; public deployment, rights and costs keep their separate gates.

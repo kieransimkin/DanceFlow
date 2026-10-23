@@ -1,6 +1,6 @@
 # DanceFlow ecosystem through one MCP server
 
-This source change extends the five-tool bridge into a catalogue-backed MCP hub. Maintainers assign a new release after review; the published `0.1.16` package and version-pinned marketplace commands do not acquire these changes merely because this branch exists.
+Version 0.1.17 packages the catalogue-backed MCP hub, seventeen components and eight workflow guides. The prior 0.1.16 five-tool bridge does not acquire these features automatically; verify the actual installed wheel and resource readback. Potbot and Unity discovery does not implement their native host execution.
 
 ## Discover before execution
 
@@ -14,9 +14,9 @@ Start with `danceflow_search` to find a feature using words from a task, or `dan
 
 For example, call `danceflow_search` with `{"query":"render video"}`, `{"query":"WordPress","kind":"tool"}`, or `{"query":"thumbnail"}`. An empty query browses every entry in the selected kind. Listing/search responses include total counts, coverage and a `next_offset` when more results exist. Follow the returned calls rather than constructing IDs or file paths. Tool schemas come from the server's actual `tools/list`, including federated native StemLab tools; there is no separately maintained list of callable tools.
 
-The searchable documentation includes all fifteen component skills, capability references and guides, shared overviews, and seven bundled DanceFlow workflow guides. When the operator configures `components.workflowmoves.source_root`, discovery also reads that checkout's Markdown workflow guides, portable skill recipes and supporting references. These records use namespaced IDs such as `workflowmoves/workflows/wordpress-blog-rest-api`. Source paths are confined to the configured checkout, reads are bounded, and malformed, unreadable or skipped documents appear in coverage information. Without that source, discovery explicitly reports the missing WorkflowMoves coverage and provides a setup/reference call. The seven packaged guides are not described as the complete WorkflowMoves workflow library. Search does not fetch remote documentation, run engine operations or install models.
+The searchable documentation includes all seventeen component skills, capability references and guides, shared overviews, and eight bundled DanceFlow workflow guides. When the operator configures `components.workflowmoves.source_root`, discovery also reads that checkout's Markdown workflow guides, portable skill recipes and supporting references. These records use namespaced IDs such as `workflowmoves/workflows/wordpress-blog-rest-api`. Source paths are confined to the configured checkout, reads are bounded, and malformed, unreadable or skipped documents appear in coverage information. Without that source, discovery explicitly reports the missing WorkflowMoves coverage and provides a setup/reference call. The eight packaged guides are not described as the complete WorkflowMoves workflow library. Search does not fetch remote documentation, run engine operations or install models.
 
-Call `danceflow_capabilities` for all fifteen components and observed runtime availability. Call `danceflow_component` with a discovered catalogue ID for exact operation schemas, conditional effects, native-host routes, source references and requirements. Missing optional packages do not stop unrelated components. A related component mentioned in a document is not a verified runtime dependency.
+Call `danceflow_capabilities` for all seventeen components and observed runtime availability. Call `danceflow_component` with a discovered catalogue ID for exact operation schemas, conditional effects, native-host routes, source references and requirements. Missing optional packages do not stop unrelated components. A related component mentioned in a document is not a verified runtime dependency.
 
 Every component has three MCP resources:
 

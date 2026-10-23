@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 version = json.loads((ROOT / 'plugins/danceflow/plugin.json').read_text('utf-8'))['version']
 dist = ROOT / 'dist'
 dist.mkdir(exist_ok=True)
-files = sorted([p for directory in ('plugins', 'docs', 'mcp-registry', '.agents', '.claude-plugin')
+files = sorted([p for directory in ('plugins', 'docs', 'examples', 'mcp-registry', '.agents', '.claude-plugin')
                 for p in (ROOT / directory).rglob('*') if p.is_file() and 'playground' not in p.relative_to(ROOT).parts] +
                [ROOT / name for name in ('README.md', 'CONTRIBUTING.md', 'AGENTS.md', 'LICENSE', 'catalogue.json')])
 archive = dist / f'danceflow-agent-toolkit-{version}.zip'

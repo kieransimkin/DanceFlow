@@ -1,3 +1,98 @@
+# FrameRudiments: capability and package reference
+
+Audited 23 October 2026: **v0.4.7**, exact source [`abf7217bb8199b1d091b7d109ddea06484ae249f`](https://github.com/kieransimkin/FrameRudiments/tree/abf7217bb8199b1d091b7d109ddea06484ae249f). This is a dated source/documentation audit, not installed-runtime or end-to-end acceptance. [Check current releases before use](../workflows/release-preflight.md).
+
+## Current README feature routes
+
+- [Complete x264 preset range](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#complete-x264-preset-range)
+- [Palette-controlled high-detail feedback](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#palette-controlled-high-detail-feedback)
+- [Five fire methods and ice](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#five-fire-methods-and-ice)
+- [Complete preset portraits and contact sheets (development)](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#complete-preset-portraits-and-contact-sheets-development)
+- [Controlled sound-response analysis](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#controlled-sound-response-analysis)
+- [Pinned visual-analysis releases](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#pinned-visual-analysis-releases)
+- [Before every new workflow](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#before-every-new-workflow)
+- [Install and run](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#install-and-run)
+- [Capabilities](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#capabilities)
+- [Project format](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#project-format)
+- [Variable-tempo synchronisation and word subtitles](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#variable-tempo-synchronisation-and-word-subtitles)
+- [Rich lyric typography and word-following particle sprites](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#rich-lyric-typography-and-word-following-particle-sprites)
+- [Particle and smoke emitters](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#particle-and-smoke-emitters)
+- [Image-backed Rudiment renderers: 52 additional options](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#image-backed-rudiment-renderers-52-additional-options)
+- [Solid 3D meshes and atmospheric rendering](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#solid-3d-meshes-and-atmospheric-rendering)
+- [Layer-selective Butterchurn/projectM feedback](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#layer-selective-butterchurnprojectm-feedback)
+- [Per-element and full-frame post-render effects](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#per-element-and-full-frame-post-render-effects)
+- [Maximum-quality rendering enabled by default](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#maximum-quality-rendering-enabled-by-default)
+- [High-quality antialiasing and motion blur](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#high-quality-antialiasing-and-motion-blur)
+- [Full-frame MilkDrop effects, including lyrics and animated sprites](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#full-frame-milkdrop-effects-including-lyrics-and-animated-sprites)
+- [Explore and profile the preset library](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#explore-and-profile-the-preset-library)
+- [Visualisation Atlas and public gallery](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#visualisation-atlas-and-public-gallery)
+- [Pinned visual-analysis releases](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#pinned-visual-analysis-releases-1)
+- [Efficient preset descriptions (new recommended analysis entry point)](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#efficient-preset-descriptions-new-recommended-analysis-entry-point)
+- [Full visualiser preset analysis — PrismMoves and PixelCue](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#full-visualiser-preset-analysis--prismmoves-and-pixelcue)
+- [Controlled sound-response analysis](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#controlled-sound-response-analysis-1)
+- [Compositing and the authoring workspace](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#compositing-and-the-authoring-workspace)
+- [Native rangoli drawing and clean projectM backgrounds](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#native-rangoli-drawing-and-clean-projectm-backgrounds)
+- [Evidence and limits](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#evidence-and-limits)
+- [Development](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#development)
+- [Source, contribution and releases](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md#source-contribution-and-releases)
+
+## Source documentation and examples
+
+- [`README.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md)
+- [`docs/ECOSYSTEM.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/ECOSYSTEM.md)
+- [`docs/FrameRudiments-PATCH_WORKFLOW.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/FrameRudiments-PATCH_WORKFLOW.md)
+- [`docs/annular-modulation.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/annular-modulation.md)
+- [`docs/authoring-workspace.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/authoring-workspace.md)
+- [`docs/beat-alignment.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/beat-alignment.md)
+- [`docs/bounded-preflight.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/bounded-preflight.md)
+- [`docs/controlled-audio-response.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/controlled-audio-response.md)
+- [`docs/expanded-effects.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/expanded-effects.md)
+- [`docs/extraction.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/extraction.md)
+- [`docs/full-preset-analysis.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/full-preset-analysis.md)
+- [`docs/hybrid-preset-analysis.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/hybrid-preset-analysis.md)
+- [`docs/keyframed-mattes.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/keyframed-mattes.md)
+- [`docs/media/demo-transcript.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/media/demo-transcript.md)
+- [`docs/media/rangoli-transcript.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/media/rangoli-transcript.md)
+- [`docs/multi-stem-modulation.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/multi-stem-modulation.md)
+- [`docs/music-reactive-3d.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/music-reactive-3d.md)
+- [`docs/natural-materials.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/natural-materials.md)
+- [`docs/particle-smoke.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/particle-smoke.md)
+- [`docs/phase3-compositing.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/phase3-compositing.md)
+- [`docs/preset-behaviour.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/preset-behaviour.md)
+- [`docs/preset-profiling.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/preset-profiling.md)
+- [`docs/project-format.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/project-format.md)
+- [`docs/projectm-local-runtime.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/projectm-local-runtime.md)
+- [`docs/quality-effects.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/quality-effects.md)
+- [`docs/rangoli.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/rangoli.md)
+- [`docs/rich-lyric-effects.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/rich-lyric-effects.md)
+- [`docs/rudiment-renderers.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/rudiment-renderers.md)
+- [`docs/scoped-post-effects.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/scoped-post-effects.md)
+- [`docs/solid-spatial-renderers.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/solid-spatial-renderers.md)
+- [`docs/spatial-renderers.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/spatial-renderers.md)
+- [`docs/spatiotemporal-supersampling.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/spatiotemporal-supersampling.md)
+- [`docs/spectrum.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/spectrum.md)
+- [`docs/sprite-visualisations.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/sprite-visualisations.md)
+- [`docs/stem-sources-and-masks.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/stem-sources-and-masks.md)
+- [`docs/variable-bpm-word-subtitles.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/variable-bpm-word-subtitles.md)
+- [`docs/visualisation-atlas.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/visualisation-atlas.md)
+- [`docs/visualisation-coverage-matrix.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/visualisation-coverage-matrix.md)
+- [`docs/visualiser-routing.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/visualiser-routing.md)
+- [`docs/visualisers.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/visualisers.md)
+- [`docs/workflow-media.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/docs/workflow-media.md)
+
+## Package evidence
+
+- [`README.md`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/README.md) — SHA-256 `36c1ac7040b96577ee40fb4213d25a8de41bb198cd15eea0ab5f8c86556307f9`.
+- [`pyproject.toml`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/pyproject.toml) — SHA-256 `72dba3cb24b24247d4d5ab72a5f5ae1ee8dcd7a61c687a7ffea416ee3ee70a46`.
+- [`MANIFEST.in`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/MANIFEST.in) — SHA-256 `99beaa0d13b7488d05d12fe3c540ea70ed90e33aede8ed53478136a02ce8e773`.
+- [`LICENSE`](https://github.com/kieransimkin/FrameRudiments/blob/abf7217bb8199b1d091b7d109ddea06484ae249f/LICENSE) — SHA-256 `2ca47a9e05d98bdaf0372db842321f5a2b34f580a1794eb7a62aa0a72b6f27ae`.
+
+Package files were read at the pinned source. Published distributions, installed identity, working host examples, rights and reviewed output require their own verification.
+
+## Historical detailed reference
+
+The following older index is retained for detailed routes. Its earlier version is historical; the audited source links above identify current documented availability.
+
 # FrameRudiments: complete capability reference
 
 Inspected stable source: [v0.4.1](https://github.com/kieransimkin/FrameRudiments/releases/tag/v0.4.1), commit `8ddbf6ea80ea447f467019f176610a763770a87a6`. This is a dated baseline; [check current releases before every new workflow](../workflows/release-preflight.md).

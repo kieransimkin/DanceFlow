@@ -1,0 +1,4 @@
+interface:
+  display_name: "Potbot"
+  short_description: "Review source-preview capabilities and host contracts."
+  default_prompt: "Inspect Potbot at its exact source identity, preserve preview and host acceptance limits, and compose supported DanceFlow contracts."

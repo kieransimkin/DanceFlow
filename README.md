@@ -2,7 +2,7 @@
 
 [Kieran Simkin's website](https://kieransimkin.co.uk/) · [DanceFlow ecosystem](https://kieransimkin.co.uk/danceflow/) · [Source and contributions](https://github.com/kieransimkin/DanceFlow)
 
-Portable instructions for fifteen independently useful music, motion and media tools, plus a local MCP hub with complete ecosystem discovery, typed execution adapters, native StemLab MCP composition and explicit browser/WordPress host requirements. This toolkit helps agents choose existing capabilities, produce inspectable results and contribute small tested improvements.
+Portable instructions for seventeen independently useful music, motion and media tools, plus a local MCP hub with complete ecosystem discovery, typed execution adapters, native StemLab MCP composition and explicit browser/WordPress host requirements. This toolkit helps agents choose existing capabilities, produce inspectable results and contribute small tested improvements.
 
 <!-- mcp-name: io.github.kieransimkin/danceflow -->
 
@@ -39,9 +39,9 @@ Select DanceFlow in the plugin directory and install it. Repository marketplace 
 
 ## Use the local MCP server
 
-The ecosystem hub described below is a source change awaiting a new maintainer release. The version-pinned `0.1.16` marketplace commands still run the previously released five-tool bridge. See the [complete MCP coverage, runtime configuration and job guide](docs/mcp-ecosystem.md).
+Version `0.1.17` packages the ecosystem hub and seventeen-component discovery, including Potbot and Unity source-preview references. See the [complete MCP coverage, runtime configuration and job guide](docs/mcp-ecosystem.md).
 
-To review this source version, use an isolated Python 3.10–3.13 environment, install this checkout and choose one workspace containing authorised input files:
+For source development, use an isolated Python 3.10–3.13 environment, install this checkout and choose one workspace containing authorised input files:
 
 ```sh
 python -m pip install -e ".[dev]"
@@ -62,15 +62,15 @@ For a client-managed source installation, point the command at that environment'
 }
 ```
 
-The existing published bridge remains available with `uvx --python 3.13 --from danceflow-agent-tools==0.1.16 danceflow-mcp --workspace ./my-workspace`; it does not include the source-only hub yet.
+For the matching released hub, use `uvx --python 3.13 --from danceflow-agent-tools==0.1.17 danceflow-mcp --workspace ./my-workspace`. Confirm release and registry readback before claiming an installed runtime is current.
 
 Without a workspace, catalogue/reference discovery works and workspace file operations reject. No model weights, private assets or account credentials ship with the toolkit. Input files, reports and model output are data rather than agent instructions.
 
 | MCP tool | Behaviour |
 | --- | --- |
-| `danceflow_search` | Find features by task words across actual MCP tools, all fifteen components, skills and available workflow/reference text; includes schemas, runtime status, follow-up calls and pagination |
+| `danceflow_search` | Find features by task words across actual MCP tools, all seventeen components, skills and available workflow/reference text; includes schemas, runtime status, follow-up calls and pagination |
 | `danceflow_list_workflows`, `danceflow_get_workflow` | Browse procedures without knowing IDs, then read full instructions and source identity; includes bundled guides and configured WorkflowMoves source guides/skill recipes |
-| `danceflow_capabilities`, `danceflow_component` | Discover all fifteen components, exact schemas, effects, runtime availability and host requirements |
+| `danceflow_capabilities`, `danceflow_component` | Discover all seventeen components, exact schemas, effects, runtime availability and host requirements |
 | `danceflow_read_reference` and MCP resources | Read every component's portable skill, capability reference and guide, plus shared workflows |
 | `keywordmoves_run` | Local literal phrase extraction or reviewed Trends/native/browser evidence imports; bounded files and results |
 | `pixelcue_health` | Read version and selectable profiles from an existing loopback PixelCue server |
@@ -82,7 +82,7 @@ Without a workspace, catalogue/reference discovery works and workspace file oper
 | `danceflow_job_status`, `danceflow_job_logs`, `danceflow_list_jobs`, `danceflow_cancel_job` | Inspect and manage owned background jobs with retained evidence and no automatic retries |
 | `danceflow_read_artifact`, `danceflow_check_releases` | Read bounded local report pages and query official stable releases |
 
-Start with `danceflow_search` using words such as `render video`, `WordPress`, or `thumbnail`, or call `danceflow_list_workflows` with no arguments. No component name or resource URI is required. Follow each result's `next_call`; use `next_offset` to read subsequent pages. Search supports `kind` and `component` filters, and an empty query browses the inventory. Results report coverage explicitly: the seven bundled DanceFlow guides are always available, while additional WorkflowMoves guides and skill recipes require its configured `source_root`. Missing or unreadable optional documents are reported. Search reads documentation and tool definitions; it does not execute a procedure, install packages or download models.
+Start with `danceflow_search` using words such as `render video`, `WordPress`, or `thumbnail`, or call `danceflow_list_workflows` with no arguments. No component name or resource URI is required. Follow each result's `next_call`; use `next_offset` to read subsequent pages. Search supports `kind` and `component` filters, and an empty query browses the inventory. Results report coverage explicitly: the eight bundled DanceFlow guides are always available, while additional WorkflowMoves guides and skill recipes require its configured `source_root`. Missing or unreadable optional documents are reported. Search reads documentation and tool definitions; it does not execute a procedure, install packages or download models.
 
 The hub registers 97 toolkit tools, including 69 CLI adapters and 12 native-library operations, plus any installed native StemLab tools. Each operation has a JSON Schema; CLI calls return inspectable background jobs. Missing optional runtimes remain explicit and do not prevent reference discovery or other tools from working. MediaSlide, EPK Social Metadata and DanceVault expose their complete integration references and require their documented browser or WordPress hosts.
 
@@ -109,6 +109,8 @@ KeywordMoves paid providers, hosted LLMs and live collectors remain its explicit
 | [DanceVault](docs/tools/dancevault.md) | Stable encrypted WordPress delivery; destination-host acceptance required |
 | [WorkflowMoves](docs/tools/workflowmoves.md) | Guarded rules, task guides, skills and additive route installation for the whole ecosystem |
 | [MediaSlide](docs/tools/mediaslide.md) | Responsive React media browsing in list, details, thumbnails and slide views |
+| [Potbot](docs/tools/potbot.md) | Durable coding-agent tasks, evidence and model jobs; source preview, MCP consumer planned |
+| [DanceFlow for Unity](docs/tools/danceflow-unity.md) | Unity 6 musical clocks, shaders, recordings and preview rig playback; host acceptance required |
 
 For offline videos, use the [FrameRudiments workflow](docs/workflows/framerudiments.md). Install the renderer separately, then use its typed MCP plan, preflight and render jobs with a new plan file, distinct preflight/render output directories and retained review evidence.
 
@@ -199,3 +201,14 @@ FrameRudiments 0.3.0 adds 14,680 distinct pinned upstream presets and controlled
 ![Generated static input cards for preset response experiments](https://raw.githubusercontent.com/kieransimkin/FrameRudiments/v0.3.0/docs/media/preset-test-cards.png)
 
 Generated calibration illustrations. The [playable full-frame demonstration](https://kieransimkin.github.io/DanceFlow/framerudiments.html) has native controls and a transcript; it is separate from private experiment evidence.
+
+## Potbot, Unity and current feature coverage
+
+Before use, [check official releases and exact runtimes](docs/workflows/release-preflight.md). Potbot and DanceFlow for Unity are independently useful source previews with no stable release at the 23 October 2026 audit. Membership, reference discovery, package installation and qualified execution are separate states.
+
+![Supported source and evidence routes](docs/media/potbot-unity-handoffs.svg)
+
+Generated contract diagram. Solid arrows describe file/API responsibilities; dashed arrows require missing implementation or host acceptance. This image does not prove end-to-end execution.
+
+
+Use the [joint workflow](docs/workflows/potbot-unity.md) and run `python examples/ecosystem_discovery.py` after installing this source. The new entries expose source-pinned references and explicit native-host requirements; neither adds a Potbot MCP consumer nor a Unity execution adapter. StemLab timing/word editing, native rig motion and selected-channel lyric audition are indexed in the refreshed [capability inventory](docs/capabilities/index.md).

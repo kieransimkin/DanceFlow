@@ -20,6 +20,7 @@ WORKFLOW_NAMES = (
     "release-preflight",
     "tool-onboarding",
     "visual-language",
+    "potbot-unity",
 )
 OVERVIEW_PATHS = {
     "mcp": "docs/mcp-ecosystem.md",

@@ -616,6 +616,14 @@ for _name, _mode in (
 
 
 UNSUPPORTED_OPERATIONS = {
+    "potbot": {
+        "native_host": "Use Potbot's operator-owned Python/PostgreSQL/worker host. Discovery does not start workers, invoke models or qualify Linux sandboxing.",
+        "mcp_consumption": "Potbot's universal tool/MCP platform is planned. A DanceFlow catalogue entry does not implement that consumer or admit an executable.",
+    },
+    "danceflow-unity": {
+        "unity_editor": "Install the pinned UPM source in Unity 6 and import opt-in Samples. Editor, PlayMode, GPU and licensed build acceptance remain separate.",
+        "motion_import": "Use canonical StemLab timelines and DanceRudiments recording/rig contracts with source hashes, explicit clocks and bounded playback; no arbitrary Unity command is exposed.",
+    },
     "stemlab": {
         "analyze_midi_evidence_loops": "Use the persistent canonical StemLab MCP provider, which owns download opt-ins, jobs and receipts.",
         "bootstrap_serve": "Dependency installation and long-lived service startup are owner runtime configuration, not arbitrary CLI calls.",

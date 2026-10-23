@@ -118,7 +118,7 @@ def test_actual_stdio_tools_and_rejection(tmp_path):
         inventory = request('tools/call', {'name':'danceflow_capabilities','arguments':{}})
         assert not inventory.get('isError'), inventory
         inventory = inventory['structuredContent']
-        assert len(inventory['ecosystem']['components'])==15
+        assert len(inventory['ecosystem']['components'])==17
         assert 'keywordmoves' in inventory and 'mcp_operations' in inventory
         templates=request('resources/templates/list',{})['resourceTemplates']
         assert 'danceflow://components/{name}/{section}' in {x['uriTemplate'] for x in templates}

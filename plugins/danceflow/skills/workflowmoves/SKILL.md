@@ -18,3 +18,7 @@ When the task exposes a reusable gap, implement the smallest worthwhile fix in W
 ![Generated WorkflowMoves architecture illustration](https://raw.githubusercontent.com/kieransimkin/WorkflowMoves/v0.1.34/docs/media/workflowmoves-overview.svg)
 
 Generated contract illustration; verify the real destination independently.
+
+## Source-bound Unity and agent handoffs
+
+For a relevant Unity/rig or Potbot task, read danceflow://workflows/potbot-unity and the matching preview skill. Preserve original master/beat/recording clocks, finite bounds and rig profile hashes; reuse canonical engines. A documented source preview is distinct from a qualified native host or a working MCP consumer.

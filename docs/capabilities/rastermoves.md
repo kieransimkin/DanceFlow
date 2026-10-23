@@ -1,3 +1,52 @@
+# RasterMoves: capability and package reference
+
+Audited 23 October 2026: **v0.3.4**, exact source [`db26fbf1211f04da5f2d4f6e0eb78387597f6149`](https://github.com/kieransimkin/RasterMoves/tree/db26fbf1211f04da5f2d4f6e0eb78387597f6149). This is a dated source/documentation audit, not installed-runtime or end-to-end acceptance. [Check current releases before use](../workflows/release-preflight.md).
+
+## Current README feature routes
+
+- [Agents and contributors](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/README.md#agents-and-contributors)
+- [Part of DanceFlow](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/README.md#part-of-danceflow)
+- [Install](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/README.md#install)
+- [Compare every model](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/README.md#compare-every-model)
+- [Optional generative detail refinement](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/README.md#optional-generative-detail-refinement)
+- [Timing and resource traces](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/README.md#timing-and-resource-traces)
+- [First upscale](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/README.md#first-upscale)
+- [Model plugins and the OpenModelDB catalogue](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/README.md#model-plugins-and-the-openmodeldb-catalogue)
+- [Downloads, verification and offline use](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/README.md#downloads-verification-and-offline-use)
+- [Memory, tiling and image handling](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/README.md#memory-tiling-and-image-handling)
+- [Python API](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/README.md#python-api)
+- [Agent skill: use and improve RasterMoves](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/README.md#agent-skill-use-and-improve-rastermoves)
+- [Validation and development](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/README.md#validation-and-development)
+- [Licence and references](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/README.md#licence-and-references)
+- [Automated releases and containers](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/README.md#automated-releases-and-containers)
+
+## Source documentation and examples
+
+- [`README.md`](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/README.md)
+- [`docs/ALL_MODELS.md`](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/docs/ALL_MODELS.md)
+- [`docs/MIGRATION.md`](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/docs/MIGRATION.md)
+- [`docs/PLUGINS.md`](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/docs/PLUGINS.md)
+- [`docs/PROFILING.md`](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/docs/PROFILING.md)
+- [`docs/REFINEMENT.md`](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/docs/REFINEMENT.md)
+- [`docs/RELEASING.md`](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/docs/RELEASING.md)
+- [`docs/SECURITY.md`](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/docs/SECURITY.md)
+- [`docs/SOURCES.md`](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/docs/SOURCES.md)
+- [`docs/TESTING.md`](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/docs/TESTING.md)
+- [`docs/branding/README.md`](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/docs/branding/README.md)
+
+## Package evidence
+
+- [`README.md`](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/README.md) — SHA-256 `a663c1d1f746fd851683a57edb047bdeb9b38ffd5b29ae216d329594d7b3c337`.
+- [`pyproject.toml`](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/pyproject.toml) — SHA-256 `c6ed15a66ff7421652aefba9d6fd9305c1714ea8b48827cfd66af324c4f248a3`.
+- [`MANIFEST.in`](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/MANIFEST.in) — SHA-256 `57795a32a8f5464e2dd37e9f4b4f3162ea5c90bd939d0e13b0f5651943d4155b`.
+- [`LICENSE`](https://github.com/kieransimkin/RasterMoves/blob/db26fbf1211f04da5f2d4f6e0eb78387597f6149/LICENSE) — SHA-256 `3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986`.
+
+Package files were read at the pinned source. Published distributions, installed identity, working host examples, rights and reviewed output require their own verification.
+
+## Historical detailed reference
+
+The following older index is retained for detailed routes. Its earlier version is historical; the audited source links above identify current documented availability.
+
 # RasterMoves: complete capability reference
 
 Inspected stable source: [v0.3.4](https://github.com/kieransimkin/RasterMoves/releases/tag/v0.3.4), commit `db26fbf1211f04da5f2d4f6e0eb78387597f6149`. This is a dated baseline; [check current releases before every new workflow](../workflows/release-preflight.md).
@@ -124,3 +173,7 @@ The inspected main checkout has different documentation at the following paths. 
 ## Examples and media
 
 Use the runnable examples and actual screenshots/videos linked from the released references. Keep their documented version/context and distinguish synthetic fixtures, model hypotheses and real captured output. Do not represent a guide link as proof that a model, GPU, physical phone or production host was tested. New decorative generated imagery adds no feature evidence to this reference index.
+
+## Default-branch availability
+
+The official default branch was also inspected at [`02895dee6bb8b9da4afaab887a3886cc1d43793b`](https://github.com/kieransimkin/RasterMoves/tree/02895dee6bb8b9da4afaab887a3886cc1d43793b). It differs from the audited stable tag. [Read that exact README](https://github.com/kieransimkin/RasterMoves/blob/02895dee6bb8b9da4afaab887a3886cc1d43793b/README.md) for later source/documentation work; this does not establish a newer release, registry version or installed runtime.

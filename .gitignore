@@ -12,5 +12,9 @@ pytest-cache-files-*/
 CMakeUserPresets.json
 
 models/
+.test-temp/
+probe-*/
+.venv/
+.uv-cache/
 
 models/
