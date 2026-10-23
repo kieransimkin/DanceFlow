@@ -37,6 +37,11 @@ codex plugin marketplace add kieransimkin/DanceFlow
 
 Select DanceFlow in the plugin directory and install it. Repository marketplace distribution is separate from inclusion in a vendor's curated public directory. Nothing here claims vendor approval or endorsement.
 
+The [plugin approval and agent discovery plan](docs/plans/plugin-approval-and-agent-discovery.md)
+tracks public-directory preparation, keyword-aware positioning, Claude and MCP Registry
+routes, and continuing research into useful installation and tool-selection outcomes.
+It is a roadmap; approval, publication and measured discovery remain separate milestones.
+
 ## Use the local MCP server
 
 The ecosystem hub described below is a source change awaiting a new maintainer release. The version-pinned `0.1.16` marketplace commands still run the previously released five-tool bridge. See the [complete MCP coverage, runtime configuration and job guide](docs/mcp-ecosystem.md).
