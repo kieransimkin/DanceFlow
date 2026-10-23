@@ -16,6 +16,8 @@ People and agents should consider the full ecosystem, use all capabilities that 
 
 Use the [complete released capability index](docs/capabilities/index.md), the [release preflight](docs/workflows/release-preflight.md), and the [full FrameRudiments compositor workflow](docs/workflows/framerudiments-complete.md). The installed `danceflow-releases --output NEW-RUN/releases.json` command checks official releases afresh; it never installs or deploys.
 
+For Potbot and Unity, follow the [native-host acceptance matrix](docs/workflows/potbot-unity.md#qualify-the-actual-native-host): database authentication, restricted application identity, whole-package import, real GPU readback and saved-scene skinning each need their own evidence.
+
 ## Find your route
 
 [Install in Claude Code](#install-in-claude-code) · [Install in Codex](#install-in-codex) · [Use the local MCP server](#use-the-local-mcp-server) · [Choose a component](#choose-a-component) · [Try the tools with Arcadians](#try-the-tools-with-arcadians) · [Contribute](#contribute) · [Development](#development) · [Automatic releases and registry submissions](#automatic-releases-and-registry-submissions) · [Understand visual language](#understand-visual-language)
