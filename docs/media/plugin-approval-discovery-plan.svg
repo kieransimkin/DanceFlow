@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">DanceFlow approval and continuing discovery plan</title>
+  <desc id="desc">Verified source and keyword evidence feed useful workflows, packaging and vendor review. A separate continuing loop measures discovery, installation suggestions, consented setup and successful tool use. Potbot receives evidence-backed strategy updates.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L8 3L0 6" fill="none" stroke="#78e0cd" stroke-width="1.5"/></marker></defs>
+  <rect width="1200" height="650" rx="24" fill="#10131e"/>
+  <g font-family="DejaVu Sans, sans-serif" fill="#f1f4f8">
+    <text x="48" y="60" font-size="32" font-weight="700">DanceFlow: approval and discovery</text>
+    <text x="48" y="94" font-size="18" fill="#bbc6d4">Proposed work · 23 October 2026 · evidence at every boundary</text>
+    <g fill="#1c2334" stroke="#56657e" stroke-width="2">
+      <rect x="48" y="140" width="250" height="140" rx="14"/>
+      <rect x="358" y="140" width="250" height="140" rx="14"/>
+      <rect x="668" y="140" width="225" height="140" rx="14"/>
+      <rect x="953" y="140" width="199" height="140" rx="14"/>
+      <rect x="48" y="355" width="340" height="155" rx="14"/>
+      <rect x="438" y="355" width="340" height="155" rx="14"/>
+      <rect x="828" y="355" width="324" height="155" rx="14"/>
+    </g>
+    <g font-size="22" font-weight="700" fill="#78e0cd">
+      <text x="70" y="178">Verify the baseline</text><text x="380" y="178">Deliver useful tasks</text>
+      <text x="690" y="178">Package and test</text><text x="975" y="178">Vendor review</text>
+      <text x="70" y="395">Measure discovery</text><text x="460" y="395">Learn and improve</text><text x="850" y="395">Update Potbot</text>
+    </g>
+    <g font-size="17">
+      <text x="70" y="213">Exact released source</text><text x="70" y="241">Task and keyword evidence</text>
+      <text x="380" y="213">Canonical tool workflows</text><text x="380" y="241">Honest host requirements</text>
+      <text x="690" y="213">Clean installation</text><text x="690" y="241">Real reviewer evidence</text>
+      <text x="975" y="213">Approval receipt</text><text x="975" y="241">Verified listing</text>
+      <text x="70" y="433">Find → suggest → consent</text><text x="70" y="461">Install → select → complete</text><text x="70" y="488">Keep each outcome distinct</text>
+      <text x="460" y="433">Matched tasks and controls</text><text x="460" y="461">One variable per comparison</text><text x="460" y="488">Weekly evidence review</text>
+      <text x="850" y="433">Fair typed capability retrieval</text><text x="850" y="461">Admission before installation</text><text x="850" y="488">Qualification before execution</text>
+    </g>
+    <g stroke="#78e0cd" stroke-width="2.5" fill="none" marker-end="url(#arrow)">
+      <path d="M300 210H344"/><path d="M610 210H654"/><path d="M895 210H939"/>
+      <path d="M1052 282V320H218V342"/><path d="M390 435H424"/><path d="M780 435H814"/>
+      <path d="M608 512V550H173V294"/>
+    </g>
+    <text x="48" y="604" font-size="18" fill="#bbc6d4">Listing does not guarantee recommendation. Generated planning illustration; no approval or implementation claimed.</text>
+  </g>
+</svg>
