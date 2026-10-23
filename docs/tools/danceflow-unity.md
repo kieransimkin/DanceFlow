@@ -8,7 +8,15 @@ Phases 1–3 implement fixed/verified variable tempo, DSP/manual transport, 16-t
 
 Install a reviewed commit through Unity Package Manager. Import the opt-in Beat Phase Cube, Shader Clock URP, Song Reactive Landscape or Rigged Character Demos sample. The synthetic rig demo creates two skinned robots with a silent 120-BPM clock. It does not prove real-character retargeting or actual song alignment. External FBX, CMU recordings, audio and weights remain separate rights-controlled inputs.
 
-Read the [source-pinned capability reference](../capabilities/danceflow-unity.md) and [joint workflow](../workflows/potbot-unity.md). Managed/static tests are useful contract evidence; Unity Editor/PlayMode, framebuffer/GPU, licensed WebGL builds, physical timing and real-character acceptance remain separate gates.
+Read the [source-pinned capability reference](../capabilities/danceflow-unity.md) and [joint workflow](../workflows/potbot-unity.md). Managed/static tests are useful contract evidence; native synthetic, other-platform, WebGL, physical timing and real-character acceptance remain separate gates.
+
+## Native preview follow-up
+
+[`v0.5.0-preview.2`](https://github.com/kieransimkin/DanceFlow.Unity/releases/tag/v0.5.0-preview.2) adds declared runtime modules, batch-compatible GPU acceptance and persistent synthetic rig generation. The [native qualification record](https://github.com/kieransimkin/DanceFlow.Unity/blob/v0.5.0-preview.2/docs/11-native-acceptance.md) covers 23 Editor and five PlayMode cases on Unity6000.6.7f1 / URP17.6 / Direct3D11 / RTX4060Ti, plus a focused actual end-mesh check. Saved/reopened direct and Playables rigs deform across seeks and return to rest beyond the finite recording. This preview is not stable, real-character or original-song acceptance, and does not qualify an older public WebGL deployment.
+
+![Actual synthetic rig render from the native acceptance check](../media/native-unity-rigs.png)
+
+Actual native framebuffer readback, not an illustration. Procedural test rigs and a silent synthetic clock; no external character or song data. Install the reviewed tag explicitly rather than interpreting the absence of a stable release as absence of a preview.
 
 ![Generated diagram of the supported evidence handoffs](../media/potbot-unity-handoffs.svg)
 
