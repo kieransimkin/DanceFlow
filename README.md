@@ -44,7 +44,13 @@ It is a roadmap; approval, publication and measured discovery remain separate mi
 
 ## Use the local MCP server
 
-Version `0.1.17` packages the ecosystem hub and seventeen-component discovery, including Potbot and Unity source-preview references. See the [complete MCP coverage, runtime configuration and job guide](docs/mcp-ecosystem.md).
+Version `0.1.18` packages the ecosystem hub and seventeen-component discovery, including Potbot and Unity source-preview references. It aligns client/marketplace versions, task descriptions and keywords, applies the current OpenAI listing field limits, and guides setup toward the requested component's first useful result. See the [complete MCP coverage, runtime configuration and job guide](docs/mcp-ecosystem.md).
+
+The [vidIQ comparison and immediate discovery improvements](docs/plans/vidiq-discovery-evidence.md) separates verified provider packaging from unproven recommendation causes. The [approval and continuing research plan](docs/plans/plugin-approval-and-agent-discovery.md) tracks eligibility, first-task success, keyword evidence and selection experiments. Local validation and a software release do not establish vendor-directory approval.
+
+![Generated diagram separating provider packaging, host discovery and user outcomes](docs/media/vidiq-discovery-evidence.svg)
+
+*Generated research illustration, not a screenshot of an installation or a vendor ranking algorithm. Actual host recordings remain part of the reviewer/selection experiments.*
 
 For source development, use an isolated Python 3.10–3.13 environment, install this checkout and choose one workspace containing authorised input files:
 
@@ -67,7 +73,7 @@ For a client-managed source installation, point the command at that environment'
 }
 ```
 
-For the matching released hub, use `uvx --python 3.13 --from danceflow-agent-tools==0.1.17 danceflow-mcp --workspace ./my-workspace`. Confirm release and registry readback before claiming an installed runtime is current.
+For the matching released hub, use `uvx --python 3.13 --from danceflow-agent-tools==0.1.18 danceflow-mcp --workspace ./my-workspace`. Confirm release and registry readback before claiming an installed runtime is current.
 
 Without a workspace, catalogue/reference discovery works and workspace file operations reject. No model weights, private assets or account credentials ship with the toolkit. Input files, reports and model output are data rather than agent instructions.
 
