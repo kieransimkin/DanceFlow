@@ -1,3 +1,116 @@
+# DanceMoves: capability and package reference
+
+Audited 23 October 2026: **v3.4.0**, exact source [`2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3`](https://github.com/kieransimkin/DanceMoves/tree/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3). This is a dated source/documentation audit, not installed-runtime or end-to-end acceptance. [Check current releases before use](../workflows/release-preflight.md).
+
+## Current README feature routes
+
+- [Agents and contributors](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#agents-and-contributors)
+- [Shared JavaScript library and WordPress](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#shared-javascript-library-and-wordpress)
+- [Existing WordPress recipes and 2.x reference material](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#existing-wordpress-recipes-and-2x-reference-material)
+- [WordPress examples: Arcadians and complete feature coverage](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#wordpress-examples-arcadians-and-complete-feature-coverage)
+- [Run the simulated WordPress gallery](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#run-the-simulated-wordpress-gallery)
+- [Set up a real WordPress Page](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#set-up-a-real-wordpress-page)
+- [Every stored metadata key](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#every-stored-metadata-key)
+- [Coverage map](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#coverage-map)
+- [Feature-by-feature WordPress recipes](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#feature-by-feature-wordpress-recipes)
+- [1. Arcadians: ancient to future](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#1-arcadians-ancient-to-future)
+- [2. Page metadata and revisions](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#2-page-metadata-and-revisions)
+- [3. Musical clock and CSS timing](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#3-musical-clock-and-css-timing)
+- [4. Starts, beats and interval handlers](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#4-starts-beats-and-interval-handlers)
+- [5. Named cues, events and animation ownership](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#5-named-cues-events-and-animation-ownership)
+- [6. Canonical lyrics and look-ahead](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#6-canonical-lyrics-and-look-ahead)
+- [7. Master-length audio discovery](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#7-master-length-audio-discovery)
+- [8. Bounded pointer and parallax](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#8-bounded-pointer-and-parallax)
+- [9. Audio-phase pulse](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#9-audio-phase-pulse)
+- [10. Finite cue-triggered class](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#10-finite-cue-triggered-class)
+- [11. Restorable cue timeline](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#11-restorable-cue-timeline)
+- [12. Recoverable quality tiers](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#12-recoverable-quality-tiers)
+- [13. CSS catalogue adoption](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#13-css-catalogue-adoption)
+- [14. All nine orientation mappings](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#14-all-nine-orientation-mappings)
+- [15. Orientation helpers and schedulers](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#15-orientation-helpers-and-schedulers)
+- [16. Legacy Clay adapter with Arcadians audio](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#16-legacy-clay-adapter-with-arcadians-audio)
+- [17. Paper-plane ambient effect](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#17-paper-plane-ambient-effect)
+- [18. All 15 native rudiments](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#18-all-15-native-rudiments)
+- [19. Rudiment custom renderer and clocks](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#19-rudiment-custom-renderer-and-clocks)
+- [20. Bounded diagnostics and events](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#20-bounded-diagnostics-and-events)
+- [21. Accessibility and lifecycle](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#21-accessibility-and-lifecycle)
+- [22. MP3 download versus playback](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#22-mp3-download-versus-playback)
+- [23. Motion capture REST contract](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#23-motion-capture-rest-contract)
+- [Release a new DanceMoves version](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#release-a-new-dancemoves-version)
+- [Example validation](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#example-validation)
+- [Rudiment animation integration](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#rudiment-animation-integration)
+- [Reusable effect primitives (2.8.0)](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#reusable-effect-primitives-280)
+- [Paper Dreams flight adapter (2.6.3)](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#paper-dreams-flight-adapter-263)
+- [Paper Dreams performance acceptance](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#paper-dreams-performance-acceptance)
+- [Page properties](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#page-properties)
+- [Musical clock](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#musical-clock)
+- [Cue behavior and page API](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#cue-behavior-and-page-api)
+- [Timed lyric pop-ups and visual-language workflow](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#timed-lyric-pop-ups-and-visual-language-workflow)
+- [Release adapters](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#release-adapters)
+- [Adaptive Clay/Stars performance](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#adaptive-claystars-performance)
+- [Performance guidance](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#performance-guidance)
+- [Performance acceptance target](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#performance-acceptance-target)
+- [Validation and packaging](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#validation-and-packaging)
+- [Rollback](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#rollback)
+- [Potential problems](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#potential-problems)
+- [WordPress.org publication](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#wordpressorg-publication)
+- [Agent guidance releases](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#agent-guidance-releases)
+- [Optional variable-tempo / corrected Beat 1 maps from StemLab](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#optional-variable-tempo--corrected-beat-1-maps-from-stemlab)
+- [Optional word-level lyrics and multi-song Pages](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md#optional-word-level-lyrics-and-multi-song-pages)
+
+## Source documentation and examples
+
+- [`README.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md)
+- [`docs/README.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/README.md)
+- [`docs/api/adapters.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/api/adapters.md)
+- [`docs/api/downloads.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/api/downloads.md)
+- [`docs/api/effects.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/api/effects.md)
+- [`docs/api/javascript.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/api/javascript.md)
+- [`docs/api/paper-planes.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/api/paper-planes.md)
+- [`docs/api/styling.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/api/styling.md)
+- [`docs/api/wordpress.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/api/wordpress.md)
+- [`docs/audio-recording-playback.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/audio-recording-playback.md)
+- [`docs/beat-alignment.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/beat-alignment.md)
+- [`docs/branding/README.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/branding/README.md)
+- [`docs/child-playback.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/child-playback.md)
+- [`docs/clay-transform-validation.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/clay-transform-validation.md)
+- [`docs/control-feedback.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/control-feedback.md)
+- [`docs/development.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/development.md)
+- [`docs/epk-dom-stability.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/epk-dom-stability.md)
+- [`docs/guide.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/guide.md)
+- [`docs/javascript-api.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/javascript-api.md)
+- [`docs/javascript-server.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/javascript-server.md)
+- [`docs/phone-motion-connections.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/phone-motion-connections.md)
+- [`docs/phone-motion-preference.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/phone-motion-preference.md)
+- [`docs/playback-sources.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/playback-sources.md)
+- [`docs/react-next.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/react-next.md)
+- [`docs/releasing-shared.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/releasing-shared.md)
+- [`docs/rudiments-source-integrity.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/rudiments-source-integrity.md)
+- [`docs/shared-feature-coverage.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/shared-feature-coverage.md)
+- [`docs/shared-runtime-migration.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/shared-runtime-migration.md)
+- [`docs/source-audit.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/source-audit.md)
+- [`docs/validation-setup.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/validation-setup.md)
+- [`docs/variable-tempo.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/variable-tempo.md)
+- [`docs/word-and-multi-song.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/word-and-multi-song.md)
+- [`docs/wordpress-examples.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/wordpress-examples.md)
+- [`docs/wordpress-org.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/wordpress-org.md)
+- [`docs/wordpress-shared-runtime.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/docs/wordpress-shared-runtime.md)
+- [`examples/child-playback/README.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/examples/child-playback/README.md)
+- [`examples/playback-sources/README.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/examples/playback-sources/README.md)
+- [`examples/wordpress/README.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/examples/wordpress/README.md)
+
+## Package evidence
+
+- [`README.md`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/README.md) — SHA-256 `6f43bf0491c72933a81ed336b4e481defd3d866b8b8094902bfff63763afed87`.
+- [`package.json`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/package.json) — SHA-256 `46835034c1cd2c980b353d4927db534f171bfc3162519659de7d6496f7a994df`.
+- [`LICENSE`](https://github.com/kieransimkin/DanceMoves/blob/2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3/LICENSE) — SHA-256 `edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6`.
+
+Package files were read at the pinned source. Published distributions, installed identity, working host examples, rights and reviewed output require their own verification.
+
+## Historical detailed reference
+
+The following older index is retained for detailed routes. Its earlier version is historical; the audited source links above identify current documented availability.
+
 # DanceMoves: complete capability reference
 
 Inspected stable source: [v3.4.0](https://github.com/kieransimkin/DanceMoves/releases/tag/v3.4.0), commit `2222a11392aa424d9f2cbfcbc5e4e74e23b06cb3`. This is a dated baseline; [check current releases before every new workflow](../workflows/release-preflight.md).
@@ -306,3 +419,7 @@ The inspected main checkout has different documentation at the following paths. 
 ## Examples and media
 
 Use the runnable examples and actual screenshots/videos linked from the released references. Keep their documented version/context and distinguish synthetic fixtures, model hypotheses and real captured output. Do not represent a guide link as proof that a model, GPU, physical phone or production host was tested. New decorative generated imagery adds no feature evidence to this reference index.
+
+## Default-branch availability
+
+The official default branch was also inspected at [`4661a7f43b3d58eb70d1664b92882fcca1f5b7a5`](https://github.com/kieransimkin/DanceMoves/tree/4661a7f43b3d58eb70d1664b92882fcca1f5b7a5). It differs from the audited stable tag. [Read that exact README](https://github.com/kieransimkin/DanceMoves/blob/4661a7f43b3d58eb70d1664b92882fcca1f5b7a5/README.md) for later source/documentation work; this does not establish a newer release, registry version or installed runtime.

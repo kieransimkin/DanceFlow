@@ -1,3 +1,76 @@
+# DanceRudiments: capability and package reference
+
+Audited 23 October 2026: **v0.4.7**, exact source [`7964bc4e912d2aba2d0971f247c2a38c371927d6`](https://github.com/kieransimkin/DanceRudiments/tree/7964bc4e912d2aba2d0971f247c2a38c371927d6). This is a dated source/documentation audit, not installed-runtime or end-to-end acceptance. [Check current releases before use](../workflows/release-preflight.md).
+
+## Current README feature routes
+
+- [Before every new workflow](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#before-every-new-workflow)
+- [Find your route](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#find-your-route)
+- [▶ Try the pattern visualizer](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#-try-the-pattern-visualizer)
+- [3D dance examples](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#3d-dance-examples)
+- [Which package should I use?](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#which-package-should-i-use)
+- [Included rudiments](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#included-rudiments)
+- [Default collections](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#default-collections)
+- [Dancefloor 06](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#dancefloor-06)
+- [BPM-synchronised N-dimensional recordings and comparison harness](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#bpm-synchronised-n-dimensional-recordings-and-comparison-harness)
+- [Rigify character motion](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#rigify-character-motion)
+- [Optional model-specific motion packages](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#optional-model-specific-motion-packages)
+- [Curve and event authoring](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#curve-and-event-authoring)
+- [Language bindings](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#language-bindings)
+- [C++ binding](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#c-binding)
+- [Python binding](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#python-binding)
+- [C# / .NET binding](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#c--net-binding)
+- [TypeScript/WASM binding](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#typescriptwasm-binding)
+- [Limits, attribution and troubleshooting](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#limits-attribution-and-troubleshooting)
+- [Harness](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#harness)
+- [DanceFlow ecosystem](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#danceflow-ecosystem)
+- [Motion safety](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#motion-safety)
+- [Troubleshooting history](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#troubleshooting-history)
+- [Switch the shared visualizer between trajectories and bars](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#switch-the-shared-visualizer-between-trajectories-and-bars)
+- [Continuous integration and releases](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#continuous-integration-and-releases)
+- [Coordinated releases and latest-release dependencies](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#coordinated-releases-and-latest-release-dependencies)
+- [Agents and contributors](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md#agents-and-contributors)
+
+## Source documentation and examples
+
+- [`README.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md)
+- [`docs/ECOSYSTEM.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/ECOSYSTEM.md)
+- [`docs/authoring.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/authoring.md)
+- [`docs/bindings.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/bindings.md)
+- [`docs/blender-motion-import.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/blender-motion-import.md)
+- [`docs/branding/README.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/branding/README.md)
+- [`docs/ci-reproducibility.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/ci-reproducibility.md)
+- [`docs/csharp.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/csharp.md)
+- [`docs/dancefloor.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/dancefloor.md)
+- [`docs/default-library.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/default-library.md)
+- [`docs/kandi-boom-integration.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/kandi-boom-integration.md)
+- [`docs/kandi-boom-source-audit.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/kandi-boom-source-audit.md)
+- [`docs/mesh-demos.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/mesh-demos.md)
+- [`docs/midi-harness.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/midi-harness.md)
+- [`docs/motion-packages.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/motion-packages.md)
+- [`docs/motion-sources.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/motion-sources.md)
+- [`docs/recordings.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/recordings.md)
+- [`docs/release-demo.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/release-demo.md)
+- [`docs/released-viewers.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/released-viewers.md)
+- [`docs/rig-motion.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/rig-motion.md)
+- [`docs/rigify-catalogue.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/rigify-catalogue.md)
+- [`docs/troubleshooting.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/docs/troubleshooting.md)
+- [`examples/bindings/README.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/examples/bindings/README.md)
+- [`examples/rig-motion/README.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/examples/rig-motion/README.md)
+
+## Package evidence
+
+- [`README.md`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/README.md) — SHA-256 `73e37f09c8c9e2e368bf85cce83bd5bf9c957c00909c9201b97683c436f1010d`.
+- [`pyproject.toml`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/pyproject.toml) — SHA-256 `ff1d8fc2e34a5b5f45eabf3650c0ec9828a1ec2f4456255bdb9bbb3e414a4872`.
+- [`package.json`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/package.json) — SHA-256 `2ba5a86e4bb1bdc4fdd7d11b5f30d57db309f7b8df2eaf5829a69ffa7e071e57`.
+- [`LICENSE`](https://github.com/kieransimkin/DanceRudiments/blob/7964bc4e912d2aba2d0971f247c2a38c371927d6/LICENSE) — SHA-256 `bc73e5152b5fe1716c5c8b5cb2b83d51b2e5300827bfa580eeb7a07a498aeafc`.
+
+Package files were read at the pinned source. Published distributions, installed identity, working host examples, rights and reviewed output require their own verification.
+
+## Historical detailed reference
+
+The following older index is retained for detailed routes. Its earlier version is historical; the audited source links above identify current documented availability.
+
 # DanceRudiments: complete capability reference
 
 Inspected stable source: [v0.3.0](https://github.com/kieransimkin/DanceRudiments/releases/tag/v0.3.0), commit `b89d1b80fcd8a8d8e02394ec718b6f4debd97b94`. This is a dated baseline; [check current releases before every new workflow](../workflows/release-preflight.md).
@@ -140,3 +213,9 @@ Each entry links to the exact released explanation, options, example or limitati
 ## Examples and media
 
 Use the runnable examples and actual screenshots/videos linked from the released references. Keep their documented version/context and distinguish synthetic fixtures, model hypotheses and real captured output. Do not represent a guide link as proof that a model, GPU, physical phone or production host was tested. New decorative generated imagery adds no feature evidence to this reference index.
+
+## Default-branch availability
+
+The official default branch was also inspected at [`e6bbd17d54272f6a017dbdda201a1a67ecc20c82`](https://github.com/kieransimkin/DanceRudiments/tree/e6bbd17d54272f6a017dbdda201a1a67ecc20c82). It differs from the audited stable tag. [Read that exact README](https://github.com/kieransimkin/DanceRudiments/blob/e6bbd17d54272f6a017dbdda201a1a67ecc20c82/README.md) for later source/documentation work; this does not establish a newer release, registry version or installed runtime.
+
+Registry audit on 23 October 2026: GitHub/npm 0.4.7 and PyPI latest 0.4.5 differ. Do not propose `pip install dancerudiments==0.4.7` without a later verified PyPI readback.

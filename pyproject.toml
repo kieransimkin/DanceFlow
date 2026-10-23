@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "danceflow-agent-tools"
-version = "0.1.16"
+version = "0.1.17"
 description = "Portable skills and a complete DanceFlow ecosystem MCP hub. https://kieransimkin.co.uk/danceflow/"
 readme = "README.md"
 requires-python = ">=3.10,<3.14"
@@ -80,5 +80,14 @@ pythonpath = ["src"]
 "share/danceflow-agent-tools/plugins/danceflow/skills/prismmoves" = ["plugins/danceflow/skills/prismmoves/SKILL.md"]
 "share/danceflow-agent-tools/plugins/danceflow/skills/prismmoves/assets" = ["plugins/danceflow/skills/prismmoves/assets/visual-profile-example.png"]
 
-"share/danceflow-agent-tools/docs/capabilities" = ["docs/capabilities/dancemoves.md", "docs/capabilities/dancerudiments.md", "docs/capabilities/dancevault.md", "docs/capabilities/epk-social-metadata.md", "docs/capabilities/framerudiments.md", "docs/capabilities/index.md", "docs/capabilities/keywordmoves.md", "docs/capabilities/likenessforge.md", "docs/capabilities/mediaslide.md", "docs/capabilities/pixelcue.md", "docs/capabilities/prismmoves.md", "docs/capabilities/rastermoves.md", "docs/capabilities/react-timeline-sequence.md", "docs/capabilities/stemlab.md", "docs/capabilities/toolkit.md", "docs/capabilities/thumbmoves.md", "docs/capabilities/workflowmoves.md"]
+"share/danceflow-agent-tools/docs/capabilities" = ["docs/capabilities/*.md"]
 "share/danceflow-agent-tools/docs/workflows" = ["docs/workflows/*.md"]
+
+"share/danceflow-agent-tools/plugins/danceflow/skills/potbot" = ["plugins/danceflow/skills/potbot/SKILL.md"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/potbot/agents" = ["plugins/danceflow/skills/potbot/agents/openai.yaml"]
+
+"share/danceflow-agent-tools/plugins/danceflow/skills/danceflow-unity" = ["plugins/danceflow/skills/danceflow-unity/SKILL.md"]
+"share/danceflow-agent-tools/plugins/danceflow/skills/danceflow-unity/agents" = ["plugins/danceflow/skills/danceflow-unity/agents/openai.yaml"]
+
+"share/danceflow-agent-tools/docs/media" = ["docs/media/potbot-unity-handoffs.svg"]
+"share/danceflow-agent-tools/examples" = ["examples/ecosystem_discovery.py"]

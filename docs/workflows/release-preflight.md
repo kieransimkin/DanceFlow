@@ -42,3 +42,7 @@ Actual synthetic renderer output retained in FrameRudiments 0.4.1. [Play the con
 - **An old environment has an incomplete unrelated distribution.** Preserve its evidence and models. Verify the selected integration in a healthy project environment or repair the actual missing package; do not describe a version-only install as a repaired environment.
 
 Screenshots and recordings belong beside the feature they demonstrate. A generated diagram may explain a contract but cannot establish installation, operation or publication. This preflight needs no new decorative generated bitmap; the actual encoded example explains the timing handoff directly.
+
+## Source previews without stable releases
+
+Potbot and DanceFlow for Unity are included in preflight. A successful official query with no stable runtime yields `no_stable_release`; a network/authentication failure remains `unavailable`. Exit 0 means queries completed, not that every component is stable, installed or qualified. Pin source previews to reviewed commits and preserve native-host acceptance. See [Potbot and Unity handoffs](potbot-unity.md).

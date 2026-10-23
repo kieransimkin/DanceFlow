@@ -1,3 +1,109 @@
+# StemLab: capability and package reference
+
+Audited 23 October 2026: **v1.11.0**, exact source [`f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0`](https://github.com/kieransimkin/stemlab/tree/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0). This is a dated source/documentation audit, not installed-runtime or end-to-end acceptance. [Check current releases before use](../workflows/release-preflight.md).
+
+## Current README feature routes
+
+- [Before every new workflow](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#before-every-new-workflow)
+- [Find your route](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#find-your-route)
+- [Synopsis](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#synopsis)
+- [Install](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#install)
+- [CLI](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#cli)
+- [Output layout](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#output-layout)
+- [Analysis performed](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#analysis-performed)
+- [Curated default model set (September 2026)](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#curated-default-model-set-september-2026)
+- [Speech transcription](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#speech-transcription)
+- [Comprehensive sonic, harmonic, rhythmic and semantic analysis](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#comprehensive-sonic-harmonic-rhythmic-and-semantic-analysis)
+- [Find DanceRudiments matching candidates from each stem](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#find-dancerudiments-matching-candidates-from-each-stem)
+- [Measured Arcadians benchmark](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#measured-arcadians-benchmark)
+- [BPM-synchronised recordings, harness and batch generation](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#bpm-synchronised-recordings-harness-and-batch-generation)
+- [Export a master or stem as a signed waveform rudiment](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#export-a-master-or-stem-as-a-signed-waveform-rudiment)
+- [Correct beats and export variable-tempo synchronisation](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#correct-beats-and-export-variable-tempo-synchronisation)
+- [First-beat alignment and tempo families](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#first-beat-alignment-and-tempo-families)
+- [Editable song timing: fixed/variable BPM, lyrics, words and cue sections](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#editable-song-timing-fixedvariable-bpm-lyrics-words-and-cue-sections)
+- [Loop discovery and playback](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#loop-discovery-and-playback)
+- [Recover a Short or video's source timing](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#recover-a-short-or-videos-source-timing)
+- [Audio-to-MIDI model comparison](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#audio-to-midi-model-comparison)
+- [Align timed musical cues to detected beats](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#align-timed-musical-cues-to-detected-beats)
+- [Complementary evidence models](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#complementary-evidence-models)
+- [Arcadians: complete analysis timeline and four movement demos](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#arcadians-complete-analysis-timeline-and-four-movement-demos)
+- [Build and publish all five examples](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#build-and-publish-all-five-examples)
+- [Export an existing analysis as a static timeline](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#export-an-existing-analysis-as-a-static-timeline)
+- [Timeline analysis gallery](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#timeline-analysis-gallery)
+- [1. Separation, spectrograms, beats and sections](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#1-separation-spectrograms-beats-and-sections)
+- [2. Lyrics, speech regions and transcript QA](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#2-lyrics-speech-regions-and-transcript-qa)
+- [3. Harmony, melody and song-map fusion](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#3-harmony-melody-and-song-map-fusion)
+- [4. Sonic profile, rhythm regimes and semantics](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#4-sonic-profile-rhythm-regimes-and-semantics)
+- [5. Where loops fit in](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#5-where-loops-fit-in)
+- [Timeline overlays and movement display modes](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#timeline-overlays-and-movement-display-modes)
+- [Web service](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#web-service)
+- [Python API](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#python-api)
+- [Codex plugin and MCP server](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#codex-plugin-and-mcp-server)
+- [Codex skill](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#codex-skill)
+- [DanceFlow and DanceMoves](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#danceflow-and-dancemoves)
+- [Documentation](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#documentation)
+- [External runtime/cache details](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#external-runtimecache-details)
+- [Releases](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#releases)
+- [Coordinated releases and latest-release dependencies](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#coordinated-releases-and-latest-release-dependencies)
+- [Standalone Linux CLI release gate](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#standalone-linux-cli-release-gate)
+- [Windows pytest temporary-directory permissions](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#windows-pytest-temporary-directory-permissions)
+- [Reproducibility and licensing](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#reproducibility-and-licensing)
+- [Arcadians timeline CI decoder and artifact checks](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#arcadians-timeline-ci-decoder-and-artifact-checks)
+- [Separated-stem movement batches and controlled smoothing](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#separated-stem-movement-batches-and-controlled-smoothing)
+- [Beat detection after separation: master and percussion hypotheses](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#beat-detection-after-separation-master-and-percussion-hypotheses)
+- [Agents and contributors](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md#agents-and-contributors)
+
+## Source documentation and examples
+
+- [`README.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md)
+- [`docs/ECOSYSTEM.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/ECOSYSTEM.md)
+- [`docs/README.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/README.md)
+- [`docs/arcadians-complete-analysis.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/arcadians-complete-analysis.md)
+- [`docs/arcadians-release-demo.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/arcadians-release-demo.md)
+- [`docs/arcadians-timeline.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/arcadians-timeline.md)
+- [`docs/beat-inputs.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/beat-inputs.md)
+- [`docs/beat-offsets.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/beat-offsets.md)
+- [`docs/beat-timeline.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/beat-timeline.md)
+- [`docs/beatnet.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/beatnet.md)
+- [`docs/branding/README.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/branding/README.md)
+- [`docs/clip-matching.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/clip-matching.md)
+- [`docs/codex-plugin.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/codex-plugin.md)
+- [`docs/codex-publishing.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/codex-publishing.md)
+- [`docs/containers.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/containers.md)
+- [`docs/cue-alignment.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/cue-alignment.md)
+- [`docs/danceflow.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/danceflow.md)
+- [`docs/evidence-models.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/evidence-models.md)
+- [`docs/loop-validation.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/loop-validation.md)
+- [`docs/loops.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/loops.md)
+- [`docs/lyric-audition.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/lyric-audition.md)
+- [`docs/midi.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/midi.md)
+- [`docs/phrase-loops.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/phrase-loops.md)
+- [`docs/publishing.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/publishing.md)
+- [`docs/recording-pairs.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/recording-pairs.md)
+- [`docs/released-viewers.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/released-viewers.md)
+- [`docs/rudiment-recordings.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/rudiment-recordings.md)
+- [`docs/rudiments.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/rudiments.md)
+- [`docs/viewer-controls.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/viewer-controls.md)
+- [`docs/web.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/web.md)
+- [`docs/wordpress-beatnet-update-2026-10-01.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/docs/wordpress-beatnet-update-2026-10-01.md)
+- [`examples/arcadians/README.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/examples/arcadians/README.md)
+- [`examples/recordings/README.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/examples/recordings/README.md)
+- [`examples/the-truth-is-a-virus/README.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/examples/the-truth-is-a-virus/README.md)
+
+## Package evidence
+
+- [`README.md`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/README.md) — SHA-256 `10ff259ce0f6340a65f6d11c028c52d64d1bb3127e50544c3355fffcc7e1a5ac`.
+- [`pyproject.toml`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/pyproject.toml) — SHA-256 `e14a6826aa2d6476c650e326a526720a91e33d647e5d622b16ba1439c36e60d6`.
+- [`package.json`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/package.json) — SHA-256 `4ae19e074b522e65f1e461b1635f4b91ca65aac4a6b3812b7b439f1d95bbcc1d`.
+- [`MANIFEST.in`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/MANIFEST.in) — SHA-256 `6ef9c450dc2eb2c6226811b957163344029cb40f8dc6f6c5762c7d18df0be203`.
+- [`LICENSE`](https://github.com/kieransimkin/stemlab/blob/f15f3d38c5e337e7ddd86d36878b61a99bf8f5b0/LICENSE) — SHA-256 `2cf0f6145baaa037c259c986f3fc2b7053b37fdbae9f48cec9875111c97c02b0`.
+
+Package files were read at the pinned source. Published distributions, installed identity, working host examples, rights and reviewed output require their own verification.
+
+## Historical detailed reference
+
+The following older index is retained for detailed routes. Its earlier version is historical; the audited source links above identify current documented availability.
+
 # stemlab: complete capability reference
 
 Inspected stable source: [v1.8.0](https://github.com/kieransimkin/stemlab/releases/tag/v1.8.0), commit `589eeb1be9dab6a9e4596cfd089b1ef87d2dc2cc`. This is a dated baseline; [check current releases before every new workflow](../workflows/release-preflight.md).
@@ -240,3 +346,7 @@ Each entry links to the exact released explanation, options, example or limitati
 ## Examples and media
 
 Use the runnable examples and actual screenshots/videos linked from the released references. Keep their documented version/context and distinguish synthetic fixtures, model hypotheses and real captured output. Do not represent a guide link as proof that a model, GPU, physical phone or production host was tested. New decorative generated imagery adds no feature evidence to this reference index.
+
+## Default-branch availability
+
+The official default branch was also inspected at [`ffb903eeeaea3f45b77c7dc0743ac785bb478593`](https://github.com/kieransimkin/stemlab/tree/ffb903eeeaea3f45b77c7dc0743ac785bb478593). It differs from the audited stable tag. [Read that exact README](https://github.com/kieransimkin/stemlab/blob/ffb903eeeaea3f45b77c7dc0743ac785bb478593/README.md) for later source/documentation work; this does not establish a newer release, registry version or installed runtime.

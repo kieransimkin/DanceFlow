@@ -29,6 +29,8 @@ COMPONENTS = (
     ("EPK Social Metadata", "kieran-epk-social-metadata", "v", None),
     ("DanceVault", "DanceVault", "v", None),
     ("WorkflowMoves", "WorkflowMoves", "v", None),
+    ("Potbot", "potbot", "v", "potbot"),
+    ("DanceFlow for Unity", "DanceFlow.Unity", "v", None),
     ("DanceFlow toolkit", "DanceFlow", "v", "danceflow-agent-tools"),
 )
 
@@ -109,7 +111,10 @@ def check_releases(installed: dict[str, str] | None = None, fetch=official_relea
                 raise releases
             release = latest_runtime(releases, prefix)
             if release is None:
-                raise ValueError("No stable runtime release found")
+                row.update(status="no_stable_release", released=None,
+                           reason="Official query succeeded; no stable runtime release exists. Source previews require a pinned commit and separate qualification.")
+                rows.append(row)
+                continue
             version = release["tag_name"][len(prefix):]
             row.update(released=version, tag=release["tag_name"], url=release["html_url"],
                        published_at=release.get("published_at"),

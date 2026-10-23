@@ -1,3 +1,53 @@
+# React Timeline Sequence: capability and package reference
+
+Audited 23 October 2026: **v0.8.0**, exact source [`169edf420bc4eb5c0664a10fb962421a5afe0814`](https://github.com/kieransimkin/react-timeline-sequence/tree/169edf420bc4eb5c0664a10fb962421a5afe0814). This is a dated source/documentation audit, not installed-runtime or end-to-end acceptance. [Check current releases before use](../workflows/release-preflight.md).
+
+## Current README feature routes
+
+- [Before every new workflow](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md#before-every-new-workflow)
+- [Find your route](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md#find-your-route)
+- [Install](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md#install)
+- [Use](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md#use)
+- [Lane content](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md#lane-content)
+- [Lyric timing audition](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md#lyric-timing-audition)
+- [Loop regions and buffered playback](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md#loop-regions-and-buffered-playback)
+- [Editable keyframe lanes](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md#editable-keyframe-lanes)
+- [Sample-frame BPM matching and editable timing lanes (v0.4)](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md#sample-frame-bpm-matching-and-editable-timing-lanes-v04)
+- [Composite audio lanes and display navigation](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md#composite-audio-lanes-and-display-navigation)
+- [Styling](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md#styling)
+- [Scope](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md#scope)
+- [Potential problems](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md#potential-problems)
+- [The timeline has no usable height](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md#the-timeline-has-no-usable-height)
+- [Audio plays but cross-origin media fails in some hosts](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md#audio-plays-but-cross-origin-media-fails-in-some-hosts)
+- [Development](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md#development)
+- [Coordinated releases and latest-release dependencies](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md#coordinated-releases-and-latest-release-dependencies)
+- [Agents and contributors](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md#agents-and-contributors)
+- [Licence](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md#licence)
+
+## Source documentation and examples
+
+- [`README.md`](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md)
+- [`docs/ECOSYSTEM.md`](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/docs/ECOSYSTEM.md)
+- [`docs/branding/README.md`](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/docs/branding/README.md)
+- [`docs/keyframe-lane.md`](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/docs/keyframe-lane.md)
+- [`docs/loops.md`](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/docs/loops.md)
+- [`docs/lyric-audition.md`](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/docs/lyric-audition.md)
+- [`docs/publishing.md`](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/docs/publishing.md)
+- [`docs/released-viewers.md`](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/docs/released-viewers.md)
+- [`docs/timing-editing.md`](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/docs/timing-editing.md)
+
+## Package evidence
+
+- [`README.md`](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/README.md) — SHA-256 `aa03b956ae2423764f3b05d3161ca2f3a5daea3bc686b9ac593af695a895d6af`.
+- [`package.json`](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/package.json) — SHA-256 `598f2503bd0de7778fb3f90ed655e9b17637e4f65a02c7d3a68d5e47ad7f343a`.
+- [`LICENSE`](https://github.com/kieransimkin/react-timeline-sequence/blob/169edf420bc4eb5c0664a10fb962421a5afe0814/LICENSE) — SHA-256 `bc73e5152b5fe1716c5c8b5cb2b83d51b2e5300827bfa580eeb7a07a498aeafc`.
+
+Package files were read at the pinned source. Published distributions, installed identity, working host examples, rights and reviewed output require their own verification.
+
+## Historical detailed reference
+
+The following older index is retained for detailed routes. Its earlier version is historical; the audited source links above identify current documented availability.
+
 # react-timeline-sequence: complete capability reference
 
 Inspected stable source: [v0.4.0](https://github.com/kieransimkin/react-timeline-sequence/releases/tag/v0.4.0), commit `e8ef859126f7d3c9abd07f371cef46b624d36ebc`. This is a dated baseline; [check current releases before every new workflow](../workflows/release-preflight.md).

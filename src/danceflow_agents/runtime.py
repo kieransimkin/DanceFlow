@@ -112,6 +112,12 @@ class RuntimeConfig:
 
     def availability(self, name: str) -> dict:
         entry = self.component(name)
+        if name in {"potbot", "danceflow-unity"}:
+            return {"status": "native_host_required", "qualification": "source_preview",
+                    "reason": ("Potbot requires its PostgreSQL/qualified worker host; DanceFlow MCP consumption remains planned."
+                               if name == "potbot" else
+                               "Unity 6 Editor/GPU acceptance is required; no Unity execution adapter is exposed."),
+                    "source_configured": bool(entry.get("source_root"))}
         if entry.get("python") and Path(entry["python"]).resolve() != Path(sys.executable).resolve():
             return {"status": "configured_unverified", "reason": "Separate Python selected; package/API checked on invocation"}
         if name == "workflowmoves":

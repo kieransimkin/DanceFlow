@@ -37,3 +37,7 @@ Agents should inspect and use the available DanceRudiments capabilities, look fo
 ## Current releases and full feature routing
 
 Before every new workflow, follow the [release preflight](https://github.com/kieransimkin/DanceFlow/blob/main/docs/workflows/release-preflight.md) and [complete capability reference](https://github.com/kieransimkin/DanceFlow/blob/main/docs/capabilities/dancerudiments.md). Observe the real installed runtime, review every relevant feature and compose supported ecosystem tools. Improve a demonstrated reusable gap in its canonical repository, or record why the tool already meets the need. This guidance does not trigger unrelated processing or downloads.
+
+## Source-bound Unity and agent handoffs
+
+For a relevant Unity/rig or Potbot task, read danceflow://workflows/potbot-unity and the matching preview skill. Preserve original master/beat/recording clocks, finite bounds and rig profile hashes; reuse canonical engines. A documented source preview is distinct from a qualified native host or a working MCP consumer.

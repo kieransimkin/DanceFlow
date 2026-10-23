@@ -48,6 +48,19 @@ def test_network_failure_retains_unavailable_without_cached_success():
     assert all('private' not in row['reason'] for row in report['components'])
 
 
+def test_preview_without_stable_release_is_distinct_from_failed_query():
+    def fetch(repo):
+        if repo in {'potbot', 'DanceFlow.Unity'}:
+            return [release('v0.5.0-preview.1', prerelease=True)]
+        return [release('v1.0.0'), release('thumbmoves-v0.1.2')]
+    rows = {row['component']: row for row in check_releases(fetch=fetch)['components']}
+    for name in ('Potbot', 'DanceFlow for Unity'):
+        assert rows[name]['status'] == 'no_stable_release'
+        assert rows[name]['released'] is None
+        assert 'Official query succeeded' in rows[name]['reason']
+    assert rows['MediaSlide']['status'] != 'no_stable_release'
+
+
 def test_gh_release_json_is_decoded_as_utf8(monkeypatch):
     seen = {}
     payload = [[release('v3.4.0', name='Café — motion')]]

@@ -1,3 +1,50 @@
+# LikenessForge: capability and package reference
+
+Audited 23 October 2026: **v0.4.5**, exact source [`cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024`](https://github.com/kieransimkin/LikenessForge/tree/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024). This is a dated source/documentation audit, not installed-runtime or end-to-end acceptance. [Check current releases before use](../workflows/release-preflight.md).
+
+## Current README feature routes
+
+- [Requirements and scope](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md#requirements-and-scope)
+- [What it does](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md#what-it-does)
+- [Built-in plugins](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md#built-in-plugins)
+- [Model storage and cleanup](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md#model-storage-and-cleanup)
+- [8 GB GPUs](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md#8-gb-gpus)
+- [Start the desktop GUI (recommended)](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md#start-the-desktop-gui-recommended)
+- [Manual install](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md#manual-install)
+- [Inspect plugins and models](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md#inspect-plugins-and-models)
+- [Identify the face index](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md#identify-the-face-index)
+- [Repair a face](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md#repair-a-face)
+- [Repair wizard](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md#repair-wizard)
+- [Train a LoRA](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md#train-a-lora)
+- [Training wizard](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md#training-wizard)
+- [FLUX.2 Klein LoRA](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md#flux2-klein-lora)
+- [Configuration file](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md#configuration-file)
+- [Third-party/custom plugins](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md#third-partycustom-plugins)
+- [Debugging](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md#debugging)
+- [Tests and GitHub CI](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md#tests-and-github-ci)
+- [Privacy and responsible use](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md#privacy-and-responsible-use)
+- [Contribute](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md#contribute)
+
+## Source documentation and examples
+
+- [`README.md`](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md)
+- [`docs/ARCHITECTURE.md`](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/docs/ARCHITECTURE.md)
+- [`docs/DANCEFLOW.md`](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/docs/DANCEFLOW.md)
+- [`docs/branding/README.md`](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/docs/branding/README.md)
+
+## Package evidence
+
+- [`README.md`](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/README.md) — SHA-256 `7a7faaae54653647c2e1ad8619fcf27472673fd2aa223c4cc362c1b52a419011`.
+- [`pyproject.toml`](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/pyproject.toml) — SHA-256 `3eac53ba6585f6b6fd054f2aca24c53a861ec19e608d7b649df50b0935bd2bd3`.
+- [`MANIFEST.in`](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/MANIFEST.in) — SHA-256 `e56d670df03478be7358e0dd0c7576c0b0fcd4ccce15f2f5e300d92fcef212a8`.
+- [`LICENSE`](https://github.com/kieransimkin/LikenessForge/blob/cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024/LICENSE) — SHA-256 `bc73e5152b5fe1716c5c8b5cb2b83d51b2e5300827bfa580eeb7a07a498aeafc`.
+
+Package files were read at the pinned source. Published distributions, installed identity, working host examples, rights and reviewed output require their own verification.
+
+## Historical detailed reference
+
+The following older index is retained for detailed routes. Its earlier version is historical; the audited source links above identify current documented availability.
+
 # LikenessForge: complete capability reference
 
 Inspected stable source: [v0.4.5](https://github.com/kieransimkin/LikenessForge/releases/tag/v0.4.5), commit `cc0ff31717bf69a98c6a59eaf9e9a1cdc1783024`. This is a dated baseline; [check current releases before every new workflow](../workflows/release-preflight.md).
@@ -47,3 +94,7 @@ Each entry links to the exact released explanation, options, example or limitati
 ## Examples and media
 
 Use the runnable examples and actual screenshots/videos linked from the released references. Keep their documented version/context and distinguish synthetic fixtures, model hypotheses and real captured output. Do not represent a guide link as proof that a model, GPU, physical phone or production host was tested. New decorative generated imagery adds no feature evidence to this reference index.
+
+## Default-branch availability
+
+The official default branch was also inspected at [`c27f079ccaa481773bd971b508b26bc2fa398487`](https://github.com/kieransimkin/LikenessForge/tree/c27f079ccaa481773bd971b508b26bc2fa398487). It differs from the audited stable tag. [Read that exact README](https://github.com/kieransimkin/LikenessForge/blob/c27f079ccaa481773bd971b508b26bc2fa398487/README.md) for later source/documentation work; this does not establish a newer release, registry version or installed runtime.

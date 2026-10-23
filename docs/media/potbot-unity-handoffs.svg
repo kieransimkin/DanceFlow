@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" role="img" aria-labelledby="title desc">
+<title id="title">DanceFlow evidence and host handoffs</title><desc id="desc">StemLab timing and DanceRudiments native motion feed the Unity preview. FrameRudiments and DanceMoves retain offline and web ownership. Potbot MCP consumption is planned and Unity acceptance is separate.</desc>
+<rect width="1100" height="520" rx="24" fill="#081311"/>
+<g fill="#f4f7f2" font-family="monospace"><text x="40" y="48" font-size="28">DanceFlow: source contracts and host acceptance</text><text x="40" y="80" font-size="16" fill="#a9b8b5">Generated illustration · 23 October 2026 · no execution claimed</text></g>
+<g fill="#10201d" stroke="#6bdcff" stroke-width="2"><rect x="40" y="125" width="280" height="105" rx="14"/><rect x="410" y="125" width="280" height="105" rx="14"/><rect x="780" y="125" width="280" height="105" rx="14"/></g>
+<g fill="#f4f7f2" font-family="monospace" font-size="22"><text x="62" y="163">StemLab</text><text x="432" y="163">DanceRudiments</text><text x="802" y="163">Unity preview</text></g>
+<g fill="#a9b8b5" font-family="monospace" font-size="15"><text x="62" y="193">Master / beat timeline</text><text x="62" y="215">Original source clock</text><text x="432" y="193">Finite recording / rig</text><text x="432" y="215">64 pips · hash / bounds</text><text x="802" y="193">UPM / shader / Playables</text><text x="802" y="215">Editor + GPU acceptance</text></g>
+<g stroke="#9df9c7" stroke-width="3" fill="none"><path d="M320 177h90m-12-7 12 7-12 7"/><path d="M690 177h90m-12-7 12 7-12 7"/></g>
+<g fill="#10201d" stroke="#28443e" stroke-width="2"><rect x="40" y="290" width="480" height="100" rx="14"/><rect x="580" y="290" width="480" height="100" rx="14"/></g>
+<g fill="#f4f7f2" font-family="monospace" font-size="22"><text x="62" y="328">FrameRudiments / DanceMoves</text><text x="602" y="328">Potbot source foundation</text></g>
+<g fill="#a9b8b5" font-family="monospace" font-size="15"><text x="62" y="359">Offline composition / live web playback</text><text x="602" y="359">Durable tasks, evidence, jobs and budgets</text></g>
+<path d="M820 290V247H550V230" fill="none" stroke="#ff9b86" stroke-width="2" stroke-dasharray="7 6"/>
+<g fill="#ff9b86" font-family="monospace" font-size="17"><text x="40" y="440">Dashed: Potbot → DanceFlow MCP consumption remains planned.</text><text x="40" y="473">Unity source checks ≠ Editor, GPU, real-rig or deployment acceptance.</text></g>
+</svg>

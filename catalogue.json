@@ -4,7 +4,7 @@
     "title": "StemLab",
     "repository": "https://github.com/kieransimkin/stemlab",
     "website": "https://kieransimkin.co.uk/danceflow/",
-    "capabilities": "music, stem, rhythm, structure, harmony, lyrics, sonic features and loop evidence",
+    "capabilities": "music, stem, rhythm, structure, harmony, lyrics, sonic features and loop evidence; StemEdit timing/word/cue editor, StemMoves gallery, source-bound beat timelines and lyric audition",
     "experimental": false
   },
   {
@@ -12,7 +12,7 @@
     "title": "DanceRudiments",
     "repository": "https://github.com/kieransimkin/DanceRudiments",
     "website": "https://kieransimkin.co.uk/danceflow/",
-    "capabilities": "deterministic rhythmic position functions, authored pattern collections and a visualizer",
+    "capabilities": "deterministic rhythmic position functions, authored pattern collections and a visualizer; typed rig profiles/motions, Rigify controls and native finite capture playback",
     "experimental": false
   },
   {
@@ -84,7 +84,7 @@
     "title": "React Timeline Sequence",
     "repository": "https://github.com/kieransimkin/react-timeline-sequence",
     "website": "https://kieransimkin.co.uk/danceflow/",
-    "capabilities": "React audio transport, sequence lanes, seeking, zoom and sample-frame loop regions",
+    "capabilities": "React audio transport, sequence lanes, seeking, zoom and sample-frame loop regions; editable timing/keyframes and line/word lyric audition on the selected source transport",
     "experimental": false
   },
   {
@@ -118,5 +118,21 @@
     "website": "https://kieransimkin.co.uk/danceflow/",
     "capabilities": "responsive React media browsing across list, details, adjustable thumbnails and double-buffered slide views, with custom renderers and bidirectional pagination",
     "experimental": false
+  },
+  {
+    "name": "potbot",
+    "title": "Potbot",
+    "repository": "https://github.com/kieransimkin/potbot",
+    "website": "https://kieransimkin.co.uk/danceflow/",
+    "capabilities": "durable coding-agent tasks, evidence, model jobs, budgets and native PostgreSQL/worker APIs; source preview, DanceFlow MCP consumption planned",
+    "experimental": true
+  },
+  {
+    "name": "danceflow-unity",
+    "title": "DanceFlow for Unity",
+    "repository": "https://github.com/kieransimkin/DanceFlow.Unity",
+    "website": "https://kieransimkin.co.uk/danceflow/",
+    "capabilities": "Unity 6 UPM musical clocks, GPU phases, source-bound finite recordings and preview rig playback; Editor/GPU acceptance outstanding",
+    "experimental": true
   }
 ]
