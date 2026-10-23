@@ -20,7 +20,7 @@ Call `danceflow_search` with `{"query":"Unity rig recording"}` or `{"query":"Pot
 
 ## Compose Potbot without inventing an MCP bridge
 
-Use Potbot's existing native CLI/API for durable tasks, evidence, patch handoffs, usage and worker reconciliation on its qualified host. Its proposed universal tool/MCP consumer is tracked in `docs/potbot-tool-mcp-implementation-bundle/`; do not label those stages implemented or send DanceFlow calls through a fictional adapter. A future consumer must preserve tool schema, workspace, effect/consent, job, receipt and source-clock contracts. Implementation belongs in Potbot, not a second job/database subsystem in the toolkit.
+Use Potbot's existing native CLI/API for durable tasks, evidence, patch handoffs, usage and worker reconciliation on its qualified host. Its universal tool/MCP programme is tracked in `docs/potbot-tool-mcp-implementation-bundle/`. Preview source already contains protocol, transport, CLI and sandboxed MCP adapter increments; the [T02.3 source record](https://github.com/kieransimkin/potbot/blob/6ac8a20981c61f682d93c9094f7dce474de8fa1e/docs/implementation/03-interactive-execution.md) distinguishes unit-only compatibility fixtures from the real Linux/PostgreSQL gate. No qualified Potbot-to-DanceFlow call is established by this catalogue. Inspect each implemented, planned and unqualified stage instead of treating the whole consumer as either absent or accepted. A qualified DanceFlow route must preserve tool schema, workspace, effect/consent, job, receipt and source-clock contracts. Implementation belongs in Potbot, not a second job/database subsystem in the toolkit.
 
 Source package review, `potbot info` and CLI help can run without models or PostgreSQL. Full startup, hosted inference, credentials, database migration and Linux execution acceptance need their own authorised host setup. A registered model name is not qualification. Store downloaded weights and caches beneath the owning project's ignored `models/`.
 
@@ -44,7 +44,7 @@ Unity package dependencies must declare every built-in module used by runtime co
 
 - **No stable release:** successful official release queries may return none. Record `no_stable_release`, exact source commit and preview manifest; never call a cached version current or misreport this as a network failure.
 - **Unity sample appears complete:** managed/static tests do not establish actual skinning, framebuffer rendering, audio-to-photon timing or external asset permission.
-- **MCP feature appears in a plan:** distinguish the hub's discoverable references from Potbot's unimplemented consumer and the Unity Editor host.
+- **MCP feature appears in a plan:** distinguish the hub's discoverable references, preview transport/adapter code, the unqualified Potbot-to-DanceFlow connection and the Unity Editor host.
 - **Package docs drift:** compare catalogue, skill, capability reference, guide, release preflight, wheel and portable ZIP membership; verify installed resource readback rather than only a source tree.
 
 ## Deployed WebGL example, separately verified
