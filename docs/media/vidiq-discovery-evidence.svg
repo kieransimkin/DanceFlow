@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="420" viewBox="0 0 1120 420" role="img" aria-labelledby="title description">
+  <title id="title">Packaging, discovery and useful completion are separate evidence stages</title>
+  <desc id="description">A generated explanatory diagram shows a provider package, a host discovery decision and a user task outcome. Each stage needs separate proof. This is not a ranking algorithm or observed conversion result.</desc>
+  <rect width="1120" height="420" rx="20" fill="#101927"/>
+  <g font-family="sans-serif" text-anchor="middle" fill="#f6f8ff">
+    <text x="560" y="52" font-size="25">Measure each step separately</text>
+    <g stroke="#8db6e8" stroke-width="2" fill="#20314a">
+      <rect x="40" y="95" width="310" height="230" rx="14"/>
+      <rect x="405" y="95" width="310" height="230" rx="14"/>
+      <rect x="770" y="95" width="310" height="230" rx="14"/>
+    </g>
+    <g font-size="22" fill="#a9dfd5">
+      <text x="195" y="137">Provider package</text><text x="560" y="137">Host discovery</text><text x="925" y="137">User outcome</text>
+    </g>
+    <g font-size="18">
+      <text x="195" y="184">Useful tools and guided tasks</text><text x="195" y="224">Truthful metadata and setup</text><text x="195" y="264">Verified versions and scope</text>
+      <text x="560" y="184">Eligibility and directory listing</text><text x="560" y="224">Task match and suggestion</text><text x="560" y="264">Vendor decisions unknown</text>
+      <text x="925" y="184">User-approved installation</text><text x="925" y="224">First completed task</text><text x="925" y="264">Reliability and repeat use</text>
+    </g>
+    <g stroke="#a9dfd5" stroke-width="3"><path d="M355 209h40m-10-8 10 8-10 8"/><path d="M720 209h40m-10-8 10 8-10 8"/></g>
+    <text x="560" y="372" fill="#bbc9dc" font-size="17">Illustration of research boundaries · No conversion rates or recommendation formula are claimed</text>
+  </g>
+</svg>

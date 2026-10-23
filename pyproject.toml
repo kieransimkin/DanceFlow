@@ -4,14 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "danceflow-agent-tools"
-version = "0.1.17"
+version = "0.1.18"
 description = "Portable skills and a complete DanceFlow ecosystem MCP hub. https://kieransimkin.co.uk/danceflow/"
 readme = "README.md"
 requires-python = ">=3.10,<3.14"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "Kieran Simkin" }]
-keywords = ["DanceFlow", "MCP", "agent-skills", "keywords", "visual-media", "visual-identity", "image-analysis"]
+keywords = ["DanceFlow", "music-analysis", "lyric-timing", "lyric-video", "audio-reactive", "bpm-animation", "keyword-research", "image-analysis", "visual-identity", "local-mcp", "agent-skills"]
 dependencies = ["mcp>=2.3,<3", "keywordmoves>=0.5.8,<0.6", "jsonschema>=4,<5"]
 
 [project.optional-dependencies]

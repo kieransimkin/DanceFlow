@@ -1,0 +1,389 @@
+{
+  "schema": "danceflow.selection-fixtures.v1",
+  "version": 1,
+  "date": "2026-10-23",
+  "status": "human-authored hypotheses; no agent trials performed",
+  "protocol": "Compare baseline/candidate on matched hosts. Hold out paraphrases; record exposed catalogue, installation/runtime state, permissions, costs, selection, false triggers and completed tasks separately.",
+  "cases": [
+    {
+      "id": "DF01",
+      "prompt": "Separate the vocal and percussion in my own recording.",
+      "expected_components": [
+        "stemlab"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF02",
+      "prompt": "Estimate the tempo of this song and show the evidence.",
+      "expected_components": [
+        "stemlab"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF03",
+      "prompt": "Check whether these section cues fit my verified beat grid.",
+      "expected_components": [
+        "stemlab"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF04",
+      "prompt": "Let me audition a word-level lyric timing edit.",
+      "expected_components": [
+        "stemlab"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF05",
+      "prompt": "Find a musically sensible loop from this master and its timing files.",
+      "expected_components": [
+        "stemlab"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF06",
+      "prompt": "Render a beat-synchronised lyric video from audio and an LRC file.",
+      "expected_components": [
+        "framerudiments"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF07",
+      "prompt": "Export an audio-reactive spectrum video with a fixed source clock.",
+      "expected_components": [
+        "framerudiments"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF08",
+      "prompt": "Make a vertical song excerpt from my verified loop boundaries.",
+      "expected_components": [
+        "framerudiments"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF09",
+      "prompt": "Render an offline scene with timed captions and native movement.",
+      "expected_components": [
+        "framerudiments"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF10",
+      "prompt": "Composite these authorised layers with a keyframed matte.",
+      "expected_components": [
+        "framerudiments"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF11",
+      "prompt": "Make web effects follow an audio player through seeking and pause.",
+      "expected_components": [
+        "dancemoves"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF12",
+      "prompt": "Connect the same bounded visual effect to mouse and phone tilt.",
+      "expected_components": [
+        "dancemoves"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF13",
+      "prompt": "Respect reduced motion and remove listeners when the web effect stops.",
+      "expected_components": [
+        "dancemoves"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF14",
+      "prompt": "Synchronise a web lyric display to the selected media clock.",
+      "expected_components": [
+        "dancemoves"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF15",
+      "prompt": "Evaluate a deterministic rhythmic position pattern at musical time.",
+      "expected_components": [
+        "dancerudiments"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF16",
+      "prompt": "Play a finite native movement recording without extending its duration.",
+      "expected_components": [
+        "dancerudiments"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF17",
+      "prompt": "Extract literal phrases from this local reference document.",
+      "expected_components": [
+        "keywordmoves"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF18",
+      "prompt": "Compare these two compatible dated keyword evidence exports.",
+      "expected_components": [
+        "keywordmoves"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF19",
+      "prompt": "Measure the colours and texture of these authorised pictures without a model.",
+      "expected_components": [
+        "pixelcue"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF20",
+      "prompt": "Describe the visual language across this bounded image collection.",
+      "expected_components": [
+        "prismmoves"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF21",
+      "prompt": "Upscale this image with the selected licensed local model.",
+      "expected_components": [
+        "rastermoves"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF22",
+      "prompt": "Repair facial likeness using my authorised reference and selected local model.",
+      "expected_components": [
+        "likenessforge"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF23",
+      "prompt": "Read an existing OS thumbnail and report a cache miss without generating one.",
+      "expected_components": [
+        "thumbmoves"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF24",
+      "prompt": "Add seeking, zoom and editable sequence lanes to my React audio interface.",
+      "expected_components": [
+        "react-timeline-sequence"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF25",
+      "prompt": "Browse a React media collection as a list, details view and slide presentation.",
+      "expected_components": [
+        "mediaslide"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF26",
+      "prompt": "Prepare song-page social metadata from these verified canonical facts.",
+      "expected_components": [
+        "epk-social-metadata"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF27",
+      "prompt": "Plan encrypted password-controlled WordPress delivery with host acceptance.",
+      "expected_components": [
+        "dancevault"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF28",
+      "prompt": "Check an evidence-gated workflow before applying its project rules.",
+      "expected_components": [
+        "workflowmoves"
+      ],
+      "negative_control": false,
+      "expected_action": "route_if_task_and_prerequisites_match",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF29",
+      "prompt": "Find the native host requirements for durable coding-agent tasks and budgets.",
+      "expected_components": [
+        "potbot"
+      ],
+      "negative_control": false,
+      "expected_action": "inspect_native_host_requirements",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF30",
+      "prompt": "Find the Unity musical-clock sample and its outstanding GPU acceptance.",
+      "expected_components": [
+        "danceflow-unity"
+      ],
+      "negative_control": false,
+      "expected_action": "inspect_native_host_requirements",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF31",
+      "prompt": "Translate this short sentence into French.",
+      "expected_components": [],
+      "negative_control": true,
+      "expected_action": "answer_without_danceflow",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF32",
+      "prompt": "What is seventeen multiplied by twenty-three?",
+      "expected_components": [],
+      "negative_control": true,
+      "expected_action": "answer_without_danceflow",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF33",
+      "prompt": "Write a brief thank-you note from these supplied facts.",
+      "expected_components": [],
+      "negative_control": true,
+      "expected_action": "answer_without_danceflow",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF34",
+      "prompt": "Rename this one local file; no media processing is needed.",
+      "expected_components": [],
+      "negative_control": true,
+      "expected_action": "answer_without_danceflow",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF35",
+      "prompt": "Give me physical practice steps for learning a waltz, without software.",
+      "expected_components": [],
+      "negative_control": true,
+      "expected_action": "answer_without_danceflow",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF36",
+      "prompt": "Explain what a minor triad is in plain text.",
+      "expected_components": [],
+      "negative_control": true,
+      "expected_action": "answer_without_danceflow",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF37",
+      "prompt": "Correct punctuation in this paragraph without changing its meaning.",
+      "expected_components": [],
+      "negative_control": true,
+      "expected_action": "answer_without_danceflow",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF38",
+      "prompt": "Summarise the supplied meeting notes in three sentences.",
+      "expected_components": [],
+      "negative_control": true,
+      "expected_action": "answer_without_danceflow",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF39",
+      "prompt": "Show the exact lyrics I supplied; do not analyse or retime them.",
+      "expected_components": [],
+      "negative_control": true,
+      "expected_action": "answer_without_danceflow",
+      "outcome": "not_run"
+    },
+    {
+      "id": "DF40",
+      "prompt": "Convert five minutes into seconds.",
+      "expected_components": [],
+      "negative_control": true,
+      "expected_action": "answer_without_danceflow",
+      "outcome": "not_run"
+    }
+  ]
+}

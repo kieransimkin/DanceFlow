@@ -2,6 +2,7 @@
 from pathlib import Path
 import json
 import re
+import unicodedata
 try:
     import tomllib
 except ImportError:
@@ -14,6 +15,11 @@ project = tomllib.loads((ROOT/'pyproject.toml').read_text('utf-8'))['project']
 assert project['urls']['Homepage'] == SITE
 assert SITE in project['description']
 assert project['version'] == json.loads((ROOT/'plugins/danceflow/plugin.json').read_text('utf-8'))['version']
+assert project['keywords'] == json.loads((ROOT/'plugins/danceflow/plugin.json').read_text('utf-8'))['keywords']
+for config in ('plugins/danceflow/mcp.json', 'plugins/danceflow/.mcp.json'):
+    command = json.loads((ROOT/config).read_text('utf-8'))['mcpServers']['danceflow']
+    assert command['command'] == 'uvx'
+    assert f"danceflow-agent-tools=={project['version']}" in command['args'], 'MCP launcher version must match the package'
 for name in ('.agents/plugins/marketplace.json', '.claude-plugin/marketplace.json'):
     data = json.loads((ROOT/name).read_text('utf-8'))
     for entry in data['plugins']:
@@ -27,6 +33,24 @@ for name in ('.agents/plugins/marketplace.json', '.claude-plugin/marketplace.jso
         for variant in ('.codex-plugin/plugin.json', '.claude-plugin/plugin.json'):
             other = json.loads((target/variant).read_text('utf-8'))
             assert other['name'] == manifest['name'] and other['version'] == manifest['version']
+            assert other['description'] == manifest['description'], 'Client descriptions must agree'
+            assert other['keywords'] == manifest['keywords'], 'Client keyword inventories must agree'
+        assert entry['version'] == manifest['version'], 'Marketplace version must match its plugin'
+        assert entry['description'] == manifest['description'], 'Marketplace description must match its plugin'
+        portable_interface = manifest['extensions']['com.openai']['interface']
+        codex = json.loads((target/'.codex-plugin/plugin.json').read_text('utf-8'))
+        assert codex['interface'] == portable_interface, 'OpenAI listing overlays must agree'
+        # Final directory limits are stricter than ZIP upload limits. Source:
+        # https://developers.openai.com/plugins/deploy/submission-errors
+        for field, maximum in (('displayName', 30), ('shortDescription', 30), ('developerName', 80)):
+            value = portable_interface[field]
+            assert value.strip() and len(value) <= maximum and not re.search(r'[\r\n]', value), field
+        assert 1 <= len(portable_interface['longDescription']) <= 4000
+        prompts = portable_interface['defaultPrompt']
+        assert 1 <= len(prompts) <= 3
+        normalized = {' '.join(unicodedata.normalize('NFKC', p).split()).casefold() for p in prompts}
+        assert len(normalized) == len(prompts), 'Starter prompts must be distinct'
+        assert all(p.strip() and len(p) <= 128 and not re.search(r'[\r\n@]', p) for p in prompts)
 for path in (ROOT/'plugins/danceflow/skills').glob('*/SKILL.md'):
     text = path.read_text('utf-8')
     frontmatter = yaml.safe_load(text.split('---', 2)[1])

@@ -1,24 +1,26 @@
 {
   "name": "danceflow",
-  "version": "0.1.17",
-  "description": "Music, motion and visual evidence tools for agents. https://kieransimkin.co.uk/danceflow/",
+  "version": "0.1.18",
+  "description": "Music analysis, lyric timing, beat-synchronised video, web motion, image analysis and keyword research tools with local MCP discovery and guided skills. https://kieransimkin.co.uk/danceflow/",
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "DanceFlow",
-    "shortDescription": "Music, motion and media tools for agents",
-    "longDescription": "Fifteen independently useful components with complete MCP discovery, typed component jobs, native StemLab federation, library adapters and portable skills. Browser and WordPress hosts remain explicit. Website: https://kieransimkin.co.uk/danceflow/",
+    "shortDescription": "Music, motion and media tools",
+    "longDescription": "Choose tools for music analysis and lyric timing, beat-synchronised video, live web motion, image analysis and keyword research. DanceFlow routes tasks to independently maintained components through local MCP tools and guided skills. Configure a local workspace and each required runtime; catalogue access alone does not run every engine. Potbot and Unity entries are source-preview references with native-host requirements and no execution adapters. Browser and WordPress tasks need their documented hosts. Website: https://kieransimkin.co.uk/danceflow/",
     "developerName": "Kieran Simkin",
     "category": "Productivity",
     "capabilities": [
-      "Read",
-      "Write"
+      "Analyse music and lyric timing",
+      "Render beat-synchronised video",
+      "Create media-clock web animation",
+      "Inspect images and keyword evidence"
     ],
     "websiteURL": "https://kieransimkin.co.uk/danceflow/",
     "defaultPrompt": [
-      "Choose the right DanceFlow tool for my task and inspect its available features.",
-      "Use KeywordMoves to extract literal phrases from my local reference text.",
-      "Find a small reproducible improvement and prepare a tested contribution."
+      "Analyse my song's tempo and structure, keeping estimates separate from verified timing.",
+      "Render a beat-synchronised lyric video from my audio, LRC lyrics and cue file.",
+      "Make web effects follow an audio player's clock, with reduced-motion support."
     ]
   },
   "extensions": {
@@ -27,9 +29,16 @@
     }
   },
   "keywords": [
-    "visual-identity",
+    "DanceFlow",
+    "music-analysis",
+    "lyric-timing",
+    "lyric-video",
+    "audio-reactive",
+    "bpm-animation",
+    "keyword-research",
     "image-analysis",
-    "PixelCue",
-    "PrismMoves"
+    "visual-identity",
+    "local-mcp",
+    "agent-skills"
   ]
 }

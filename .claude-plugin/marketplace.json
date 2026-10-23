@@ -8,9 +8,9 @@
     {
       "name": "danceflow",
       "source": "./plugins/danceflow",
-      "description": "Music, motion and visual evidence tools for agents. https://kieransimkin.co.uk/danceflow/",
+      "description": "Music analysis, lyric timing, beat-synchronised video, web motion, image analysis and keyword research tools with local MCP discovery and guided skills. https://kieransimkin.co.uk/danceflow/",
       "homepage": "https://kieransimkin.co.uk/danceflow/",
-      "version": "0.1.15"
+      "version": "0.1.18"
     }
   ]
 }
