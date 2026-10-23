@@ -4,6 +4,10 @@ Audited 23 October 2026: **source preview; no stable release**, exact source [`b
 
 UPM `com.kieransimkin.danceflow.unity` is `0.5.0-preview.1`, requires Unity 6000.0+, and has four opt-in samples. Unity Editor/GPU and real-character acceptance remain outstanding.
 
+## Native preview follow-up
+
+The original source snapshot below remains historical. [Preview0.5.0-preview.2](https://github.com/kieransimkin/DanceFlow.Unity/releases/tag/v0.5.0-preview.2) adds explicit runtime-module dependencies, batch-safe GPU checks and persistent synthetic rig assets/links. [The native record](https://github.com/kieransimkin/DanceFlow.Unity/blob/v0.5.0-preview.2/docs/11-native-acceptance.md) retains actual captures, 23 Editor/five PlayMode cases and a focused end-mesh regression on the named Windows/Unity/URP/RTX host. It does not close real-character, source-song, physical timing, other-platform or deployed-WebGL acceptance.
+
 ## Current README feature routes
 
 - [Install in Unity](https://github.com/kieransimkin/DanceFlow.Unity/blob/ba3124e0075584d94a54f8e7137fbacdd036b774/README.md#install-in-unity)

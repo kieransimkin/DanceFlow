@@ -18,6 +18,8 @@ Use the [complete released capability index](docs/capabilities/index.md), the [r
 
 For Potbot and Unity, follow the [native-host acceptance matrix](docs/workflows/potbot-unity.md#qualify-the-actual-native-host): database authentication, restricted application identity, whole-package import, real GPU readback and saved-scene skinning each need their own evidence.
 
+The [Unity preview follow-up](docs/tools/danceflow-unity.md#native-preview-follow-up) records the released `0.5.0-preview.2` fixes and actual synthetic GPU/rig evidence, with real-character, source-song and deployment limits kept explicit.
+
 ## Find your route
 
 [Install in Claude Code](#install-in-claude-code) · [Install in Codex](#install-in-codex) · [Use the local MCP server](#use-the-local-mcp-server) · [Choose a component](#choose-a-component) · [Try the tools with Arcadians](#try-the-tools-with-arcadians) · [Contribute](#contribute) · [Development](#development) · [Automatic releases and registry submissions](#automatic-releases-and-registry-submissions) · [Understand visual language](#understand-visual-language)
