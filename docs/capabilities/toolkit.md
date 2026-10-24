@@ -1,4 +1,4 @@
-# DanceFlow toolkit 0.1.17: current integration
+# DanceFlow toolkit 0.1.20: current integration
 
 This package includes seventeen component identities, eight workflow guides, complete source-pinned component references, typed CLI/library adapters and native StemLab MCP composition. Potbot and Unity expose reference discovery and native-host requirements; neither has an execution adapter. The release preflight distinguishes no stable release from failed queries. Read [the current MCP guide](../mcp-ecosystem.md), [capability inventory](index.md) and [joint workflow](../workflows/potbot-unity.md).
 

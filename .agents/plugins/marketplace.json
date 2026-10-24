@@ -15,7 +15,7 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Productivity",
-      "version": "0.1.19",
+      "version": "0.1.20",
       "description": "Music analysis, lyric timing, beat-synchronised video, web motion, image analysis and keyword research tools with local MCP discovery and guided skills. https://kieransimkin.co.uk/danceflow/"
     }
   ]
