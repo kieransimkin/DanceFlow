@@ -22,3 +22,16 @@ def test_version_without_site_packages():
 def test_runtime_version_matches_distribution_metadata():
     project = tomllib.loads((Path(__file__).resolve().parents[1] / "pyproject.toml").read_text(encoding="utf-8"))
     assert __version__ == project["project"]["version"]
+
+
+def test_agent_discovery_copy_matches_current_identity():
+    root = Path(__file__).resolve().parents[1]
+    project = tomllib.loads((root / "pyproject.toml").read_text(encoding="utf-8"))
+    version = project["project"]["version"]
+    overview = (root / "docs/mcp-ecosystem.md").read_text(encoding="utf-8")
+    toolkit = (root / "docs/capabilities/toolkit.md").read_text(encoding="utf-8")
+    server = (root / "src/danceflow_agents/server.py").read_text(encoding="utf-8")
+
+    assert f"Version {version} packages" in overview
+    assert f"DanceFlow toolkit {version}: current integration" in toolkit
+    assert "Discover all 17 components" in server

@@ -112,7 +112,7 @@ def create_server(bridge: DanceFlowBridge, ecosystem: EcosystemBridge | None = N
 
     @server.tool(annotations=read)
     def danceflow_capabilities() -> dict[str, Any]:
-        """Discover all 15 components, their MCP tools, references and observed runtime availability."""
+        """Discover all 17 components, their MCP tools, references and observed runtime availability."""
         return {**bridge.capabilities(), "ecosystem": ecosystem.capabilities()}
 
     @server.tool(annotations=read)

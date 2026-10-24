@@ -1,6 +1,6 @@
 # DanceFlow ecosystem through one MCP server
 
-Version 0.1.17 packages the catalogue-backed MCP hub, seventeen components and eight workflow guides. The prior 0.1.16 five-tool bridge does not acquire these features automatically; verify the actual installed wheel and resource readback. Potbot and Unity discovery does not implement their native host execution.
+Version 0.1.20 packages the catalogue-backed MCP hub, seventeen components and eight workflow guides. The prior 0.1.16 five-tool bridge does not acquire these features automatically; verify the actual installed wheel and resource readback. Potbot and Unity discovery does not implement their native host execution.
 
 ## Discover before execution
 
