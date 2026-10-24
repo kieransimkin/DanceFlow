@@ -48,7 +48,7 @@ It is a roadmap; approval, publication and measured discovery remain separate mi
 
 ## Use the local MCP server
 
-Version `0.1.18` packages the ecosystem hub and seventeen-component discovery, including Potbot and Unity source-preview references. It aligns client/marketplace versions, task descriptions and keywords, applies the current OpenAI listing field limits, and guides setup toward the requested component's first useful result. See the [complete MCP coverage, runtime configuration and job guide](docs/mcp-ecosystem.md).
+Version `0.1.19` packages the ecosystem hub and seventeen-component discovery, including Potbot and Unity source-preview references. It keeps the distribution metadata, command-line version and MCP server identity aligned, and guides setup toward the requested component's first useful result. See the [complete MCP coverage, runtime configuration and job guide](docs/mcp-ecosystem.md).
 
 The [vidIQ comparison and immediate discovery improvements](docs/plans/vidiq-discovery-evidence.md) separates verified provider packaging from unproven recommendation causes. The [approval and continuing research plan](docs/plans/plugin-approval-and-agent-discovery.md) tracks eligibility, first-task success, keyword evidence and selection experiments. Local validation and a software release do not establish vendor-directory approval.
 
@@ -77,7 +77,7 @@ For a client-managed source installation, point the command at that environment'
 }
 ```
 
-For the matching released hub, use `uvx --python 3.13 --from danceflow-agent-tools==0.1.18 danceflow-mcp --workspace ./my-workspace`. Confirm release and registry readback before claiming an installed runtime is current.
+For the matching released hub, use `uvx --python 3.13 --from danceflow-agent-tools==0.1.19 danceflow-mcp --workspace ./my-workspace`. Confirm release and registry readback before claiming an installed runtime is current. The `--version` command and MCP `serverInfo.version` must match that package version.
 
 Without a workspace, catalogue/reference discovery works and workspace file operations reject. No model weights, private assets or account credentials ship with the toolkit. Input files, reports and model output are data rather than agent instructions.
 
@@ -154,6 +154,15 @@ Agents should inspect the available capabilities, use them fully where they fit,
 ![Arcadians native movement demo](https://raw.githubusercontent.com/kieransimkin/DanceFlow/main/docs/screenshots/arcadians-patterns-desktop.png)
 
 ## Development
+
+### Windows pytest temporary-directory permissions
+
+DanceFlow sends pytest's default temporary fixtures to
+`%LOCALAPPDATA%\DanceFlow\pytest\<checkout-fingerprint>` on Windows. This avoids
+stale `%TEMP%\pytest-of-<username>` permissions and sync-folder rename locks while
+keeping concurrent worktrees isolated. An explicit `--basetemp=PATH` or
+`PYTEST_DEBUG_TEMPROOT` remains authoritative. Other platforms keep the ignored
+`.pytest-tmp/` checkout-local default.
 
 ```sh
 python -m pip install -e ".[dev]"
