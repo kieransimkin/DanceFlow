@@ -3,6 +3,10 @@ import os
 from pathlib import Path
 import subprocess
 import sys
+try:
+    import tomllib
+except ModuleNotFoundError:  # Python 3.10 uses the declared development dependency.
+    import tomli as tomllib
 
 from danceflow_agents import __version__
 
@@ -13,3 +17,8 @@ def test_version_without_site_packages():
                           env=env,capture_output=True,text=True,timeout=20)
     assert result.returncode==0,result.stderr
     assert result.stdout.strip()==__version__
+
+
+def test_runtime_version_matches_distribution_metadata():
+    project = tomllib.loads((Path(__file__).resolve().parents[1] / "pyproject.toml").read_text(encoding="utf-8"))
+    assert __version__ == project["project"]["version"]

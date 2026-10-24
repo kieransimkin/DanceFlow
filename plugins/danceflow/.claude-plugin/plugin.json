@@ -1,6 +1,6 @@
 {
   "name": "danceflow",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "description": "Music analysis, lyric timing, beat-synchronised video, web motion, image analysis and keyword research tools with local MCP discovery and guided skills. https://kieransimkin.co.uk/danceflow/",
   "author": {
     "name": "Kieran Simkin",
