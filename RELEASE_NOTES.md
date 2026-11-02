@@ -1,3 +1,7 @@
+# DanceFlow 0.1.21
+
+Makes Windows test runs reproducible: process temp, pytest fixtures and pytest cache now share a probed, unique LocalAppData run root that is removed after the run. Routine local invocations require focused test paths; the complete cross-platform matrix remains in GitHub CI. Git stores text as LF across platforms while retaining CRLF for Windows command scripts, preventing checkout-dependent source hashes.
+
 # DanceFlow 0.1.17
 
 Packages the catalogue-backed ecosystem MCP hub and integrates Potbot and DanceFlow for Unity into seventeen-component discovery, portable skills, guides, source-pinned capability references and wheel/ZIP data. The joint workflow composes canonical StemLab timing and native DanceRudiments recording/rig contracts without inventing a Potbot MCP consumer or Unity execution adapter. Official release queries now distinguish a verified absence of stable releases from network failures. Preview hosts, model consent, runtime availability and actual Editor/GPU acceptance remain explicit.
