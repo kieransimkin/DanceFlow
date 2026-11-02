@@ -236,3 +236,25 @@ Generated contract diagram. Solid arrows describe file/API responsibilities; das
 
 
 Use the [joint workflow](docs/workflows/potbot-unity.md) and run `python examples/ecosystem_discovery.py` after installing this source. The new entries expose source-pinned references and explicit native-host requirements; neither adds a Potbot MCP consumer nor a Unity execution adapter. StemLab timing/word editing, native rig motion and selected-channel lyric audition are indexed in the refreshed [capability inventory](docs/capabilities/index.md).
+
+
+## Reliable Python tests on Windows
+
+Run focused tests through `pwsh ./scripts/Invoke-Tests.ps1 <test-path> [...]`.
+The wrapper probes create/read/atomic-rename/delete access before collection,
+uses a unique per-run root beneath `%LOCALAPPDATA%/<project>/pytest-tmp` on
+Windows, redirects Python process temporary files, pytest's `--basetemp` and cache,
+then removes only that run's directory and restores the caller's environment.
+This avoids stale or sandbox-altered `%TEMP%\pytest-of-*` ACLs and prevents
+parallel checkouts from sharing a pytest root.
+
+Repository text is stored and checked out as LF through `.gitattributes`;
+declared binary media, archives, fonts and model formats remain byte-exact.
+
+An omitted test selection fails closed. Use `-FullSuite` only for an explicit
+release or whole-environment diagnostic; routine local work should select the
+affected tests, while GitHub Actions owns the complete platform matrix.
+
+This is a command-line environment-isolation contract, so screenshots or video
+would not add reliable evidence. The probe messages, selected test output and
+process exit code are the verification evidence.
