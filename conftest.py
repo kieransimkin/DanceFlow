@@ -8,6 +8,8 @@ from __future__ import annotations
 
 import hashlib
 import os
+import shutil
+import uuid
 from pathlib import Path
 from typing import Mapping
 
@@ -24,8 +26,32 @@ def default_temp_root(
     if platform == "nt":
         base = Path(current_environment.get("LOCALAPPDATA") or Path.home() / "AppData" / "Local")
         key = hashlib.sha256(str(checkout).casefold().encode("utf-8")).hexdigest()[:12]
-        return base / "DanceFlow" / "pytest" / key
+        return base / checkout.name / "pytest-tmp"
     return checkout / ".pytest-tmp"
+
+
+def _new_run_root(checkout: Path) -> Path:
+    """Return a fresh root so a killed run can never poison the next run."""
+    checkout = checkout.resolve()
+    key = hashlib.sha256(str(checkout).casefold().encode("utf-8")).hexdigest()[:12]
+    return default_temp_root(checkout) / (
+        f"direct-{key}-{os.getpid()}-{uuid.uuid4().hex}"
+    )
+
+
+def _probe_temp_root(root: Path) -> None:
+    """Require create/read/atomic-rename/delete before collection starts."""
+    root.mkdir(mode=0o700, parents=True, exist_ok=False)
+    probe = root / "probe"
+    renamed = root / "probe-renamed"
+    try:
+        probe.write_text("pytest-temp-probe", encoding="utf-8")
+        if probe.read_text(encoding="utf-8") != "pytest-temp-probe":
+            raise OSError(f"pytest temp probe readback failed: {root}")
+        probe.rename(renamed)
+    finally:
+        renamed.unlink(missing_ok=True)
+        probe.unlink(missing_ok=True)
 
 
 @pytest.hookimpl(tryfirst=True)
@@ -35,7 +61,10 @@ def pytest_configure(config: pytest.Config) -> None:
         return
     if os.environ.get("PYTEST_DEBUG_TEMPROOT"):
         return
-    root = default_temp_root(Path(config.rootpath))
-    root.mkdir(mode=0o700, parents=True, exist_ok=True)
+    root = _new_run_root(Path(config.rootpath))
+    _probe_temp_root(root)
     os.environ["PYTEST_DEBUG_TEMPROOT"] = str(root)
-    config.inicfg["cache_dir"] = str(root / "cache")
+    config._inicache["cache_dir"] = str(root / "cache")
+    cleanup = getattr(config, "add_cleanup", None)
+    if cleanup is not None:
+        cleanup(lambda: shutil.rmtree(root, ignore_errors=True))
