@@ -38,3 +38,4 @@ def pytest_configure(config: pytest.Config) -> None:
     root = default_temp_root(Path(config.rootpath))
     root.mkdir(mode=0o700, parents=True, exist_ok=True)
     os.environ["PYTEST_DEBUG_TEMPROOT"] = str(root)
+    config.inicfg["cache_dir"] = str(root / "cache")
