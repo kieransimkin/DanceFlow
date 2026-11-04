@@ -112,3 +112,19 @@ def test_concurrent_review_edit_holds_before_any_mutation(monkeypatch):
     with pytest.raises(ValueError, match='changed during staging'):
         recipes.open_recipe_pr(upstream, branch, {}, 'Add keywordmoves 0.5.7', 'body',
                                expected_review_head='a'*40)
+
+def test_regular_submission_retains_vcpkg_candidate(monkeypatch):
+    calls = []
+    monkeypatch.setattr(recipes, 'checked_recipe', lambda component: None)
+    monkeypatch.setattr(recipes, 'api', lambda path: {'login': recipes.OWNER})
+    monkeypatch.setattr(recipes, 'submit_conda', lambda component: calls.append(component))
+    monkeypatch.setattr(recipes, 'submit_conan', lambda: calls.append('conan'))
+    monkeypatch.setattr(recipes, 'submit_vcpkg', lambda: calls.append('vcpkg'))
+    monkeypatch.setattr('sys.argv', ['submit_registry_recipes.py', '--apply'])
+    recipes.main()
+    assert calls == [*recipes.COMPONENTS, 'conan']
+
+    calls.clear()
+    monkeypatch.setattr('sys.argv', ['submit_registry_recipes.py', '--apply', '--submit-vcpkg'])
+    recipes.main()
+    assert calls == [*recipes.COMPONENTS, 'conan', 'vcpkg']

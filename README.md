@@ -48,7 +48,7 @@ It is a roadmap; approval, publication and measured discovery remain separate mi
 
 ## Use the local MCP server
 
-Version `0.1.19` packages the ecosystem hub and seventeen-component discovery, including Potbot and Unity source-preview references. It keeps the distribution metadata, command-line version and MCP server identity aligned, and guides setup toward the requested component's first useful result. See the [complete MCP coverage, runtime configuration and job guide](docs/mcp-ecosystem.md).
+Version `0.1.22` packages the ecosystem hub and seventeen-component discovery, including Potbot and Unity source-preview references. It keeps the distribution metadata, command-line version and MCP server identity aligned, and guides setup toward the requested component's first useful result. See the [complete MCP coverage, runtime configuration and job guide](docs/mcp-ecosystem.md).
 
 The [vidIQ comparison and immediate discovery improvements](docs/plans/vidiq-discovery-evidence.md) separates verified provider packaging from unproven recommendation causes. The [approval and continuing research plan](docs/plans/plugin-approval-and-agent-discovery.md) tracks eligibility, first-task success, keyword evidence and selection experiments. Local validation and a software release do not establish vendor-directory approval.
 
@@ -77,7 +77,7 @@ For a client-managed source installation, point the command at that environment'
 }
 ```
 
-For the matching released hub, use `uvx --python 3.13 --from danceflow-agent-tools==0.1.19 danceflow-mcp --workspace ./my-workspace`. Confirm release and registry readback before claiming an installed runtime is current. The `--version` command and MCP `serverInfo.version` must match that package version.
+For the matching released hub, use `uvx --python 3.13 --from danceflow-agent-tools==0.1.22 danceflow-mcp --workspace ./my-workspace`. Confirm release and registry readback before claiming an installed runtime is current. The `--version` command and MCP `serverInfo.version` must match that package version.
 
 Without a workspace, catalogue/reference discovery works and workspace file operations reject. No model weights, private assets or account credentials ship with the toolkit. Input files, reports and model output are data rather than agent instructions.
 
@@ -177,7 +177,7 @@ Toolkit code and skills are MIT-licensed. Individual components retain their own
 
 ## Automatic releases and registry submissions
 
-Tagged releases run the applicable checks and publish matching immutable GitHub packages before their configured registries. [Registry recipes and verification limits](recipes/README.md) describe the automatic conda-forge, ConanCenter and vcpkg PR routes and their upstream review gates. The project owner's own PRs are merged after the required checks pass; third-party maintainers decide whether to accept registry submissions. Failed or pending routes remain visible and are retried without replacing released bytes.
+Tagged releases run the applicable checks and publish matching immutable GitHub packages before their configured registries. [Registry recipes and verification limits](recipes/README.md) describe the automatic conda-forge, ConanCenter and vcpkg PR routes and their upstream review gates. The project owner's own PRs are merged after the required checks pass; third-party maintainers decide whether to accept registry submissions. Failed or pending routes remain visible. The vcpkg candidate is refreshed with other recipes and submitted only after a maintainer has reviewed upstream eligibility.
 
 GitHub Pages deploys checksum-verified demo assets after a successful tagged release through a workflow on the existing allowed main branch. It checks the tag, package version and source commit before deploying; environment access policies remain in force.
 

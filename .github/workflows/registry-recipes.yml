@@ -1,6 +1,11 @@
 name: Submit registry recipes after tagged releases
 on:
   workflow_dispatch:
+    inputs:
+      submit_vcpkg:
+        description: 'Submit vcpkg only after reviewing the upstream maturity and port test requirements'
+        type: boolean
+        default: false
   push:
     tags: ['v*']
   schedule:
@@ -31,7 +36,12 @@ jobs:
             exit 1
           fi
       - name: Submit versions with verified GitHub releases and PyPI source archives
-        run: python scripts/submit_registry_recipes.py --refresh --apply
+        env:
+          SUBMIT_VCPKG: ${{ inputs.submit_vcpkg }}
+        run: |
+          args=(--refresh --apply)
+          if [ "$SUBMIT_VCPKG" = true ]; then args+=(--submit-vcpkg); fi
+          python scripts/submit_registry_recipes.py "${args[@]}"
       - name: Retain exact submitted recipe candidates
         if: always()
         uses: actions/upload-artifact@v7

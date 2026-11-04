@@ -1,3 +1,7 @@
+# DanceFlow 0.1.22
+
+Keep the vcpkg candidate available for manual eligibility review while continuing automatic conda and Conan recipe submissions. Align toolkit installation pins and document the verified WordPress.org distribution routes.
+
 # DanceFlow 0.1.21
 
 Makes Windows test runs reproducible: process temp, pytest fixtures and pytest cache now share a probed, unique LocalAppData run root that is removed after the run. Routine local invocations require focused test paths; the complete cross-platform matrix remains in GitHub CI. Git stores text as LF across platforms while retaining CRLF for Windows command scripts, preventing checkout-dependent source hashes.
