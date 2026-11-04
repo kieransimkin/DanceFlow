@@ -333,7 +333,15 @@ This is a **draft**: the first upstream release is 28 September 2026, so the usu
 
 
 def main():
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--check',action='store_true');parser.add_argument('--apply',action='store_true');parser.add_argument('--refresh',action='store_true');args=parser.parse_args()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--check', action='store_true')
+    parser.add_argument('--apply', action='store_true')
+    parser.add_argument('--refresh', action='store_true')
+    parser.add_argument('--submit-vcpkg', action='store_true',
+                        help='submit the reviewed vcpkg candidate after upstream eligibility review')
+    args = parser.parse_args()
+    if args.submit_vcpkg and not args.apply:
+        parser.error('--submit-vcpkg requires --apply')
     if args.refresh:
         for component in COMPONENTS: refresh(component)
     for component in COMPONENTS: checked_recipe(component)
@@ -343,7 +351,11 @@ def main():
         for component in COMPONENTS:
             url=submit_conda(component)
             if url: print(url,flush=True)
-        print(submit_conan(),flush=True);print(submit_vcpkg(),flush=True)
+        print(submit_conan(), flush=True)
+        if args.submit_vcpkg:
+            print(submit_vcpkg(), flush=True)
+        else:
+            print('vcpkg: candidate retained for upstream eligibility review', flush=True)
 
 
 if __name__=='__main__': main()
